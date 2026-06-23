@@ -270,6 +270,14 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .faq-grid{grid-template-columns:1fr}
   .who-split{grid-template-columns:1fr}
 }
+/* Named classes for inline grids */
+.grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.grid-2col-tight{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid-2col-story{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.grid-4col{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.grid-icon-text{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
+.grid-2col-offer{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
 @media(max-width:768px){
   nav{padding:1rem 1.25rem}
   .hero,.process,.stats,.features,.supps,.stories,.who,.addons,.kit-section,.compare,.offer,.faq,.disclaimer{padding-left:1.25rem;padding-right:1.25rem}
@@ -279,6 +287,17 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .addon-grid{grid-template-columns:1fr}
   .process-rail{grid-template-columns:1fr 1fr}
   .compare-table{font-size:13px}
+  /* Fix all inline grids on mobile */
+  .grid-2col{grid-template-columns:1fr;gap:2rem}
+  .grid-2col-tight{grid-template-columns:1fr 1fr;gap:8px}
+  .grid-2col-story{grid-template-columns:1fr;gap:2rem}
+  .grid-4col{grid-template-columns:1fr 1fr;gap:6px}
+  .grid-icon-text{grid-template-columns:auto 1fr;gap:1rem}
+  .grid-2col-offer{grid-template-columns:1fr 1fr;gap:8px}
+  .supp-cats{grid-template-columns:1fr !important}
+  /* General padding fix */
+  section{padding-left:1.25rem !important;padding-right:1.25rem !important}
+  .wrap{padding-left:0;padding-right:0}
 }
 </style>
 </head>
@@ -375,7 +394,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 <!-- STORY -->
 <section style="background:var(--white);padding:5.5rem 2.5rem">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:2.5rem">
+    <div class="grid-2col" style="margin-bottom:2.5rem">
       <div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:8px"><i class="ti ti-heart"></i> Why GabaDown exists</div>
         <h2 style="font-size:clamp(28px,3.5vw,40px);margin-bottom:1.25rem;color:var(--text)">I built this because I looked for help for my mother — and found nothing.</h2>
@@ -396,7 +415,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
             <div style="font-size:13px;color:var(--text2);line-height:1.6">GabaDown Circle members get real-time updates on my mom's taper — her dose, her symptoms, what's working, and what isn't. The only place you'll find the full story.</div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div class="grid-2col-tight">
           <a href="/blog/moms-gabapentin-journey/" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:var(--teal2);padding:13px 16px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(45,212,191,0.2)"><i class="ti ti-book"></i> Read her story</a>
           <a href="https://buy.stripe.com/eVq4gygzdgfbav67qu83C02" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);color:white;padding:13px 16px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none"><i class="ti ti-users"></i> Join the Circle</a>
         </div>
@@ -412,7 +431,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 <!-- WHY PEOPLE REDUCE -->
 <section style="background:var(--navy2);padding:5.5rem 2.5rem;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)">
-  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+  <div class="wrap" class="grid-2col">
     <div>
       <div class="eyebrow eyebrow-light"><i class="ti ti-alert-triangle"></i> Why people reduce</div>
       <h2 style="font-size:clamp(26px,3.5vw,38px);color:#F8FAFC;margin-bottom:1.25rem;line-height:1.15">The side effects that make people search for a way out</h2>
@@ -464,7 +483,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 <!-- WHAT IS THE JOURNAL -->
 <section style="background:var(--navy2);padding:5rem 2.5rem;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+    <div class="grid-2col-story">
       <div>
         <div class="eyebrow eyebrow-light"><i class="ti ti-notebook"></i> What you receive</div>
         <h2 style="font-size:clamp(26px,3.5vw,38px);color:#F8FAFC;margin-bottom:1.25rem;line-height:1.15">A personalized digital journal — private, interactive, ready on day one</h2>
@@ -514,7 +533,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
           <!-- Daily log row -->
           <div style="border-top:1px solid #E2E8F0;padding-top:1rem">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9CA3AF;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem">Today's log</div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+            <div class="grid-4col">
               <div style="background:#F8FAFC;border-radius:6px;padding:0.5rem;text-align:center;border:1px solid #E2E8F0"><div style="font-size:10px;color:#9CA3AF;margin-bottom:3px">Pain</div><div style="font-size:14px;font-weight:700;color:#374151">6/10</div></div>
               <div style="background:#F8FAFC;border-radius:6px;padding:0.5rem;text-align:center;border:1px solid #E2E8F0"><div style="font-size:10px;color:#9CA3AF;margin-bottom:3px">Sleep</div><div style="font-size:14px;font-weight:700;color:#374151">5h</div></div>
               <div style="background:#F0FDF4;border-radius:6px;padding:0.5rem;text-align:center;border:1px solid #BBF7D0"><div style="font-size:10px;color:#9CA3AF;margin-bottom:3px">Mood</div><div style="font-size:14px;font-weight:700;color:#0D9488">OK</div></div>
@@ -581,7 +600,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       </div>
       <!-- Row 4: Full width AI -->
       <div class="bento-card bento-6 bento-dark">
-        <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center">
+        <div class="grid-icon-text">
           <div class="card-icon" style="width:64px;height:64px"><i class="ti ti-robot" style="font-size:28px"></i></div>
           <div>
             <div class="card-title" style="font-size:18px;margin-bottom:8px">AI Plan Assistant — included for every client</div>
@@ -834,7 +853,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       </div>
       <div style="background:rgba(45,212,191,0.04);border:1px solid rgba(45,212,191,0.12);border-radius:12px;padding:1.25rem 1.5rem;margin-top:1rem">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:0.75rem">Your journal is a private digital document</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div class="grid-2col-offer">
           <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-device-tablet" style="color:var(--teal2);font-size:15px"></i> Any device</div>
           <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-lock" style="color:var(--teal2);font-size:15px"></i> Fully private</div>
           <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-color-swatch" style="color:var(--teal2);font-size:15px"></i> Interactive &amp; tabbed</div>
