@@ -290,13 +290,29 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .nav-links{gap:0.5rem;flex-wrap:wrap}
   .nav-link{font-size:12px}
   .nav-cta{padding:8px 14px;font-size:12px}
-  .hero,.process,.stats,.features,.supps,.stories,.who,.addons,.kit-section,.compare,.offer,.faq,.disclaimer{padding-left:1.25rem;padding-right:1.25rem}
   .bento-2{grid-column:span 6}
   .stories-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
   .addon-grid{grid-template-columns:repeat(2,1fr)}
+  /* Collapse ALL two-column grids */
+  .grid-2col{grid-template-columns:1fr !important;gap:2rem !important}
+  .grid-2col-story{grid-template-columns:1fr !important;gap:2rem !important}
+  .grid-2col-tight{grid-template-columns:1fr 1fr;gap:8px}
+  .grid-4col{grid-template-columns:1fr 1fr;gap:6px}
+  .grid-icon-text{grid-template-columns:auto 1fr;gap:1rem}
+  .grid-2col-offer{grid-template-columns:1fr 1fr;gap:8px}
+  /* Force all inline grid styles to collapse */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+  [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important}
+  /* General padding */
   section{padding-left:1.25rem !important;padding-right:1.25rem !important}
   .wrap{padding-left:0;padding-right:0}
+  /* Hide mockup on mobile - it breaks layout */
+  .journal-mockup{display:none !important}
+  /* Fix story section two-col */
+  .story-grid{grid-template-columns:1fr !important}
+  /* Fix font sizes that cause overflow */
+  p{word-break:break-word}
 }
 @media(max-width:480px){
   .addon-grid{grid-template-columns:1fr}
@@ -433,7 +449,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 <!-- WHY PEOPLE REDUCE -->
 <section style="background:var(--navy2);padding:5.5rem 2.5rem;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)">
-  <div class="wrap" class="grid-2col">
+  <div class="wrap grid-2col">
     <div>
       <div class="eyebrow eyebrow-light"><i class="ti ti-alert-triangle"></i> Why people reduce</div>
       <h2 style="font-size:clamp(26px,3.5vw,38px);color:#F8FAFC;margin-bottom:1.25rem;line-height:1.15">The side effects that make people search for a way out</h2>
@@ -489,7 +505,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         </div>
       </div>
       <!-- Journal mockup -->
-      <div style="background:#FFFFFF;border-radius:20px;border:1px solid #E2E8F0;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)">
+      <div class="journal-mockup" style="background:#FFFFFF;border-radius:20px;border:1px solid #E2E8F0;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)">
         <!-- Browser bar -->
         <div style="background:#F1F5F9;padding:0.75rem 1rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid #E2E8F0">
           <div style="display:flex;gap:5px"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57"></div><div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840"></div></div>
