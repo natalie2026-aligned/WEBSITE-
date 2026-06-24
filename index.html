@@ -226,12 +226,21 @@ body{overflow-x:hidden}
 .gpt-callout-title i{color:var(--teal2)}
 .gpt-callout p{font-size:13px;color:#94A3B8;line-height:1.65}
 
-/* ── FAQ ──────────────────────────────────────────────────────────── */
-.faq{background:var(--cream);padding:5rem 2.5rem}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;margin-top:2rem}
-.faq-item{border-bottom:1px solid var(--border);padding:1.25rem 0}
-.faq-q{font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:0.6rem}
-.faq-a{font-size:14.5px;color:var(--text2);line-height:1.8}
+/* ── FAQ ACCORDION ──────────────────────────────────────────────── */
+.acc-item{border-bottom:1px solid var(--border);background:var(--white)}
+.acc-item:first-child .acc-q{border-radius:0}
+.acc-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);text-align:left;transition:background .2s}
+.acc-q:hover{background:var(--cream)}
+.acc-icon{font-size:18px;color:var(--teal);flex-shrink:0;transition:transform .3s ease}
+.acc-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:15px;color:var(--text2);line-height:1.8}
+.acc-open .acc-a{padding:0 1.5rem 1.25rem}
+
+/* ── VALUE STACK ────────────────────────────────────────────────── */
+.value-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#E2E8F0;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.value-row span:last-child{font-family:'IBM Plex Mono',monospace;color:#94A3B8;font-size:13px}
+.value-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid rgba(45,212,191,0.2);margin-top:4px}
+.value-total span:first-child{font-size:15px;font-weight:700;color:#F0F9FF}
+.value-total span:last-child{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#475569;text-decoration:line-through}
 
 /* ── DISCLAIMER ───────────────────────────────────────────────────── */
 .disclaimer{background:var(--navy);padding:3.5rem 2.5rem;border-top:1px solid var(--border-dark)}
@@ -418,7 +427,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
           <i class="ti ti-users" style="color:var(--teal);font-size:20px;flex-shrink:0;margin-top:2px"></i>
           <div>
             <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px">Join the journey</div>
-            <div style="font-size:13px;color:var(--text2);line-height:1.6">GabaDown Circle is a genuinely private space for people reducing gabapentin — not a Facebook group, not a subreddit. Real conversations, real timelines, and a front-row seat to my mom's taper as it unfolds. You're not an observer. You're part of it.</div>
+            <div style="font-size:13px;color:var(--text2);line-height:1.6">A genuinely private space for people on the same path. Real conversations, real timelines, shared wins. You're not alone in this.</div>
           </div>
         </div>
         <div class="grid-2col-tight">
@@ -468,22 +477,12 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 </section>
 
 <!-- BRIDGE 2 -->
-<section style="background:var(--navy2);padding:3rem 2.5rem 0;text-align:center">
+<section style="background:var(--navy2);padding:2.5rem 2.5rem 0;text-align:center">
   <div class="wrap">
-    <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(45,212,191,0.07);border:1px solid rgba(45,212,191,0.2);border-radius:20px;padding:10px 24px">
-      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:16px"></i>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2)">GabaDown was built to address every one of these</span>
-      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:16px"></i>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT IS THE JOURNAL -->
-  <div class="wrap">
-    <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(45,212,191,0.07);border:1px solid rgba(45,212,191,0.2);border-radius:20px;padding:10px 24px;margin-bottom:0">
-      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:16px"></i>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2)">Here's what GabaDown actually looks like</span>
-      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:16px"></i>
+    <div style="display:inline-flex;align-items:center;gap:14px;background:rgba(45,212,191,0.07);border:1px solid rgba(45,212,191,0.25);border-radius:24px;padding:14px 32px">
+      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:18px"></i>
+      <span style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.02em;color:var(--teal2)">GabaDown was built to address every one of these — here's what that looks like</span>
+      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:18px"></i>
     </div>
   </div>
 </section>
@@ -723,34 +722,16 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       <div class="spots-badge"><i class="ti ti-clock" style="font-size:12px"></i> Built by hand — 3 new clients per week</div>
 
       <!-- Value stack -->
-      <div style="margin-bottom:1.75rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#475569;margin-bottom:0.85rem">What you're getting</div>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>Draft taper framework</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$300</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>Healthcare team summary</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$150</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>Full personalized digital journal</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$200</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>Custom supplement protocol</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$150</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>Patient advocacy guide</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$100</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>30-minute follow-up call</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$150</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#CBD5E1;padding:7px 0;border-bottom:1px solid rgba(45,212,191,0.07)">
-            <span>AI Plan Assistant</span><span style="color:#475569;font-family:'IBM Plex Mono',monospace">$100</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600;color:#94A3B8;padding:10px 0;border-bottom:1px solid rgba(45,212,191,0.15)">
-            <span>Total value</span><span style="font-family:'IBM Plex Mono',monospace;text-decoration:line-through;color:#475569">$1,150</span>
-          </div>
-        </div>
+      <div style="margin-bottom:1.75rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem 1.5rem">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#64748B;margin-bottom:0.85rem">What's included — component value</div>
+        <div class="value-row"><span>Draft taper framework</span><span>$300</span></div>
+        <div class="value-row"><span>Healthcare team summary</span><span>$150</span></div>
+        <div class="value-row"><span>Full personalized digital journal</span><span>$200</span></div>
+        <div class="value-row"><span>Custom supplement protocol</span><span>$150</span></div>
+        <div class="value-row"><span>Patient advocacy guide</span><span>$100</span></div>
+        <div class="value-row"><span>30-minute follow-up call</span><span>$150</span></div>
+        <div class="value-row" style="border-bottom:none"><span>AI Plan Assistant</span><span>$100</span></div>
+        <div class="value-total"><span>Total value</span><span>$1,150</span></div>
       </div>
 
       <!-- Price -->
@@ -834,7 +815,82 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   <div class="wrap">
     <div class="eyebrow"><i class="ti ti-help-circle"></i> Common questions</div>
     <h2 class="section-title">Frequently asked questions</h2>
-    <div class="faq-grid">
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden">
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">Does my doctor need to build my taper schedule first?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">Will my doctor and pharmacist get a copy?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Yes. Every client receives a one-page healthcare team summary formatted for their doctor and pharmacist to review. Your doctor reviews the draft plan, adjusts if needed, and gives their approval. Your pharmacist sees the full picture for any supplement conversations.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">What if I need to slow down or pause?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Hold guidance is built into every stage of your journal. Slowing down or pausing is part of a safe taper — not a failure. Any changes should always be made with your doctor's knowledge, and your tracking log helps you explain exactly what's been happening.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">How do I know if it's withdrawal or my original pain returning?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">This is one of the most important questions in any gabapentin taper and your journal addresses it directly. Withdrawal symptoms typically track closely with dose reductions and ease with time. Your tracking log is specifically designed to help you and your doctor distinguish the two. When in doubt, always call your doctor.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">But I need gabapentin for my pain — what happens when I'm off it?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Reducing gabapentin does not erase your underlying condition — and it shouldn't. What it does is help you and your doctor see more clearly what the medication is actually doing versus what your baseline pain actually is. Many people find their pain is more manageable than the medicated fog made it feel. Others work with their doctor to explore alternative pain management as the dose comes down. Either way, the taper creates clarity — and clarity gives you and your doctor better options than staying at a dose that's affecting your quality of life.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">Why would I want to reduce? It's managing my pain.<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">For many people it is — and that's exactly why a careful supervised reduction is the right approach. But long-term high-dose gabapentin is associated with significant side effects that worsen over time: cognitive fog, memory problems, emotional blunting, persistent fatigue, weight gain, and a deepening physical dependency. Many people find that as doses come down carefully, they feel more present, more themselves — and discover their baseline pain is lower than they thought. The goal is not to be pain-free. The goal is to be better off at a lower dose than you are at a higher one.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">Does GabaDown work for pregabalin (Lyrica) too?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Not currently. GabaDown is built specifically for gabapentin users. Pregabalin has a different dosing profile and reduction framework — it's a related but distinct medication. We may address pregabalin in future, but every current journal is gabapentin-specific.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">I'm in Canada — can I use GabaDown?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Yes. GabaDown is available to anyone reducing gabapentin under medical supervision in the US and Canada. Pricing is in USD. The deprescribing research it's built on is North American and international — nothing is US-specific.</div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-q" onclick="toggleAcc(this)">Is there a payment plan?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Yes — 2 payments of $249 (total $498). Same journal, same delivery timeline, same everything. Just split the payment for flexibility. Choose the payment plan option at checkout.</div>
+      </div>
+
+      <div class="acc-item" style="border-bottom:none">
+        <button class="acc-q" onclick="toggleAcc(this)">What if I'm not ready to buy yet?<i class="ti ti-chevron-down acc-icon"></i></button>
+        <div class="acc-a">Download the free 7 Questions guide — it helps you have a more effective conversation with your doctor and is a good starting point regardless of whether GabaDown is right for you right now.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleAcc(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.acc-a');
+  const icon = btn.querySelector('.acc-icon');
+  const isOpen = item.classList.contains('acc-open');
+  // Close all
+  document.querySelectorAll('.acc-item').forEach(i => {
+    i.classList.remove('acc-open');
+    i.querySelector('.acc-a').style.maxHeight = '0';
+    i.querySelector('.acc-icon').style.transform = 'rotate(0deg)';
+  });
+  // Open this one if it was closed
+  if (!isOpen) {
+    item.classList.add('acc-open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+</script>
       <div class="faq-item">
         <div class="faq-q">Does my doctor need to build my taper schedule first?</div>
         <div class="faq-a">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
@@ -871,14 +927,6 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         <div class="faq-q">Why would I want to reduce? It's managing my pain.</div>
         <div class="faq-a">For many people it is — and that's exactly why a careful supervised reduction is the right approach, not stopping abruptly. But long-term high-dose gabapentin is associated with significant side effects that worsen over time: cognitive fog, memory problems, emotional blunting, persistent fatigue, weight gain, and a deepening physical dependency. Many people find that as doses come down carefully, they feel more present, more themselves — and discover their baseline pain is lower than they thought. The goal is not to be pain-free. The goal is to be better off at a lower dose than you are at a higher one.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">Is there a payment plan?</div>
-        <div class="faq-a">Yes — 2 payments of $249 (total $498). Same journal, same delivery timeline, same everything. Just split the payment for flexibility. Choose the payment plan option at checkout.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- DISCLAIMER -->
 <section class="disclaimer" id="disclaimer">
   <div class="disclaimer-inner">
