@@ -194,53 +194,39 @@ body{overflow-x:hidden}
 
 /* ── OFFER ────────────────────────────────────────────────────────── */
 .offer{background:var(--navy2);padding:5.5rem 2.5rem}
-.offer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:5fr 7fr;gap:3.5rem;align-items:start}
-.offer-box{background:var(--navy);border-radius:20px;padding:2.5rem;border:1px solid var(--border-dark)}
-.spots-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#FCA5A5;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem;font-family:'IBM Plex Mono',monospace;letter-spacing:0.05em}
+.spots-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#FCA5A5;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.05em}
 .offer-price{font-family:'DM Serif Display',serif;font-size:72px;color:#F8FAFC;line-height:1;display:block}
-.offer-currency{font-size:15px;color:#475569;margin-top:4px;margin-bottom:1.5rem}
-.offer-includes{list-style:none;margin-bottom:2rem}
-.offer-includes li{font-size:14px;color:#CBD5E1;padding:10px 0 10px 26px;position:relative;border-bottom:1px solid rgba(45,212,191,0.07);display:flex;align-items:center}
-.offer-includes li:last-child{border-bottom:none}
-.offer-includes li i{position:absolute;left:0;color:var(--teal2);font-size:15px}
+.offer-currency{font-size:16px;color:#94A3B8;margin-top:4px;margin-bottom:1.5rem}
 .offer-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:white;padding:18px 40px;border-radius:12px;font-size:18px;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:1rem;width:100%}
 .offer-cta:hover{background:var(--teal2);color:var(--navy);transform:translateY(-2px)}
-.offer-guarantee{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0.75rem 0;font-size:13px;color:#94A3B8;border-top:1px solid rgba(45,212,191,0.1);margin-top:0.75rem}
-.offer-guarantee i{color:var(--teal2);font-size:14px;flex-shrink:0}
-.offer-guarantee .g-divider{color:#334155}
-.offer-guarantee a{color:var(--teal2)}
-
-.offer-downsell{text-align:center;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.1)}
-.offer-downsell span{font-size:13px;color:#475569}
-.offer-downsell a{font-size:13px;font-weight:600;color:var(--teal2);text-decoration:none;margin-left:6px}
-.offer-downsell a:hover{color:white}
-.offer-right h3{font-family:'DM Serif Display',serif;font-size:28px;color:#F0F9FF;margin-bottom:1.25rem;line-height:1.2}
+.offer-downsell{text-align:center;padding-top:1rem}
+.offer-downsell span{font-size:15px;color:#94A3B8}
+.offer-downsell a{font-size:15px;font-weight:700;color:var(--teal2);text-decoration:none;margin-left:6px}
 .offer-steps{list-style:none}
 .offer-step{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(45,212,191,0.07)}
 .offer-step:last-child{border-bottom:none}
 .step-num{width:28px;height:28px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--teal2);flex-shrink:0;margin-top:2px}
 .offer-step p{font-size:14.5px;color:var(--on-dark);line-height:1.6}
 .offer-step p strong{color:#CBD5E1}
-.gpt-callout{background:rgba(45,212,191,0.05);border:1px solid var(--border-dark);border-radius:14px;padding:1.5rem;margin-top:1.5rem}
+.gpt-callout{background:rgba(45,212,191,0.05);border:1px solid var(--border-dark);border-radius:14px;padding:1.5rem}
 .gpt-callout-title{font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .gpt-callout-title i{color:var(--teal2)}
 .gpt-callout p{font-size:13px;color:#94A3B8;line-height:1.65}
 
 /* ── FAQ ACCORDION ──────────────────────────────────────────────── */
-.acc-item{border-bottom:1px solid var(--border);background:var(--white)}
-.acc-item:first-child .acc-q{border-radius:0}
-.acc-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);text-align:left;transition:background .2s}
+.acc-item{border-bottom:1px solid var(--border);background:var(--white);overflow:hidden}
+.acc-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);text-align:left;transition:background .2s;line-height:1.4}
 .acc-q:hover{background:var(--cream)}
 .acc-icon{font-size:18px;color:var(--teal);flex-shrink:0;transition:transform .3s ease}
-.acc-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:15px;color:var(--text2);line-height:1.8}
-.acc-open .acc-a{padding:0 1.5rem 1.25rem}
+.acc-a{max-height:0!important;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:15px;color:var(--text2);line-height:1.8;padding:0 1.5rem}
+.acc-open .acc-a{max-height:600px!important;padding:0 1.5rem 1.25rem}
 
 /* ── VALUE STACK ────────────────────────────────────────────────── */
-.value-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#E2E8F0;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
-.value-row span:last-child{font-family:'IBM Plex Mono',monospace;color:#94A3B8;font-size:13px}
-.value-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid rgba(45,212,191,0.2);margin-top:4px}
-.value-total span:first-child{font-size:15px;font-weight:700;color:#F0F9FF}
-.value-total span:last-child{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#475569;text-decoration:line-through}
+.value-row{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#E2E8F0;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.value-row span:last-child{font-family:'IBM Plex Mono',monospace;color:#CBD5E1;font-size:14px;font-weight:600}
+.value-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid rgba(45,212,191,0.25);margin-top:4px}
+.value-total span:first-child{font-size:16px;font-weight:700;color:#F0F9FF}
+.value-total span:last-child{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#64748B;text-decoration:line-through}
 
 /* ── DISCLAIMER ───────────────────────────────────────────────────── */
 .disclaimer{background:var(--navy);padding:3.5rem 2.5rem;border-top:1px solid var(--border-dark)}
@@ -454,36 +440,34 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       <p style="color:#94A3B8;line-height:1.75;font-size:14.5px">This is not about stopping gabapentin. It's about reducing it carefully — under medical supervision — until the side effects are manageable and your quality of life is yours again.</p>
     </div>
     <div>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
-          <i class="ti ti-cloud-fog" style="color:var(--teal2);font-size:22px;flex-shrink:0;margin-top:2px"></i>
-          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Cognitive fog</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">Difficulty concentrating, memory lapses, the feeling of thinking through cotton wool — common at higher doses and worsening over time.</div></div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid var(--teal2)">
+            <i class="ti ti-cloud-fog" style="color:var(--teal2);font-size:24px;flex-shrink:0;margin-top:2px"></i>
+            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Cognitive fog</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">Difficulty concentrating, memory lapses, the feeling of thinking through cotton wool — common at higher doses and worsening over time.</div></div>
+          </div>
+          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid #818CF8">
+            <i class="ti ti-mood-empty" style="color:#818CF8;font-size:24px;flex-shrink:0;margin-top:2px"></i>
+            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Emotional blunting</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">Feeling flat, disconnected, or less emotionally present than you used to be — a reduced emotional range that affects relationships and wellbeing.</div></div>
+          </div>
+          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid #FCD34D">
+            <i class="ti ti-battery-1" style="color:#FCD34D;font-size:24px;flex-shrink:0;margin-top:2px"></i>
+            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Fatigue &amp; weight gain</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">Persistent tiredness that doesn't improve with rest, and significant weight gain that's very difficult to reverse while remaining on higher doses.</div></div>
+          </div>
+          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid #F87171">
+            <i class="ti ti-lock" style="color:#F87171;font-size:24px;flex-shrink:0;margin-top:2px"></i>
+            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Physical dependency</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">The anxiety when a prescription is late, the fear of missing a dose, the sense that the medication controls you rather than the other way around.</div></div>
+          </div>
         </div>
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
-          <i class="ti ti-mood-empty" style="color:#818CF8;font-size:22px;flex-shrink:0;margin-top:2px"></i>
-          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Emotional blunting</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">Feeling flat, disconnected, or less emotionally present than you used to be — a reduced emotional range that affects relationships and wellbeing.</div></div>
-        </div>
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
-          <i class="ti ti-battery-1" style="color:#FCD34D;font-size:22px;flex-shrink:0;margin-top:2px"></i>
-          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Fatigue &amp; weight gain</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">Persistent tiredness that doesn't improve with rest, and significant weight gain that's very difficult to reverse while remaining on higher doses.</div></div>
-        </div>
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
-          <i class="ti ti-lock" style="color:#F87171;font-size:22px;flex-shrink:0;margin-top:2px"></i>
-          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Physical dependency</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">The anxiety when a prescription is late, the fear of missing a dose, the sense that the medication controls you rather than the other way around.</div></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- BRIDGE 2 -->
-<section style="background:var(--navy2);padding:2.5rem 2.5rem 0;text-align:center">
-  <div class="wrap">
-    <div style="display:inline-flex;align-items:center;gap:14px;background:rgba(45,212,191,0.07);border:1px solid rgba(45,212,191,0.25);border-radius:24px;padding:14px 32px">
-      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:18px"></i>
-      <span style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.02em;color:var(--teal2)">GabaDown was built to address every one of these — here's what that looks like</span>
-      <i class="ti ti-arrow-down" style="color:var(--teal2);font-size:18px"></i>
-    </div>
+<section style="background:linear-gradient(180deg,var(--navy2) 0%,var(--navy2) 100%);padding:3rem 2.5rem;text-align:center;border-top:1px solid rgba(45,212,191,0.12)">
+  <div class="wrap" style="max-width:640px">
+    <p style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,32px);color:#F0F9FF;line-height:1.3;margin-bottom:0.75rem">GabaDown was built to address every one of these.</p>
+    <p style="font-size:16px;color:#64748B;line-height:1.7">Here's what that looks like in practice.</p>
+    <div style="width:1px;height:48px;background:linear-gradient(180deg,rgba(45,212,191,0.4),transparent);margin:1.5rem auto 0"></div>
   </div>
 </section>
 
@@ -675,10 +659,10 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     <p class="section-sub">Most people managing a gabapentin taper are doing it with forum threads and rushed appointments. Here's what changes with a structured system.</p>
     <div style="display:flex;flex-direction:column;gap:10px;margin-top:2rem">
       <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-        <div style="background:var(--navy);padding:0.85rem 1.25rem;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#475569;letter-spacing:0.06em;text-transform:uppercase">What you need</div>
-        <div style="background:var(--teal);padding:0.85rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:11px;color:white;letter-spacing:0.06em;text-transform:uppercase;text-align:center;min-width:90px">GabaDown</div>
-        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#475569;letter-spacing:0.06em;text-transform:uppercase;text-align:center;min-width:70px">Forums</div>
-        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#475569;letter-spacing:0.06em;text-transform:uppercase;text-align:center;min-width:80px">15-min appt</div>
+        <div style="background:var(--navy);padding:0.85rem 1.25rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#94A3B8;letter-spacing:0.02em">What you need</div>
+        <div style="background:var(--teal);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:white;text-align:center;min-width:90px">GabaDown</div>
+        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#64748B;text-align:center;min-width:70px">Forums</div>
+        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#64748B;text-align:center;min-width:80px">15-min appt</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--white)">
         <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Structured taper schedule</div>
@@ -728,7 +712,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
       <!-- Value stack -->
       <div style="margin-bottom:2rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem 1.5rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:1rem">What's included — component value</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:1rem">What's in your journal — component value</div>
         <div class="value-row"><span>Draft taper framework</span><span>$300</span></div>
         <div class="value-row"><span>Healthcare team summary</span><span>$150</span></div>
         <div class="value-row"><span>Full personalized digital journal</span><span>$200</span></div>
@@ -876,20 +860,14 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 <script>
 function toggleAcc(btn) {
   const item = btn.parentElement;
-  const answer = item.querySelector('.acc-a');
-  const icon = btn.querySelector('.acc-icon');
   const isOpen = item.classList.contains('acc-open');
-  // Close all
   document.querySelectorAll('.acc-item').forEach(i => {
     i.classList.remove('acc-open');
-    i.querySelector('.acc-a').style.maxHeight = '0';
     i.querySelector('.acc-icon').style.transform = 'rotate(0deg)';
   });
-  // Open this one if it was closed
   if (!isOpen) {
     item.classList.add('acc-open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-    icon.style.transform = 'rotate(180deg)';
+    btn.querySelector('.acc-icon').style.transform = 'rotate(180deg)';
   }
 }
 </script>
