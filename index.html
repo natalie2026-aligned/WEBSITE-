@@ -717,13 +717,18 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 <!-- OFFER -->
 <section class="offer" id="apply">
-  <div class="offer-inner">
-    <div class="offer-box">
-      <div class="spots-badge"><i class="ti ti-clock" style="font-size:12px"></i> Built by hand — 3 new clients per week</div>
+  <div class="wrap" style="max-width:780px">
+
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center"><i class="ti ti-package"></i> Everything you need</div>
+      <h2 class="section-title">Get your custom journal</h2>
+    </div>
+
+    <div style="background:var(--navy);border-radius:20px;border:1px solid rgba(45,212,191,0.2);padding:2.5rem;margin-bottom:1.5rem">
 
       <!-- Value stack -->
-      <div style="margin-bottom:1.75rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem 1.5rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#64748B;margin-bottom:0.85rem">What's included — component value</div>
+      <div style="margin-bottom:2rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem 1.5rem">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:1rem">What's included — component value</div>
         <div class="value-row"><span>Draft taper framework</span><span>$300</span></div>
         <div class="value-row"><span>Healthcare team summary</span><span>$150</span></div>
         <div class="value-row"><span>Full personalized digital journal</span><span>$200</span></div>
@@ -734,50 +739,47 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         <div class="value-total"><span>Total value</span><span>$1,150</span></div>
       </div>
 
-      <!-- Price -->
-      <span class="offer-price">$497</span>
-      <div class="offer-currency">USD · one time · no subscription</div>
+      <!-- Price + CTA -->
+      <div style="text-align:center;margin-bottom:1.5rem">
+        <div class="spots-badge" style="justify-content:center;margin-bottom:1rem"><i class="ti ti-clock" style="font-size:12px"></i> Built by hand — 3 new clients per week</div>
+        <span class="offer-price">$497</span>
+        <div class="offer-currency">USD · one time · no subscription</div>
+      </div>
 
       <a href="https://buy.stripe.com/aFabJ0aaP5Ax32E26a83C03" class="offer-cta">Get My Custom Journal <i class="ti ti-arrow-right"></i></a>
 
-      <!-- Option D Guarantee -->
+      <!-- Guarantee -->
       <div style="background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.2);border-radius:12px;padding:1.25rem;margin-top:1.25rem;display:flex;gap:12px;align-items:flex-start">
         <i class="ti ti-shield-check" style="color:var(--teal2);font-size:22px;flex-shrink:0;margin-top:2px"></i>
         <div>
-          <div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:4px">The "Worth It" Guarantee</div>
-          <div style="font-size:13px;color:#94A3B8;line-height:1.65">If after your 30-minute follow-up call you don't feel the journal was worth every dollar — we'll refund you in full. No forms. No friction. <a href="/terms.html" style="color:var(--teal2)">Full terms here.</a></div>
+          <div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">The "Worth It" Guarantee</div>
+          <div style="font-size:14px;color:#CBD5E1;line-height:1.65">If after your 30-minute follow-up call you don't feel the journal was worth every dollar — we'll refund you in full. No forms. No friction. <a href="/terms.html" style="color:var(--teal2)">Full terms here.</a></div>
         </div>
       </div>
 
-      <div class="offer-downsell">
+      <div class="offer-downsell" style="margin-top:1.25rem;text-align:center">
         <span>Prefer to split the payment?</span>
         <a href="https://buy.stripe.com/8x23cuaaP6EB32E7qu83C04">2 payments of $249 <i class="ti ti-arrow-right" style="font-size:11px"></i></a>
       </div>
     </div>
-    <div class="offer-right">
-      <h3>What happens after you purchase</h3>
+
+    <!-- What happens next -->
+    <div style="background:var(--navy);border-radius:20px;border:1px solid rgba(45,212,191,0.15);padding:2rem 2.5rem">
+      <h3 style="font-size:20px;color:#F0F9FF;margin-bottom:1.5rem">What happens after you purchase</h3>
       <ul class="offer-steps">
-        <li class="offer-step"><div class="step-num">1</div><p>Your intake questionnaire arrives by email within 2 hours of purchase</p></li>
-        <li class="offer-step"><div class="step-num">2</div><p>You complete the questionnaire — <strong>your dose, your history, your goals, and your doctor's current thinking on reduction if you have it</strong></p></li>
-        <li class="offer-step"><div class="step-num">3</div><p>We produce your <strong>draft taper framework</strong> — a structured phase-by-phase reduction schedule based on published deprescribing guidelines</p></li>
-        <li class="offer-step"><div class="step-num">4</div><p>You take the <strong>healthcare team summary</strong> to your doctor — they review, adjust if needed, and approve the plan</p></li>
-        <li class="offer-step"><div class="step-num">5</div><p>We build your <strong>full journal</strong> around the approved plan — everything personalised to your specific situation</p></li>
-        <li class="offer-step"><div class="step-num">6</div><p>Your journal is delivered within 7 days — and we <strong>schedule your 30-minute follow-up call</strong> to walk through it together</p></li>
+        <li class="offer-step"><div class="step-num">1</div><p>Your intake questionnaire arrives by email within 2 hours</p></li>
+        <li class="offer-step"><div class="step-num">2</div><p>You complete the questionnaire — your dose, your history, your goals, your doctor's current position on reduction</p></li>
+        <li class="offer-step"><div class="step-num">3</div><p>We produce your <strong>draft taper framework</strong> based on published deprescribing guidelines</p></li>
+        <li class="offer-step"><div class="step-num">4</div><p>You take the <strong>healthcare team summary</strong> to your doctor — they review, adjust if needed, and approve</p></li>
+        <li class="offer-step"><div class="step-num">5</div><p>We build your <strong>full personalized journal</strong> around the approved plan</p></li>
+        <li class="offer-step"><div class="step-num">6</div><p>Journal delivered within 7 days — we <strong>schedule your 30-minute follow-up call</strong> to walk through it together</p></li>
       </ul>
-      <div class="gpt-callout">
+      <div class="gpt-callout" style="margin-top:1.5rem">
         <div class="gpt-callout-title"><i class="ti ti-robot"></i> AI Plan Assistant included</div>
-        <p>A custom AI trained on your specific journal — answers questions about your plan, your supplements, and what to expect at each stage. Designed to support you and your care team, not replace either of them. Cannot handle emergencies — always contact your doctor or emergency services for urgent concerns.</p>
-      </div>
-      <div style="background:rgba(45,212,191,0.04);border:1px solid rgba(45,212,191,0.12);border-radius:12px;padding:1.25rem 1.5rem;margin-top:1rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:0.75rem">Your journal is a private digital document</div>
-        <div class="grid-2col-offer">
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-device-tablet" style="color:var(--teal2);font-size:15px"></i> Any device</div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-lock" style="color:var(--teal2);font-size:15px"></i> Fully private</div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-color-swatch" style="color:var(--teal2);font-size:15px"></i> Interactive &amp; tabbed</div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-download" style="color:var(--teal2);font-size:15px"></i> No app needed</div>
-        </div>
+        <p>A custom AI trained on your specific journal — available 24/7 for questions about your plan, your supplements, and what to expect at each stage. Designed to support you between appointments, not replace your care team.</p>
       </div>
     </div>
+
   </div>
 </section>
 
