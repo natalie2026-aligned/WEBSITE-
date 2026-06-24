@@ -214,13 +214,15 @@ body{overflow-x:hidden}
 .gpt-callout p{font-size:13px;color:#94A3B8;line-height:1.65}
 
 /* ── FAQ DETAILS/SUMMARY ─────────────────────────────────────────── */
-.faq-details{border-bottom:1px solid var(--border);background:var(--white)}
-.faq-details summary{padding:1.25rem 1.5rem;font-size:16px;font-weight:700;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s}
+.faq-details{border-bottom:1px solid var(--border);background:var(--white);display:block;width:100%}
+.faq-details summary{padding:1.25rem 1.5rem;font-size:16px;font-weight:700;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s;-webkit-user-select:none;user-select:none}
 .faq-details summary::-webkit-details-marker{display:none}
-.faq-details summary::after{content:'+';font-size:22px;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .2s}
+.faq-details summary::-moz-list-bullet{display:none}
+.faq-details summary::after{content:'+';font-size:24px;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1}
+.faq-details[open] summary{background:var(--cream)}
 .faq-details[open] summary::after{content:'−'}
 .faq-details summary:hover{background:var(--cream)}
-.faq-details-body{padding:0 1.5rem 1.25rem;font-size:15px;color:var(--text2);line-height:1.8}
+.faq-details-body{padding:0.25rem 1.5rem 1.25rem;font-size:15px;color:var(--text2);line-height:1.8;border-top:1px solid var(--border)}
 
 /* ── VALUE STACK ────────────────────────────────────────────────── */
 .value-row{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#E2E8F0;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
@@ -621,7 +623,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
           <li><i class="ti ti-check"></i>Your doctor is aware of and open to the idea of reduction</li>
           <li><i class="ti ti-check"></i>Your pharmacist is part of your care</li>
           <li><i class="ti ti-check"></i>You are open to natural supplement information as part of your support</li>
-          <li><i class="ti ti-check"></i>You understand this takes 12 to 18 months — not weeks</li>
+          <li><i class="ti ti-check"></i>You understand this can take months or even years — not weeks</li>
           <li><i class="ti ti-check"></i>You are ready to treat this like the serious protocol it is</li>
         </ul>
       </div>
@@ -705,8 +707,8 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   <div class="wrap" style="max-width:780px">
 
     <div style="text-align:center;margin-bottom:2.5rem">
-      <div class="eyebrow" style="justify-content:center"><i class="ti ti-package"></i> Everything you need</div>
-      <h2 class="section-title" style="font-size:clamp(36px,4vw,52px)">Get your custom journal</h2>
+      <div class="eyebrow eyebrow-light" style="justify-content:center"><i class="ti ti-package"></i> Everything you need</div>
+      <h2 class="section-title" style="font-size:clamp(36px,4vw,52px);color:#F0F9FF">Get your custom journal</h2>
     </div>
 
     <div style="background:var(--navy);border-radius:20px;border:1px solid rgba(45,212,191,0.2);padding:2.5rem;margin-bottom:1.5rem">
@@ -721,7 +723,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         <div class="value-row"><span>Patient advocacy guide</span><span>$100</span></div>
         <div class="value-row"><span>30-minute follow-up call</span><span>$150</span></div>
         <div class="value-row" style="border-bottom:none"><span>AI Plan Assistant</span><span>$100</span></div>
-        <div class="value-total"><span>Total value</span><span>$1,150</span></div>
+        <div class="value-total"><span>Total value</span><span style="font-size:20px;font-weight:700">$1,150</span></div>
       </div>
 
       <!-- Price + CTA -->
