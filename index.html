@@ -162,7 +162,7 @@ body{overflow-x:hidden}
 
 /* ── ADD-ONS ──────────────────────────────────────────────────────── */
 .addons{background:var(--white);padding:4rem 2.5rem}
-.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem}
+.addon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2rem}
 .addon-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:10px;transition:all .2s}
 .addon-card:hover{border-color:var(--teal);transform:translateY(-2px)}
 .addon-price{font-family:'DM Serif Display',serif;font-size:36px;color:var(--teal);line-height:1}
@@ -288,20 +288,12 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .bento-2{grid-column:span 6}
   .stories-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
-  .addon-grid{grid-template-columns:1fr}
-  .process-rail{grid-template-columns:1fr 1fr}
-  .compare-table{font-size:13px}
-  /* Fix all inline grids on mobile */
-  .grid-2col{grid-template-columns:1fr;gap:2rem}
-  .grid-2col-tight{grid-template-columns:1fr 1fr;gap:8px}
-  .grid-2col-story{grid-template-columns:1fr;gap:2rem}
-  .grid-4col{grid-template-columns:1fr 1fr;gap:6px}
-  .grid-icon-text{grid-template-columns:auto 1fr;gap:1rem}
-  .grid-2col-offer{grid-template-columns:1fr 1fr;gap:8px}
-  .supp-cats{grid-template-columns:1fr !important}
-  /* General padding fix */
+  .addon-grid{grid-template-columns:repeat(2,1fr)}
   section{padding-left:1.25rem !important;padding-right:1.25rem !important}
   .wrap{padding-left:0;padding-right:0}
+}
+@media(max-width:480px){
+  .addon-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -811,7 +803,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   <div class="wrap">
     <div class="eyebrow"><i class="ti ti-help-circle"></i> Common questions</div>
     <h2 class="section-title">Frequently asked questions</h2>
-    <div style="display:flex;flex-direction:column;gap:0;margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden">
+    <div style="display:block;margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden">
 
       <details class="faq-details">
         <summary>Does my doctor need to build my taper schedule first?</summary>
