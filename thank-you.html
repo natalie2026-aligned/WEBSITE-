@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your Inbox — GabaDown</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root{--navy:#0B1628;--navy2:#112240;--teal:#0D9488;--teal2:#2DD4BF;--teal-pale:#CCFBF1;--cream:#F8FAFC;--white:#fff;--text:#0F172A;--text2:#374151;--text3:#6B7280;--border:#E2E8F0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);font-size:16px;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(45,212,191,0.1)}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;text-decoration:none}
+.logo span{color:var(--teal2)}
+
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem}
+.card{background:var(--navy2);border:1px solid rgba(45,212,191,0.15);border-radius:24px;padding:3.5rem;max-width:580px;width:100%;text-align:center}
+
+.check-icon{width:72px;height:72px;background:rgba(45,212,191,0.1);border:2px solid rgba(45,212,191,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem}
+.check-icon i{font-size:32px;color:var(--teal2)}
+
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal2);margin-bottom:1rem}
+
+h1{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,36px);color:#F0F9FF;line-height:1.15;margin-bottom:1rem;letter-spacing:-0.5px}
+
+.sub{font-size:16px;color:#64748B;line-height:1.8;margin-bottom:2rem;max-width:420px;margin-left:auto;margin-right:auto}
+
+.inbox-tip{background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.15);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2rem;text-align:left}
+.inbox-tip-title{font-size:13px;font-weight:600;color:#F0F9FF;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
+.inbox-tip-title i{color:var(--teal2)}
+.inbox-tip p{font-size:13px;color:#64748B;line-height:1.6}
+
+.divider{height:1px;background:rgba(45,212,191,0.1);margin:2rem 0}
+
+.while-you-wait{text-align:left;margin-bottom:2rem}
+.while-you-wait h3{font-family:'DM Serif Display',serif;font-size:18px;color:#F0F9FF;margin-bottom:1rem}
+
+.article-link{display:flex;align-items:flex-start;gap:14px;padding:1rem;border-radius:12px;border:1px solid var(--border);background:var(--navy);text-decoration:none;transition:all 0.2s;margin-bottom:10px}
+.article-link:hover{border-color:var(--teal);transform:translateX(3px)}
+.article-link-icon{width:36px;height:36px;background:rgba(13,148,136,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.article-link-icon i{font-size:18px;color:var(--teal2)}
+.article-link-text{}
+.article-link-label{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:3px}
+.article-link-title{font-size:14px;font-weight:600;color:#CBD5E1;line-height:1.4}
+
+.cta-section{text-align:center}
+.cta-sub{font-size:13px;color:#475569;margin-top:0.75rem;line-height:1.6}
+
+footer{padding:2rem 2.5rem;border-top:1px solid rgba(45,212,191,0.06);text-align:center}
+footer p{font-size:12px;color:#1E3A5C}
+
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem}
+  .card{padding:2rem 1.5rem}
+  .main{padding:2rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Gaba<span>Down</span></a>
+</nav>
+
+<div class="main">
+  <div class="card">
+
+    <div class="check-icon">
+      <i class="ti ti-mail-check"></i>
+    </div>
+
+    <div class="eyebrow">You're on your way</div>
+    <h1>Check your inbox — your 7 questions are on their way</h1>
+    <p class="sub">We've sent your free guide to the email address you provided. It should arrive within a few minutes.</p>
+
+    <div class="inbox-tip">
+      <div class="inbox-tip-title"><i class="ti ti-alert-circle"></i> Don't see it?</div>
+      <p>Check your spam or promotions folder. The email comes from <strong style="color:#94A3B8">hello@gabadown.com</strong> — add it to your contacts so future emails land in your inbox.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="while-you-wait">
+      <h3>While you wait — start here</h3>
+      <a href="/blog/gabapentin-taper-schedule/" class="article-link">
+        <div class="article-link-icon"><i class="ti ti-map-2"></i></div>
+        <div class="article-link-text">
+          <div class="article-link-label">Clinical Guide · 12 min read</div>
+          <div class="article-link-title">Gabapentin Taper Schedule: A Realistic Guide for Long-Term, High-Dose Users</div>
+        </div>
+      </a>
+      <a href="/blog/moms-gabapentin-journey/" class="article-link">
+        <div class="article-link-icon"><i class="ti ti-heart"></i></div>
+        <div class="article-link-text">
+          <div class="article-link-label">Real Story · 8 min read</div>
+          <div class="article-link-title">My Mother's Gabapentin Journey: Eight Years, 2,700mg, and the Decision to Finally Reduce</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cta-section">
+      <p style="font-size:14px;color:#64748B;line-height:1.7;margin-bottom:0">The 7 questions are a starting point. If you're ready for a fully structured plan built around your dose, your history, and your doctor — that's what GabaDown builds.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>GabaDown is a patient advocacy resource. Not a medical service. &copy; 2026 GabaDown. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
