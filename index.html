@@ -197,8 +197,8 @@ body{overflow-x:hidden}
 .spots-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#FCA5A5;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.05em}
 .offer-price{font-family:'DM Serif Display',serif;font-size:72px;color:#F8FAFC;line-height:1;display:block}
 .offer-currency{font-size:16px;color:#94A3B8;margin-top:4px;margin-bottom:1.5rem}
-.offer-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:white;padding:18px 40px;border-radius:12px;font-size:18px;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:1rem;width:100%}
-.offer-cta:hover{background:var(--teal2);color:var(--navy);transform:translateY(-2px)}
+.offer-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:#FFFFFF!important;padding:18px 40px;border-radius:12px;font-size:18px;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:1rem;width:100%}
+.offer-cta:hover{background:#0b8076;color:#FFFFFF!important;transform:translateY(-2px)}
 .offer-downsell{text-align:center;padding-top:1rem}
 .offer-downsell span{font-size:15px;color:#94A3B8}
 .offer-downsell a{font-size:15px;font-weight:700;color:var(--teal2);text-decoration:none;margin-left:6px}
@@ -213,13 +213,14 @@ body{overflow-x:hidden}
 .gpt-callout-title i{color:var(--teal2)}
 .gpt-callout p{font-size:13px;color:#94A3B8;line-height:1.65}
 
-/* ── FAQ ACCORDION ──────────────────────────────────────────────── */
-.acc-item{border-bottom:1px solid var(--border);background:var(--white);overflow:hidden}
-.acc-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);text-align:left;transition:background .2s;line-height:1.4}
-.acc-q:hover{background:var(--cream)}
-.acc-icon{font-size:18px;color:var(--teal);flex-shrink:0;transition:transform .3s ease}
-.acc-a{max-height:0!important;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:15px;color:var(--text2);line-height:1.8;padding:0 1.5rem}
-.acc-open .acc-a{max-height:600px!important;padding:0 1.5rem 1.25rem}
+/* ── FAQ DETAILS/SUMMARY ─────────────────────────────────────────── */
+.faq-details{border-bottom:1px solid var(--border);background:var(--white)}
+.faq-details summary{padding:1.25rem 1.5rem;font-size:16px;font-weight:700;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s}
+.faq-details summary::-webkit-details-marker{display:none}
+.faq-details summary::after{content:'+';font-size:22px;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .2s}
+.faq-details[open] summary::after{content:'−'}
+.faq-details summary:hover{background:var(--cream)}
+.faq-details-body{padding:0 1.5rem 1.25rem;font-size:15px;color:var(--text2);line-height:1.8}
 
 /* ── VALUE STACK ────────────────────────────────────────────────── */
 .value-row{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#E2E8F0;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
@@ -466,8 +467,8 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 <section style="background:linear-gradient(180deg,var(--navy2) 0%,var(--navy2) 100%);padding:3rem 2.5rem;text-align:center;border-top:1px solid rgba(45,212,191,0.12)">
   <div class="wrap" style="max-width:640px">
     <p style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,32px);color:#F0F9FF;line-height:1.3;margin-bottom:0.75rem">GabaDown was built to address every one of these.</p>
-    <p style="font-size:16px;color:#64748B;line-height:1.7">Here's what that looks like in practice.</p>
-    <div style="width:1px;height:48px;background:linear-gradient(180deg,rgba(45,212,191,0.4),transparent);margin:1.5rem auto 0"></div>
+    <p style="font-size:16px;color:#F0F9FF;line-height:1.7">Here's what that looks like in practice.</p>
+    <div style="width:1px;height:48px;background:linear-gradient(180deg,#FFFFFF,transparent);margin:1.5rem auto 0"></div>
   </div>
 </section>
 
@@ -661,8 +662,8 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border)">
         <div style="background:var(--navy);padding:0.85rem 1.25rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#94A3B8;letter-spacing:0.02em">What you need</div>
         <div style="background:var(--teal);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:white;text-align:center;min-width:90px">GabaDown</div>
-        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#64748B;text-align:center;min-width:70px">Forums</div>
-        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#64748B;text-align:center;min-width:80px">15-min appt</div>
+        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#F0F9FF;text-align:center;min-width:70px">Forums</div>
+        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#F0F9FF;text-align:center;min-width:80px">15-min appt</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--white)">
         <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Structured taper schedule</div>
@@ -705,7 +706,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
     <div style="text-align:center;margin-bottom:2.5rem">
       <div class="eyebrow" style="justify-content:center"><i class="ti ti-package"></i> Everything you need</div>
-      <h2 class="section-title">Get your custom journal</h2>
+      <h2 class="section-title" style="font-size:clamp(36px,4vw,52px)">Get your custom journal</h2>
     </div>
 
     <div style="background:var(--navy);border-radius:20px;border:1px solid rgba(45,212,191,0.2);padding:2.5rem;margin-bottom:1.5rem">
@@ -725,7 +726,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
       <!-- Price + CTA -->
       <div style="text-align:center;margin-bottom:1.5rem">
-        <div class="spots-badge" style="justify-content:center;margin-bottom:1rem"><i class="ti ti-clock" style="font-size:12px"></i> Built by hand — 3 new clients per week</div>
+        <div class="spots-badge" style="justify-content:center;margin-bottom:1rem"><i class="ti ti-clock" style="font-size:12px"></i> Built by hand · only 3 spots available per week</div>
         <span class="offer-price">$497</span>
         <div class="offer-currency">USD · one time · no subscription</div>
       </div>
@@ -803,74 +804,59 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     <h2 class="section-title">Frequently asked questions</h2>
     <div style="display:flex;flex-direction:column;gap:0;margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden">
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">Does my doctor need to build my taper schedule first?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
-      </div>
+      <details class="faq-details">
+        <summary>Does my doctor need to build my taper schedule first?</summary>
+        <div class="faq-details-body">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">Will my doctor and pharmacist get a copy?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Yes. Every client receives a one-page healthcare team summary formatted for their doctor and pharmacist to review. Your doctor reviews the draft plan, adjusts if needed, and gives their approval. Your pharmacist sees the full picture for any supplement conversations.</div>
-      </div>
+      <details class="faq-details">
+        <summary>Will my doctor and pharmacist get a copy?</summary>
+        <div class="faq-details-body">Yes. Every client receives a one-page healthcare team summary formatted for their doctor and pharmacist to review. Your doctor reviews the draft plan, adjusts if needed, and gives their approval. Your pharmacist sees the full picture for any supplement conversations.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">What if I need to slow down or pause?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Hold guidance is built into every stage of your journal. Slowing down or pausing is part of a safe taper — not a failure. Any changes should always be made with your doctor's knowledge, and your tracking log helps you explain exactly what's been happening.</div>
-      </div>
+      <details class="faq-details">
+        <summary>What if I need to slow down or pause?</summary>
+        <div class="faq-details-body">Hold guidance is built into every stage of your journal. Slowing down or pausing is part of a safe taper — not a failure. Any changes should always be made with your doctor's knowledge, and your tracking log helps you explain exactly what's been happening.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">How do I know if it's withdrawal or my original pain returning?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">This is one of the most important questions in any gabapentin taper and your journal addresses it directly. Withdrawal symptoms typically track closely with dose reductions and ease with time. Your tracking log is specifically designed to help you and your doctor distinguish the two. When in doubt, always call your doctor.</div>
-      </div>
+      <details class="faq-details">
+        <summary>How do I know if it's withdrawal or my original pain returning?</summary>
+        <div class="faq-details-body">This is one of the most important questions in any gabapentin taper and your journal addresses it directly. Withdrawal symptoms typically track closely with dose reductions and ease with time. Your tracking log is specifically designed to help you and your doctor distinguish the two. When in doubt, always call your doctor.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">But I need gabapentin for my pain — what happens when I'm off it?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Reducing gabapentin does not erase your underlying condition — and it shouldn't. What it does is help you and your doctor see more clearly what the medication is actually doing versus what your baseline pain actually is. Many people find their pain is more manageable than the medicated fog made it feel. Others work with their doctor to explore alternative pain management as the dose comes down. Either way, the taper creates clarity — and clarity gives you and your doctor better options than staying at a dose that's affecting your quality of life.</div>
-      </div>
+      <details class="faq-details">
+        <summary>But I need gabapentin for my pain — what happens when I'm off it?</summary>
+        <div class="faq-details-body">Reducing gabapentin does not erase your underlying condition — and it shouldn't. What it does is help you and your doctor see more clearly what the medication is actually doing versus what your baseline pain actually is. Many people find their pain is more manageable than the medicated fog made it feel. Others work with their doctor to explore alternative pain management as the dose comes down. Either way, the taper creates clarity — and clarity gives you and your doctor better options than staying at a dose that's affecting your quality of life.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">Why would I want to reduce? It's managing my pain.<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">For many people it is — and that's exactly why a careful supervised reduction is the right approach. But long-term high-dose gabapentin is associated with significant side effects that worsen over time: cognitive fog, memory problems, emotional blunting, persistent fatigue, weight gain, and a deepening physical dependency. Many people find that as doses come down carefully, they feel more present, more themselves — and discover their baseline pain is lower than they thought. The goal is not to be pain-free. The goal is to be better off at a lower dose than you are at a higher one.</div>
-      </div>
+      <details class="faq-details">
+        <summary>Why would I want to reduce? It's managing my pain.</summary>
+        <div class="faq-details-body">For many people it is — and that's exactly why a careful supervised reduction is the right approach. But long-term high-dose gabapentin is associated with significant side effects that worsen over time: cognitive fog, memory problems, emotional blunting, persistent fatigue, weight gain, and a deepening physical dependency. Many people find that as doses come down carefully, they feel more present, more themselves — and discover their baseline pain is lower than they thought. The goal is not to be pain-free. The goal is to be better off at a lower dose than you are at a higher one.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">Does GabaDown work for pregabalin (Lyrica) too?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Not currently. GabaDown is built specifically for gabapentin users. Pregabalin has a different dosing profile and reduction framework — it's a related but distinct medication. We may address pregabalin in future, but every current journal is gabapentin-specific.</div>
-      </div>
+      <details class="faq-details">
+        <summary>Does GabaDown work for pregabalin (Lyrica) too?</summary>
+        <div class="faq-details-body">Not currently. GabaDown is built specifically for gabapentin users. Pregabalin has a different dosing profile and reduction framework — it's a related but distinct medication. We may address pregabalin in future, but every current journal is gabapentin-specific.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">I'm in Canada — can I use GabaDown?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Yes. GabaDown is available to anyone reducing gabapentin under medical supervision in the US and Canada. Pricing is in USD. The deprescribing research it's built on is North American and international — nothing is US-specific.</div>
-      </div>
+      <details class="faq-details">
+        <summary>I'm in Canada — can I use GabaDown?</summary>
+        <div class="faq-details-body">Yes. GabaDown is available to anyone reducing gabapentin under medical supervision in the US and Canada. Pricing is in USD. The deprescribing research it's built on is North American and international — nothing is US-specific.</div>
+      </details>
 
-      <div class="acc-item">
-        <button class="acc-q" onclick="toggleAcc(this)">Is there a payment plan?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Yes — 2 payments of $249 (total $498). Same journal, same delivery timeline, same everything. Just split the payment for flexibility. Choose the payment plan option at checkout.</div>
-      </div>
+      <details class="faq-details">
+        <summary>Is there a payment plan?</summary>
+        <div class="faq-details-body">Yes — 2 payments of $249 (total $498). Same journal, same delivery timeline, same everything. Just split the payment for flexibility. Choose the payment plan option at checkout.</div>
+      </details>
 
-      <div class="acc-item" style="border-bottom:none">
-        <button class="acc-q" onclick="toggleAcc(this)">What if I'm not ready to buy yet?<i class="ti ti-chevron-down acc-icon"></i></button>
-        <div class="acc-a">Download the free 7 Questions guide — it helps you have a more effective conversation with your doctor and is a good starting point regardless of whether GabaDown is right for you right now.</div>
-      </div>
+      <details class="faq-details" style="border-bottom:none">
+        <summary>What if I'm not ready to buy yet?</summary>
+        <div class="faq-details-body">Download the free 7 Questions guide — it helps you have a more effective conversation with your doctor and is a good starting point regardless of whether GabaDown is right for you right now.</div>
+      </details>
 
     </div>
   </div>
 </section>
-
-<script>
-function toggleAcc(btn) {
-  const item = btn.parentElement;
-  const isOpen = item.classList.contains('acc-open');
-  document.querySelectorAll('.acc-item').forEach(i => {
-    i.classList.remove('acc-open');
-    i.querySelector('.acc-icon').style.transform = 'rotate(0deg)';
-  });
-  if (!isOpen) {
-    item.classList.add('acc-open');
-    btn.querySelector('.acc-icon').style.transform = 'rotate(180deg)';
-  }
-}
-</script>
       <div class="faq-item">
         <div class="faq-q">Does my doctor need to build my taper schedule first?</div>
         <div class="faq-a">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
