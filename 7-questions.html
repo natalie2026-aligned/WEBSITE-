@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Questions to Ask Your Doctor About Gabapentin Reduction — GabaDown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1628;
+    --navy2: #112240;
+    --teal: #0D9488;
+    --teal-light: #2DD4BF;
+    --teal-pale: #CCFBF1;
+    --white: #FFFFFF;
+    --text: #0F172A;
+    --text2: #374151;
+    --text3: #6B7280;
+    --border: #E2E8F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f0f4f8;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white; margin: 0; padding: 0; font-size: 12px; }
+    .no-print { display: none !important; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; max-width: 100%; }
+    .cover { padding: 2.5rem 2.5rem 2rem; }
+    .intro-strip { padding: 0.9rem 2.5rem; }
+    .questions-body { padding: 1.5rem 2.5rem 1rem; }
+    .question-block { margin-bottom: 1rem; padding-bottom: 1rem; }
+    .q-text { font-size: 14px; }
+    .q-gap { font-size: 11px; }
+    .footer-strip { padding: 1rem 2.5rem; }
+  }
+
+  .print-btn {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .print-btn:hover { background: #0b8076; }
+
+  .page {
+    max-width: 740px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 40px rgba(11,22,40,0.1);
+    overflow: hidden;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--navy);
+    padding: 3rem 3.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(45,212,191,0.07) 0%, transparent 70%);
+  }
+  .cover-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cover-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--teal-light);
+  }
+  .cover h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 4.5vw, 38px);
+    color: #F0F9FF;
+    line-height: 1.1;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.5px;
+    max-width: 500px;
+  }
+  .cover h1 em { font-style: italic; color: var(--teal-light); }
+  .cover-sub {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.75;
+    max-width: 460px;
+    margin-bottom: 1.5rem;
+  }
+  .cover-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: #334155;
+    border-top: 1px solid rgba(45,212,191,0.12);
+    padding-top: 1.1rem;
+  }
+  .cover-logo span { color: var(--teal-light); }
+
+  /* INTRO STRIP */
+  .intro-strip {
+    background: var(--teal-pale);
+    padding: 1rem 3.5rem;
+    border-bottom: 1px solid rgba(13,148,136,0.15);
+  }
+  .intro-strip p {
+    font-size: 13px;
+    color: #0F766E;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* QUESTIONS */
+  .questions-body {
+    padding: 2rem 3.5rem 1.5rem;
+  }
+
+  .question-block {
+    margin-bottom: 1.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 1rem;
+    align-items: start;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .question-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .q-number {
+    width: 42px; height: 42px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--teal-light);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .q-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16.5px;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 0.45rem;
+  }
+  .q-gap {
+    font-size: 12.5px;
+    color: var(--text3);
+    line-height: 1.7;
+    font-style: italic;
+    padding-left: 10px;
+    border-left: 2px solid rgba(13,148,136,0.2);
+  }
+
+  /* FOOTER STRIP — subtle CTA */
+  .footer-strip {
+    background: var(--navy);
+    padding: 1.25rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-strip p {
+    font-size: 12.5px;
+    color: #475569;
+    line-height: 1.6;
+    max-width: 420px;
+  }
+  .footer-strip p strong {
+    color: #64748B;
+  }
+  .footer-url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--teal-light);
+    white-space: nowrap;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">↓ Save as PDF</button>
+
+<div class="page">
+
+  <div class="cover">
+    <div class="cover-eyebrow">GabaDown · Free Resource</div>
+    <h1>7 Questions to Ask Your Doctor About <em>Gabapentin Reduction</em></h1>
+    <p class="cover-sub">Most appointments last 15 minutes. These questions will help you use every one of them — and show your doctor you're serious about doing this safely.</p>
+    <div class="cover-logo">Gaba<span>Down</span> · gabadown.com</div>
+  </div>
+
+  <div class="intro-strip">
+    <p>Walking into a doctor's appointment without a plan is how tapers get dismissed or rushed. These 7 questions give you a framework — and reveal exactly where the gaps are that a structured protocol needs to fill.</p>
+  </div>
+
+  <div class="questions-body">
+
+    <div class="question-block">
+      <div class="q-number">01</div>
+      <div class="q-content">
+        <div class="q-text">I'd like to start reducing my gabapentin — what information do you need from me to support that plan?</div>
+        <div class="q-gap">Reframes the conversation from asking permission to starting a collaboration. Most patients never say this out loud — doing so signals you're serious, not impulsive.</div>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">02</div>
+      <div class="q-content">
+        <div class="q-text">Given how long I've been on this dose, how slowly should we go — and what's the smallest safe reduction increment?</div>
+        <div class="q-gap">Standard taper rates weren't designed for long-term, high-dose users. The answer to this question is specific to your history — and you need it before anything begins.</div>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">03</div>
+      <div class="q-content">
+        <div class="q-text">How will we know if we're reducing too fast — what are the signals to pause or hold at a dose?</div>
+        <div class="q-gap">Without a daily tracking system, this is guesswork. Your doctor needs data from you between appointments — not a vague sense that things feel "off."</div>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">04</div>
+      <div class="q-content">
+        <div class="q-text">How do we tell the difference between withdrawal symptoms and my original condition returning?</div>
+        <div class="q-gap">This is the question that derails most tapers. Without a clear framework, one bad week looks like failure — and patients stop. Your doctor needs a plan for this before it happens, not after.</div>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">05</div>
+      <div class="q-content">
+        <div class="q-text">What should I be doing to support my nervous system during the reduction — supplements, sleep, anything else?</div>
+        <div class="q-gap">Your doctor may not have time to cover this. But the gap between appointments is where most of the difficulty happens — and there are evidence-informed ways to fill it.</div>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">06</div>
+      <div class="q-content">
+        <div class="q-text">Can we document a taper plan together that I can refer back to between appointments?</div>
+        <div class="q-gap">Your doctor sees you for 15 minutes. The other 99% of this process happens without them in the room. A written plan changes everything — for both of you.</div>
+      </div>
+    </div>
+
+    <div class="question-block">
+      <div class="q-number">07</div>
+      <div class="q-content">
+        <div class="q-text">What support resources would help me stay on track between appointments — and who else should be on my care team?</div>
+        <div class="q-gap">This is the question most people never ask. And the honest answer is: your doctor can't be the only one. A structured support system between appointments isn't optional — it's what makes the difference between finishing and giving up.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-strip">
+    <p>If you find yourself unable to answer these questions — that's the gap. <strong>GabaDown builds the structured plan that fills it.</strong></p>
+    <a href="https://gabadown.com" class="footer-url">gabadown.com</a>
+  </div>
+
+</div>
+
+</body>
+</html>
