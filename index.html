@@ -47,8 +47,7 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 
 /* ── HERO ─────────────────────────────────────────────────────────── */
 .hero{background:var(--navy);min-height:90vh;display:flex;align-items:center;justify-content:center;padding:6rem 2.5rem;position:relative;overflow:hidden;text-align:center}
-.hero-graphic{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:62%;opacity:0.25;pointer-events:none;max-width:100%}
-body{overflow-x:hidden}
+.hero-graphic{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:62%;opacity:0.25;pointer-events:none}
 .hero-content{position:relative;z-index:2;max-width:820px;margin:0 auto}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal2);background:rgba(45,212,191,0.08);border:1px solid var(--border-dark);padding:7px 18px;border-radius:20px;margin-bottom:2rem}
 .hero h1{font-size:clamp(36px,5vw,62px);color:#F8FAFC;line-height:1.08;margin-bottom:1.5rem}
@@ -162,7 +161,7 @@ body{overflow-x:hidden}
 
 /* ── ADD-ONS ──────────────────────────────────────────────────────── */
 .addons{background:var(--white);padding:4rem 2.5rem}
-.addon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2rem}
+.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem}
 .addon-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:10px;transition:all .2s}
 .addon-card:hover{border-color:var(--teal);transform:translateY(-2px)}
 .addon-price{font-family:'DM Serif Display',serif;font-size:36px;color:var(--teal);line-height:1}
@@ -194,42 +193,44 @@ body{overflow-x:hidden}
 
 /* ── OFFER ────────────────────────────────────────────────────────── */
 .offer{background:var(--navy2);padding:5.5rem 2.5rem}
-.spots-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#FCA5A5;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.05em}
+.offer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:5fr 7fr;gap:3.5rem;align-items:start}
+.offer-box{background:var(--navy);border-radius:20px;padding:2.5rem;border:1px solid var(--border-dark)}
+.spots-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#FCA5A5;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem;font-family:'IBM Plex Mono',monospace;letter-spacing:0.05em}
 .offer-price{font-family:'DM Serif Display',serif;font-size:72px;color:#F8FAFC;line-height:1;display:block}
-.offer-currency{font-size:16px;color:#94A3B8;margin-top:4px;margin-bottom:1.5rem}
-.offer-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:#FFFFFF!important;padding:18px 40px;border-radius:12px;font-size:18px;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:1rem;width:100%}
-.offer-cta:hover{background:#0b8076;color:#FFFFFF!important;transform:translateY(-2px)}
-.offer-downsell{text-align:center;padding-top:1rem}
-.offer-downsell span{font-size:15px;color:#94A3B8}
-.offer-downsell a{font-size:15px;font-weight:700;color:var(--teal2);text-decoration:none;margin-left:6px}
+.offer-currency{font-size:15px;color:#475569;margin-top:4px;margin-bottom:1.5rem}
+.offer-includes{list-style:none;margin-bottom:2rem}
+.offer-includes li{font-size:14px;color:#CBD5E1;padding:10px 0 10px 26px;position:relative;border-bottom:1px solid rgba(45,212,191,0.07);display:flex;align-items:center}
+.offer-includes li:last-child{border-bottom:none}
+.offer-includes li i{position:absolute;left:0;color:var(--teal2);font-size:15px}
+.offer-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--teal);color:white;padding:18px 40px;border-radius:12px;font-size:18px;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:1rem;width:100%}
+.offer-cta:hover{background:var(--teal2);color:var(--navy);transform:translateY(-2px)}
+.offer-guarantee{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0.75rem 0;font-size:13px;color:#94A3B8;border-top:1px solid rgba(45,212,191,0.1);margin-top:0.75rem}
+.offer-guarantee i{color:var(--teal2);font-size:14px;flex-shrink:0}
+.offer-guarantee .g-divider{color:#334155}
+.offer-guarantee a{color:var(--teal2)}
+
+.offer-downsell{text-align:center;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.1)}
+.offer-downsell span{font-size:13px;color:#475569}
+.offer-downsell a{font-size:13px;font-weight:600;color:var(--teal2);text-decoration:none;margin-left:6px}
+.offer-downsell a:hover{color:white}
+.offer-right h3{font-family:'DM Serif Display',serif;font-size:28px;color:#F0F9FF;margin-bottom:1.25rem;line-height:1.2}
 .offer-steps{list-style:none}
 .offer-step{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(45,212,191,0.07)}
 .offer-step:last-child{border-bottom:none}
 .step-num{width:28px;height:28px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--teal2);flex-shrink:0;margin-top:2px}
 .offer-step p{font-size:14.5px;color:var(--on-dark);line-height:1.6}
 .offer-step p strong{color:#CBD5E1}
-.gpt-callout{background:rgba(45,212,191,0.05);border:1px solid var(--border-dark);border-radius:14px;padding:1.5rem}
+.gpt-callout{background:rgba(45,212,191,0.05);border:1px solid var(--border-dark);border-radius:14px;padding:1.5rem;margin-top:1.5rem}
 .gpt-callout-title{font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .gpt-callout-title i{color:var(--teal2)}
 .gpt-callout p{font-size:13px;color:#94A3B8;line-height:1.65}
 
-/* ── FAQ DETAILS/SUMMARY ─────────────────────────────────────────── */
-.faq-details{border-bottom:1px solid var(--border);background:var(--white);display:block;width:100%}
-.faq-details summary{padding:1.25rem 1.5rem;font-size:16px;font-weight:700;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s;-webkit-user-select:none;user-select:none}
-.faq-details summary::-webkit-details-marker{display:none}
-.faq-details summary::-moz-list-bullet{display:none}
-.faq-details summary::after{content:'+';font-size:24px;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1}
-.faq-details[open] summary{background:var(--cream)}
-.faq-details[open] summary::after{content:'−'}
-.faq-details summary:hover{background:var(--cream)}
-.faq-details-body{padding:0.25rem 1.5rem 1.25rem;font-size:15px;color:var(--text2);line-height:1.8;border-top:1px solid var(--border)}
-
-/* ── VALUE STACK ────────────────────────────────────────────────── */
-.value-row{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#E2E8F0;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
-.value-row span:last-child{font-family:'IBM Plex Mono',monospace;color:#CBD5E1;font-size:14px;font-weight:600}
-.value-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid rgba(45,212,191,0.25);margin-top:4px}
-.value-total span:first-child{font-size:16px;font-weight:700;color:#F0F9FF}
-.value-total span:last-child{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#64748B;text-decoration:line-through}
+/* ── FAQ ──────────────────────────────────────────────────────────── */
+.faq{background:var(--cream);padding:5rem 2.5rem}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;margin-top:2rem}
+.faq-item{border-bottom:1px solid var(--border);padding:1.25rem 0}
+.faq-q{font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:0.6rem}
+.faq-a{font-size:14.5px;color:var(--text2);line-height:1.8}
 
 /* ── DISCLAIMER ───────────────────────────────────────────────────── */
 .disclaimer{background:var(--navy);padding:3.5rem 2.5rem;border-top:1px solid var(--border-dark)}
@@ -242,20 +243,14 @@ body{overflow-x:hidden}
 .disclaimer a:hover{color:var(--on-dark)}
 
 /* ── FOOTER ───────────────────────────────────────────────────────── */
-footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212,191,0.08)}
+footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212,191,0.06)}
 .footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#E2E8F0}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#94A3B8}
 .footer-logo span{color:#2DD4BF}
 .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
-.footer-links a:nth-child(1){color:#2DD4BF}
-.footer-links a:nth-child(2){color:#94A3B8}
-.footer-links a:nth-child(3){color:#7DD3FC}
-.footer-links a:nth-child(4){color:#A5B4FC}
-.footer-links a:nth-child(5){color:#86EFAC}
-.footer-links a:nth-child(6){color:#FCA5A5}
-.footer-links a{font-size:14px;text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#F0F9FF}
-.footer-copy{font-size:12px;color:#64748B;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.06)}
+.footer-links a{font-size:14px;color:#64748B;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--teal)}
+.footer-copy{font-size:12px;color:#475569;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.04)}
 
 /* ── CONDITION NOTE ───────────────────────────────────────────────── */
 .condition-note{background:rgba(245,158,11,0.06);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin-top:1.5rem}
@@ -284,38 +279,29 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 .grid-2col-offer{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
 @media(max-width:768px){
-  .hero-graphic{display:none !important}
   nav{padding:0.75rem 1rem;flex-wrap:wrap;gap:0.5rem}
   .logo{font-size:18px}
   .nav-links{gap:0.5rem;flex-wrap:wrap}
   .nav-link{font-size:12px}
   .nav-cta{padding:8px 14px;font-size:12px}
+  .hero,.process,.stats,.features,.supps,.stories,.who,.addons,.kit-section,.compare,.offer,.faq,.disclaimer{padding-left:1.25rem;padding-right:1.25rem}
   .bento-2{grid-column:span 6}
   .stories-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
-  .addon-grid{grid-template-columns:repeat(2,1fr)}
-  /* Collapse ALL two-column grids */
-  .grid-2col{grid-template-columns:1fr !important;gap:2rem !important}
-  .grid-2col-story{grid-template-columns:1fr !important;gap:2rem !important}
+  .addon-grid{grid-template-columns:1fr}
+  .process-rail{grid-template-columns:1fr 1fr}
+  .compare-table{font-size:13px}
+  /* Fix all inline grids on mobile */
+  .grid-2col{grid-template-columns:1fr;gap:2rem}
   .grid-2col-tight{grid-template-columns:1fr 1fr;gap:8px}
+  .grid-2col-story{grid-template-columns:1fr;gap:2rem}
   .grid-4col{grid-template-columns:1fr 1fr;gap:6px}
   .grid-icon-text{grid-template-columns:auto 1fr;gap:1rem}
   .grid-2col-offer{grid-template-columns:1fr 1fr;gap:8px}
-  /* Force all inline grid styles to collapse */
-  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
-  [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important}
-  /* General padding */
+  .supp-cats{grid-template-columns:1fr !important}
+  /* General padding fix */
   section{padding-left:1.25rem !important;padding-right:1.25rem !important}
   .wrap{padding-left:0;padding-right:0}
-  /* Hide mockup on mobile - it breaks layout */
-  .journal-mockup{display:none !important}
-  /* Fix story section two-col */
-  .story-grid{grid-template-columns:1fr !important}
-  /* Fix font sizes that cause overflow */
-  p{word-break:break-word}
-}
-@media(max-width:480px){
-  .addon-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -415,11 +401,11 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     <div class="grid-2col" style="margin-bottom:2.5rem">
       <div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:8px"><i class="ti ti-heart"></i> Why GabaDown exists</div>
-        <h2 style="font-size:clamp(28px,3.5vw,40px);margin-bottom:1.25rem;color:var(--text)">I built this because what existed wasn't enough.</h2>
-        <a href="/blog/moms-gabapentin-journey/" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;margin-bottom:1.5rem"><i class="ti ti-book"></i> Read her story</a>
-        <p style="font-size:16px;color:var(--text2);line-height:1.85;margin-bottom:1rem">The pieces were all there. Taper protocols. Nerve repair research. Supplement stacks. Communities. But they lived in clinical papers, scattered forums, and general guides written for the average patient — not for you, your dose, your history, your nervous system, your life. Nobody had pulled it together into one place and made it personal.</p>
-        <p style="font-size:16px;color:var(--text2);line-height:1.85;margin-bottom:1rem">And nobody had added what the neuroscience makes clear actually matters: that how you see your life on the other side of this — your vision, your identity, your reasons — is not optional. Pain catastrophizing is one of the strongest predictors of a failed taper. The goal-setting work in GabaDown is built to counter that directly. So is the daily tracking system your doctor can actually use, the nerve repair protocol timed to your reduction schedule, and the private community of people on the exact same path — not a public forum, not a Facebook group, a genuinely private space.</p>
-        <p style="font-size:16px;color:var(--text2);line-height:1.85">GabaDown is what happens when you take all of it and build it around one person specifically.</p>
+        <h2 style="font-size:clamp(28px,3.5vw,40px);margin-bottom:1.25rem;color:var(--text)">I built this because I looked for help for my mother — and found nothing.</h2>
+        <a href="/blog/" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;margin-bottom:1.5rem"><i class="ti ti-book"></i> Read her story</a>
+        <p style="font-size:16px;color:var(--text2);line-height:1.85;margin-bottom:1rem">My mother has been on 2,700mg of gabapentin for years. When she and her doctor decided it was time to reduce, we went looking for a structured roadmap. Something that took seriously how long this takes and how hard it is.</p>
+        <p style="font-size:16px;color:var(--text2);line-height:1.85;margin-bottom:1rem">There was nothing. Not a single resource built specifically for long-term users trying to reduce carefully and sustainably.</p>
+        <p style="font-size:16px;color:var(--text2);line-height:1.85">So I built it myself. I spent weeks researching taper protocols, the research base, and what actually helps people get through this. My mom's journey — her real numbers, her hard weeks and her wins — is shared with GabaDown Circle members as it unfolds.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:1.25rem">
         <div style="background:var(--navy);border-radius:16px;padding:2rem;border-left:4px solid var(--teal2)">
@@ -429,8 +415,8 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         <div style="background:rgba(13,148,136,0.06);border:1px solid rgba(13,148,136,0.2);border-radius:12px;padding:1.25rem 1.5rem;display:flex;gap:10px;align-items:flex-start">
           <i class="ti ti-users" style="color:var(--teal);font-size:20px;flex-shrink:0;margin-top:2px"></i>
           <div>
-            <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px">Join the journey</div>
-            <div style="font-size:13px;color:var(--text2);line-height:1.6">A genuinely private space for people on the same path. Real conversations, real timelines, shared wins. You're not alone in this.</div>
+            <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px">Follow the journey</div>
+            <div style="font-size:13px;color:var(--text2);line-height:1.6">GabaDown Circle members get real-time updates on my mom's taper — her dose, her symptoms, what's working, and what isn't. The only place you'll find the full story.</div>
           </div>
         </div>
         <div class="grid-2col-tight">
@@ -449,7 +435,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 <!-- WHY PEOPLE REDUCE -->
 <section style="background:var(--navy2);padding:5.5rem 2.5rem;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)">
-  <div class="wrap grid-2col">
+  <div class="wrap" class="grid-2col">
     <div>
       <div class="eyebrow eyebrow-light"><i class="ti ti-alert-triangle"></i> Why people reduce</div>
       <h2 style="font-size:clamp(26px,3.5vw,38px);color:#F8FAFC;margin-bottom:1.25rem;line-height:1.15">The side effects that make people search for a way out</h2>
@@ -457,39 +443,49 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       <p style="color:#94A3B8;line-height:1.75;font-size:14.5px">This is not about stopping gabapentin. It's about reducing it carefully — under medical supervision — until the side effects are manageable and your quality of life is yours again.</p>
     </div>
     <div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid var(--teal2)">
-            <i class="ti ti-cloud-fog" style="color:var(--teal2);font-size:24px;flex-shrink:0;margin-top:2px"></i>
-            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Cognitive fog</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">Difficulty concentrating, memory lapses, the feeling of thinking through cotton wool — common at higher doses and worsening over time.</div></div>
-          </div>
-          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid #818CF8">
-            <i class="ti ti-mood-empty" style="color:#818CF8;font-size:24px;flex-shrink:0;margin-top:2px"></i>
-            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Emotional blunting</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">Feeling flat, disconnected, or less emotionally present than you used to be — a reduced emotional range that affects relationships and wellbeing.</div></div>
-          </div>
-          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid #FCD34D">
-            <i class="ti ti-battery-1" style="color:#FCD34D;font-size:24px;flex-shrink:0;margin-top:2px"></i>
-            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Fatigue &amp; weight gain</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">Persistent tiredness that doesn't improve with rest, and significant weight gain that's very difficult to reverse while remaining on higher doses.</div></div>
-          </div>
-          <div style="background:var(--navy);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:14px;align-items:flex-start;border-left:3px solid #F87171">
-            <i class="ti ti-lock" style="color:#F87171;font-size:24px;flex-shrink:0;margin-top:2px"></i>
-            <div><div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">Physical dependency</div><div style="font-size:14px;color:#94A3B8;line-height:1.65">The anxiety when a prescription is late, the fear of missing a dose, the sense that the medication controls you rather than the other way around.</div></div>
-          </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
+          <i class="ti ti-cloud-fog" style="color:var(--teal2);font-size:22px;flex-shrink:0;margin-top:2px"></i>
+          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Cognitive fog</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">Difficulty concentrating, memory lapses, the feeling of thinking through cotton wool — common at higher doses and worsening over time.</div></div>
         </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
+          <i class="ti ti-mood-empty" style="color:#818CF8;font-size:22px;flex-shrink:0;margin-top:2px"></i>
+          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Emotional blunting</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">Feeling flat, disconnected, or less emotionally present than you used to be — a reduced emotional range that affects relationships and wellbeing.</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
+          <i class="ti ti-battery-1" style="color:#FCD34D;font-size:22px;flex-shrink:0;margin-top:2px"></i>
+          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Fatigue &amp; weight gain</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">Persistent tiredness that doesn't improve with rest, and significant weight gain that's very difficult to reverse while remaining on higher doses.</div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start">
+          <i class="ti ti-lock" style="color:#F87171;font-size:22px;flex-shrink:0;margin-top:2px"></i>
+          <div><div style="font-size:14px;font-weight:700;color:#F0F9FF;margin-bottom:3px">Physical dependency</div><div style="font-size:13px;color:var(--on-dark);line-height:1.6">The anxiety when a prescription is late, the fear of missing a dose, the sense that the medication controls you rather than the other way around.</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BRIDGE 2 -->
-<section style="background:linear-gradient(180deg,var(--navy2) 0%,var(--navy2) 100%);padding:3rem 2.5rem;text-align:center;border-top:1px solid rgba(45,212,191,0.12)">
-  <div class="wrap" style="max-width:640px">
-    <p style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,32px);color:#F0F9FF;line-height:1.3;margin-bottom:0.75rem">GabaDown was built to address every one of these.</p>
-    <p style="font-size:16px;color:#F0F9FF;line-height:1.7">Here's what that looks like in practice.</p>
-    <div style="width:1px;height:48px;background:linear-gradient(180deg,#FFFFFF,transparent);margin:1.5rem auto 0"></div>
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="stat-num">73M+</span>
+      <span class="stat-label">Gabapentin prescriptions written annually across North America</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">80%</span>
+      <span class="stat-label">Our reduction goal — not zero, just significantly less fog, less dependency, more life</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Varies</span>
+      <span class="stat-label">Timeline varies by dose, duration, and how your body responds. Some reduce faster. Some need up to 18 months. Your pace is the right pace.</span>
+    </div>
   </div>
 </section>
 
+
 <!-- WHAT IS THE JOURNAL -->
-<section style="background:var(--navy2);padding:3rem 2.5rem 5rem;border-bottom:1px solid var(--border-dark)">
+<section style="background:var(--navy2);padding:5rem 2.5rem;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)">
   <div class="wrap">
     <div class="grid-2col-story">
       <div>
@@ -505,7 +501,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         </div>
       </div>
       <!-- Journal mockup -->
-      <div class="journal-mockup" style="background:#FFFFFF;border-radius:20px;border:1px solid #E2E8F0;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)">
+      <div style="background:#FFFFFF;border-radius:20px;border:1px solid #E2E8F0;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)">
         <!-- Browser bar -->
         <div style="background:#F1F5F9;padding:0.75rem 1rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid #E2E8F0">
           <div style="display:flex;gap:5px"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57"></div><div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840"></div></div>
@@ -620,9 +616,89 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   </div>
 </section>
 
+<!-- SUPPLEMENT INFORMATION -->
+<section class="supps">
+  <div class="wrap">
+    <div class="eyebrow"><i class="ti ti-leaf"></i> Supplement information</div>
+    <h2 class="section-title">Natural support — what the research shows</h2>
+    <div class="supps-split">
+      <div class="supps-copy">
+        <p>Your journal includes research-backed information on supplements that many people find supportive during a gabapentin reduction. We cover the evidence behind each category, what the research actually shows, and the questions worth asking your pharmacist before starting anything new.</p>
+        <p>This is educational information — not a prescription or a protocol. Your pharmacist is the right person to confirm timing, dosing, and any interactions with your specific medications. The healthcare team summary we give you makes that conversation straightforward.</p>
+        <div class="supp-disclaimer">
+          <i class="ti ti-alert-circle"></i>
+          <span>All supplement information in your journal is for educational purposes only. Always confirm with your pharmacist before starting any new supplement — especially alongside a prescription medication.</span>
+        </div>
+      </div>
+      <div>
+        <div class="supp-cats">
+          <div class="supp-cat">
+            <div style="width:36px;height:36px;background:rgba(124,58,237,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:8px"><i class="ti ti-brain" style="color:#7C3AED;font-size:18px"></i></div>
+            <div class="supp-cat-name">Nerve repair support</div>
+            <div class="supp-cat-desc">Supplements with evidence for supporting nerve health and the repair process during reduction</div>
+          </div>
+          <div class="supp-cat">
+            <div style="width:36px;height:36px;background:rgba(13,148,136,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:8px"><i class="ti ti-activity" style="color:var(--teal);font-size:18px"></i></div>
+            <div class="supp-cat-name">GABA pathway support</div>
+            <div class="supp-cat-desc">Supplements that work on similar pathways to ease the transition as doses come down</div>
+          </div>
+          <div class="supp-cat">
+            <div style="width:36px;height:36px;background:rgba(37,99,235,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:8px"><i class="ti ti-moon" style="color:#2563EB;font-size:18px"></i></div>
+            <div class="supp-cat-name">Sleep &amp; anxiety support</div>
+            <div class="supp-cat-desc">Supplements to support sleep quality and reduce withdrawal-related anxiety</div>
+          </div>
+          <div class="supp-cat">
+            <div style="width:36px;height:36px;background:rgba(220,38,38,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:8px"><i class="ti ti-flame" style="color:#DC2626;font-size:18px"></i></div>
+            <div class="supp-cat-name">Anti-inflammatory support</div>
+            <div class="supp-cat-desc">Supplements targeting the inflammatory component of chronic nerve pain</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
+<!-- SUCCESS STORIES -->
+<section class="stories">
+  <div class="wrap">
+    <div class="eyebrow eyebrow-light"><i class="ti ti-star"></i> What we found in our research</div>
+    <h2 class="section-title" style="color:#F8FAFC">Patient experiences, found in public forums</h2>
+    <p class="section-sub" style="color:#94A3B8">These are publicly shared accounts, linked to their original sources so you can read them in full context.</p>
+    <div class="stories-grid">
+      <div class="story-card">
+        <div class="story-source"><i class="ti ti-message-circle"></i> Mayo Clinic Connect Forum</div>
+        <div class="story-tags"><span class="story-tag tag-blue">3 years on gabapentin</span><span class="story-tag tag-green">Made it off</span></div>
+        <div class="story-quote">Reported no real difficulty tapering off after 3 years on the medication — just a few days of minor symptoms.</div>
+        <div class="story-detail">Tapered with psychiatrist support for hip pain and anxiety. Slow taper, medical supervision throughout. Described it as unremarkable.</div>
+        <a href="https://connect.mayoclinic.org/discussion/tapering-off-gabapentin/" target="_blank" rel="noopener" class="story-link">Read the full thread <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="story-card">
+        <div class="story-source"><i class="ti ti-message-circle"></i> Reddit r/ChronicPain</div>
+        <div class="story-tags"><span class="story-tag tag-blue">2,700mg — same starting dose</span><span class="story-tag tag-green">Tapered successfully</span></div>
+        <div class="story-quote">Tapered very slowly over months, eventually cutting tablets into sixteenths — slow and steady wins the race.</div>
+        <div class="story-detail">Started at exactly 2,700mg. That level of precision is not weakness — it's exactly how a safe taper is done. And they got there.</div>
+        <a href="https://www.reddit.com/r/ChronicPain/comments/1cwgm1e/i_outlasted_gabapentin_withdrawal/" target="_blank" rel="noopener" class="story-link">Read the full thread <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="story-card">
+        <div class="story-source"><i class="ti ti-message-circle"></i> Mad In America</div>
+        <div class="story-tags"><span class="story-tag tag-blue">7-year taper journey</span><span class="story-tag tag-green">Finally finished</span></div>
+        <div class="story-quote">Finished a seven-year taper, and found it validating just to learn they weren't the only one for whom it took this long.</div>
+        <div class="story-detail">Seven years. The longest road. But they finished. They wrote this to help others feel less alone. Your timeline will be shorter with structured support.</div>
+        <a href="https://www.madinamerica.com/2023/05/gabapentin-withdrawal-one-year-later/" target="_blank" rel="noopener" class="story-link">Read the full story <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="story-card">
+        <div class="story-source"><i class="ti ti-message-circle"></i> Pain Concern Forum (UK)</div>
+        <div class="story-tags"><span class="story-tag tag-teal">Neuropathic pain</span><span class="story-tag tag-green">Off with GP support</span></div>
+        <div class="story-quote">Found the process genuinely hard, but worth it — and credits going slow with their doctor fully informed.</div>
+        <div class="story-detail">100mg reductions with GP guidance. Genuinely difficult. And yet on the other side they feel so much better and call it worth it.</div>
+        <a href="https://healthunlocked.com/painconcern/posts/133870000/coming-of-gabapentin." target="_blank" rel="noopener" class="story-link">Read the full thread <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="stories-note">
+      <p><strong style="color:#94A3B8">A note on these accounts:</strong> Success stories are underrepresented online because people who get through it tend to move on with their lives rather than posting about it. The real success rate of a slow, supervised taper is much higher than online forums suggest. If you are quoted here and would like it removed, email <a href="mailto:hello@gabadown.com" style="color:var(--teal2)">hello@gabadown.com</a> and it comes down right away.</p>
+    </div>
+  </div>
+</section>
 
 <!-- WHO IT'S FOR -->
 <section class="who">
@@ -637,7 +713,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
           <li><i class="ti ti-check"></i>Your doctor is aware of and open to the idea of reduction</li>
           <li><i class="ti ti-check"></i>Your pharmacist is part of your care</li>
           <li><i class="ti ti-check"></i>You are open to natural supplement information as part of your support</li>
-          <li><i class="ti ti-check"></i>You understand this can take months or even years — not weeks</li>
+          <li><i class="ti ti-check"></i>You understand this takes 12 to 18 months — not weeks</li>
           <li><i class="ti ti-check"></i>You are ready to treat this like the serious protocol it is</li>
         </ul>
       </div>
@@ -657,139 +733,12 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   </div>
 </section>
 
-<!-- KIT FORM -->
-<section class="kit-section">
-  <div class="kit-inner">
-    <div class="eyebrow eyebrow-light" style="justify-content:center;margin-bottom:0.75rem"><i class="ti ti-file-text"></i> Free resource</div>
-    <h2>Not ready to commit yet?<br>Start here.</h2>
-    <p>Seven questions that help you and your doctor have a real conversation about gabapentin reduction. Free. One page. Takes 2 minutes to read.</p>
-    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <form action="https://app.kit.com/forms/9598713/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9598713" data-uid="cef53f7cd5" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field" style="margin-bottom:10px"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color:rgb(0,0,0);border-color:rgb(227,227,227);border-radius:8px;font-weight:400;padding:14px 16px;font-size:15px;width:100%"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color:rgb(255,255,255);background-color:rgb(13,148,136);border-radius:8px;font-weight:600;padding:14px 24px;font-size:15px;width:100%;cursor:pointer;border:0"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get the 7 questions free</span></button></div><div class="formkit-powered-by-convertkit-container" style="opacity:0.35;margin-top:10px;text-align:center"><a href="https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow noopener">Built with Kit</a></div></div></form>
-  </div>
-</section>
-
-<!-- COMPARISON TABLE -->
-<section class="compare">
-  <div class="wrap">
-    <div class="eyebrow"><i class="ti ti-table"></i> How it compares</div>
-    <h2 class="section-title">GabaDown vs. the alternatives</h2>
-    <p class="section-sub">Most people managing a gabapentin taper are doing it with forum threads and rushed appointments. Here's what changes with a structured system.</p>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-top:2rem">
-      <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-        <div style="background:var(--navy);padding:0.85rem 1.25rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#94A3B8;letter-spacing:0.02em">What you need</div>
-        <div style="background:var(--teal);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:white;text-align:center;min-width:90px">GabaDown</div>
-        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#F0F9FF;text-align:center;min-width:70px">Forums</div>
-        <div style="background:var(--navy);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;color:#F0F9FF;text-align:center;min-width:80px">15-min appt</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--white)">
-        <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Structured taper schedule</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;border-bottom:1px solid var(--border);min-width:90px;background:rgba(13,148,136,0.04)">✓</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8;border-bottom:1px solid var(--border);min-width:70px">✗</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#D97706;font-size:13px;border-bottom:1px solid var(--border);min-width:80px">Rarely</div>
-
-        <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Doctor-ready summary</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;border-bottom:1px solid var(--border);background:rgba(13,148,136,0.04)">✓</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8;border-bottom:1px solid var(--border)">✗</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;border-bottom:1px solid var(--border)">✓</div>
-
-        <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Withdrawal vs. pain framework</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;border-bottom:1px solid var(--border);background:rgba(13,148,136,0.04)">✓</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#D97706;font-size:13px;border-bottom:1px solid var(--border)">Mixed</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#D97706;font-size:13px;border-bottom:1px solid var(--border)">Rarely</div>
-
-        <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Daily tracking log</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;border-bottom:1px solid var(--border);background:rgba(13,148,136,0.04)">✓</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8;border-bottom:1px solid var(--border)">✗</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8;border-bottom:1px solid var(--border)">✗</div>
-
-        <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border)">Between-appointment support</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;border-bottom:1px solid var(--border);background:rgba(13,148,136,0.04)">✓</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#D97706;font-size:13px;border-bottom:1px solid var(--border)">Sort of</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8;border-bottom:1px solid var(--border)">✗</div>
-
-        <div style="padding:0.9rem 1.25rem;font-size:14px;font-weight:600;color:var(--text)">Private community</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#16A34A;font-weight:700;background:rgba(13,148,136,0.04)">✓</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8">✗</div>
-        <div style="padding:0.9rem 1rem;text-align:center;color:#94A3B8">✗</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OFFER -->
-<section class="offer" id="apply">
-  <div class="wrap" style="max-width:780px">
-
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <div class="eyebrow eyebrow-light" style="justify-content:center"><i class="ti ti-package"></i> Everything you need</div>
-      <h2 class="section-title" style="font-size:clamp(36px,4vw,52px);color:#F0F9FF">Get your custom journal</h2>
-    </div>
-
-    <div style="background:var(--navy);border-radius:20px;border:1px solid rgba(45,212,191,0.2);padding:2.5rem;margin-bottom:1.5rem">
-
-      <!-- Value stack -->
-      <div style="margin-bottom:2rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem 1.5rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:1rem">What's in your journal — component value</div>
-        <div class="value-row"><span>Draft taper framework</span><span>$300</span></div>
-        <div class="value-row"><span>Healthcare team summary</span><span>$150</span></div>
-        <div class="value-row"><span>Full personalized digital journal</span><span>$200</span></div>
-        <div class="value-row"><span>Custom supplement protocol</span><span>$150</span></div>
-        <div class="value-row"><span>Patient advocacy guide</span><span>$100</span></div>
-        <div class="value-row"><span>30-minute follow-up call</span><span>$150</span></div>
-        <div class="value-row" style="border-bottom:none"><span>AI Plan Assistant</span><span>$100</span></div>
-        <div class="value-total"><span>Total value</span><span style="font-size:20px;font-weight:700">$1,150</span></div>
-      </div>
-
-      <!-- Price + CTA -->
-      <div style="text-align:center;margin-bottom:1.5rem">
-        <div class="spots-badge" style="justify-content:center;margin-bottom:1rem"><i class="ti ti-clock" style="font-size:12px"></i> Built by hand · only 3 spots available per week</div>
-        <span class="offer-price">$497</span>
-        <div class="offer-currency">USD · one time · no subscription</div>
-      </div>
-
-      <a href="https://buy.stripe.com/aFabJ0aaP5Ax32E26a83C03" class="offer-cta">Get My Custom Journal <i class="ti ti-arrow-right"></i></a>
-
-      <!-- Guarantee -->
-      <div style="background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.2);border-radius:12px;padding:1.25rem;margin-top:1.25rem;display:flex;gap:12px;align-items:flex-start">
-        <i class="ti ti-shield-check" style="color:var(--teal2);font-size:22px;flex-shrink:0;margin-top:2px"></i>
-        <div>
-          <div style="font-size:15px;font-weight:700;color:#F0F9FF;margin-bottom:4px">The "Worth It" Guarantee</div>
-          <div style="font-size:14px;color:#CBD5E1;line-height:1.65">If after your 30-minute follow-up call you don't feel the journal was worth every dollar — we'll refund you in full. No forms. No friction. <a href="/terms.html" style="color:var(--teal2)">Full terms here.</a></div>
-        </div>
-      </div>
-
-      <div class="offer-downsell" style="margin-top:1.25rem;text-align:center">
-        <span>Prefer to split the payment?</span>
-        <a href="https://buy.stripe.com/8x23cuaaP6EB32E7qu83C04">2 payments of $249 <i class="ti ti-arrow-right" style="font-size:11px"></i></a>
-      </div>
-    </div>
-
-    <!-- What happens next -->
-    <div style="background:var(--navy);border-radius:20px;border:1px solid rgba(45,212,191,0.15);padding:2rem 2.5rem">
-      <h3 style="font-size:20px;color:#F0F9FF;margin-bottom:1.5rem">What happens after you purchase</h3>
-      <ul class="offer-steps">
-        <li class="offer-step"><div class="step-num">1</div><p>Your intake questionnaire arrives by email within 2 hours</p></li>
-        <li class="offer-step"><div class="step-num">2</div><p>You complete the questionnaire — your dose, your history, your goals, your doctor's current position on reduction</p></li>
-        <li class="offer-step"><div class="step-num">3</div><p>We produce your <strong>draft taper framework</strong> based on published deprescribing guidelines</p></li>
-        <li class="offer-step"><div class="step-num">4</div><p>You take the <strong>healthcare team summary</strong> to your doctor — they review, adjust if needed, and approve</p></li>
-        <li class="offer-step"><div class="step-num">5</div><p>We build your <strong>full personalized journal</strong> around the approved plan</p></li>
-        <li class="offer-step"><div class="step-num">6</div><p>Journal delivered within 7 days — we <strong>schedule your 30-minute follow-up call</strong> to walk through it together</p></li>
-      </ul>
-      <div class="gpt-callout" style="margin-top:1.5rem">
-        <div class="gpt-callout-title"><i class="ti ti-robot"></i> AI Plan Assistant included</div>
-        <p>A custom AI trained on your specific journal — available 24/7 for questions about your plan, your supplements, and what to expect at each stage. Designed to support you between appointments, not replace your care team.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- ADD-ON SERVICES -->
 <section class="addons">
   <div class="wrap">
-    <div class="eyebrow"><i class="ti ti-plus"></i> Want more support?</div>
-    <h2 class="section-title">Add-on services</h2>
-    <p class="section-sub">Your journal stands alone — these are available when you want more direct support at key moments in your taper.</p>
+    <div class="eyebrow"><i class="ti ti-plus"></i> Add-on services</div>
+    <h2 class="section-title">Deepen your support</h2>
+    <p class="section-sub">Each GabaDown journal stands alone — these add-ons are available for clients who want more direct support at key moments.</p>
     <div class="addon-grid">
       <div class="addon-card">
         <div class="addon-price">$197</div>
@@ -806,15 +755,123 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       <div class="addon-card">
         <div class="addon-price" style="font-size:28px">$47<span style="font-size:14px;color:var(--text3)">/mo</span></div>
         <div class="addon-name">GabaDown Circle</div>
-        <div class="addon-desc">A private community for people actively reducing gabapentin. Real conversations, real timelines, real support — from people on the exact same path. Not a Reddit thread. Not a Facebook group.</div>
+        <div class="addon-desc">The founding-member community for people actively reducing gabapentin. Real conversations, real timelines, real support from people going through exactly this. Founding rate locks in before the price rises.</div>
         <a href="https://buy.stripe.com/eVq4gygzdgfbav67qu83C02" class="addon-cta">Join the Circle <i class="ti ti-arrow-right"></i></a>
       </div>
-      <div class="addon-card" style="border:1px solid rgba(45,212,191,0.25);position:relative">
-        <div style="position:absolute;top:-1px;right:1.25rem;background:var(--teal);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:0 0 8px 8px;letter-spacing:0.05em;text-transform:uppercase">By referral</div>
-        <div class="addon-price" style="font-size:22px;color:var(--teal2)">Complex case support</div>
-        <div class="addon-name">Full care coordination</div>
-        <div class="addon-desc">Navigating multiple providers, polypharmacy, or a situation that goes beyond a standard taper? We work with a small number of clients on a more intensive basis — full intake, provider coordination, and ongoing case management.</div>
-        <a href="mailto:hello@gabadown.com?subject=Complex case inquiry" class="addon-cta">Inquire by email <i class="ti ti-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- KIT FORM -->
+<section class="kit-section">
+  <div class="kit-inner">
+    <div class="eyebrow eyebrow-light" style="justify-content:center;margin-bottom:0.75rem"><i class="ti ti-file-text"></i> Free resource</div>
+    <h2>Not ready to commit yet?<br>Start here.</h2>
+    <p>Seven questions that help you and your doctor have a real conversation about gabapentin reduction. Free. One page. Takes 2 minutes to read.</p>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <script>
+    document.addEventListener("submit", function(e) {
+      if (e.target && e.target.classList.contains("seva-form")) {
+        setTimeout(function() {
+          window.location.href = "https://gabadown.com/thank-you.html";
+        }, 1000);
+      }
+    });
+    </script>
+    <form action="https://app.kit.com/forms/9598713/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9598713" data-uid="cef53f7cd5" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field" style="margin-bottom:10px"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color:rgb(0,0,0);border-color:rgb(227,227,227);border-radius:8px;font-weight:400;padding:14px 16px;font-size:15px;width:100%"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color:rgb(255,255,255);background-color:rgb(13,148,136);border-radius:8px;font-weight:600;padding:14px 24px;font-size:15px;width:100%;cursor:pointer;border:0"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get the 7 questions free</span></button></div><div class="formkit-powered-by-convertkit-container" style="opacity:0.35;margin-top:10px;text-align:center"><a href="https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow noopener">Built with Kit</a></div></div></form>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare">
+  <div class="wrap">
+    <div class="eyebrow"><i class="ti ti-table"></i> How it compares</div>
+    <h2 class="section-title">GabaDown vs. the alternatives</h2>
+    <p class="section-sub">Most people managing a gabapentin taper are doing it with forum threads and rushed appointments. Here's what changes with a structured system.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>What you need</th>
+          <th class="col-gaba" style="vertical-align:middle">
+            <div style="display:flex;align-items:center;gap:8px">
+              <svg viewBox="0 0 100 100" width="22" height="22" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="50" cy="50" r="50" fill="#0D9488"/><circle cx="28" cy="36" r="9.5" fill="white"/><circle cx="50" cy="50" r="7" fill="white"/><circle cx="72" cy="64" r="5" fill="white"/></svg>
+              GabaDown
+            </div>
+          </th>
+          <th>Forums / Reddit</th>
+          <th>15-min appointment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A structured taper schedule</td><td class="col-gaba yes">✓ Built for you</td><td class="no">✗</td><td class="rare">Rarely</td></tr>
+        <tr><td>Doctor can review &amp; approve the plan</td><td class="col-gaba yes">✓ Healthcare summary included</td><td class="no">✗</td><td class="yes">✓</td></tr>
+        <tr><td>Distinguishes withdrawal from relapse</td><td class="col-gaba yes">✓ Explicitly addressed</td><td class="rare">Mixed</td><td class="rare">Rarely</td></tr>
+        <tr><td>Between-appointment support</td><td class="col-gaba yes">✓ AI Plan Assistant</td><td class="rare">Sort of</td><td class="no">✗</td></tr>
+        <tr><td>Evidence-based supplement information</td><td class="col-gaba yes">✓ Cited research</td><td class="rare">Mixed quality</td><td class="rare">Rarely</td></tr>
+        <tr><td>Daily tracking for appointments</td><td class="col-gaba yes">✓ Built in</td><td class="no">✗</td><td class="no">✗</td></tr>
+        <tr><td>Available across North America</td><td class="col-gaba yes">✓ US &amp; Canada</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="apply">
+  <div class="offer-inner">
+    <div class="offer-box">
+      <div class="spots-badge"><i class="ti ti-clock" style="font-size:12px"></i> We take 3 new clients per week</div>
+      <span class="offer-price">$497</span>
+      <div class="offer-currency">USD · one time · no subscription</div>
+      <ul class="offer-includes">
+        <li><i class="ti ti-check"></i>Custom intake questionnaire</li>
+        <li><i class="ti ti-check"></i>Draft taper framework (for doctor review)</li>
+        <li><i class="ti ti-check"></i>Healthcare team summary for doctor &amp; pharmacist</li>
+        <li><i class="ti ti-check"></i>Full personalised digital journal</li>
+        <li><i class="ti ti-check"></i>Supplement information guide</li>
+        <li><i class="ti ti-check"></i>Personalised milestone rewards</li>
+        <li><i class="ti ti-check"></i>Patient advocacy guide</li>
+        <li><i class="ti ti-check"></i>Nerve health support practices</li>
+        <li><i class="ti ti-check"></i>Morning routine protocol</li>
+        <li><i class="ti ti-check"></i>AI Plan Assistant access</li>
+        <li><i class="ti ti-check"></i>30-minute follow-up call</li>
+        <li><i class="ti ti-check"></i>Delivered within 7 days</li>
+      </ul>
+      <a href="https://buy.stripe.com/aFabJ0aaP5Ax32E26a83C03" class="offer-cta">Get My Custom Journal <i class="ti ti-arrow-right"></i></a>
+      <div class="offer-guarantee">
+        <i class="ti ti-shield-check"></i>
+        <span>30-day revision guarantee</span>
+        <span class="g-divider">·</span>
+        <span>Quality of work, always</span>
+        <span class="g-divider">·</span>
+        <a href="/terms.html">Terms of service</a>
+      </div>
+      <div class="offer-downsell">
+        <span>Prefer to split the payment?</span>
+        <a href="https://buy.stripe.com/8x23cuaaP6EB32E7qu83C04">2 payments of $249 <i class="ti ti-arrow-right" style="font-size:11px"></i></a>
+      </div>
+    </div>
+    <div class="offer-right">
+      <h3>What happens after you purchase</h3>
+      <ul class="offer-steps">
+        <li class="offer-step"><div class="step-num">1</div><p>Your intake questionnaire arrives by email within 2 hours of purchase</p></li>
+        <li class="offer-step"><div class="step-num">2</div><p>You complete the questionnaire — <strong>your dose, your history, your goals, and your doctor's current thinking on reduction if you have it</strong></p></li>
+        <li class="offer-step"><div class="step-num">3</div><p>We produce your <strong>draft taper framework</strong> — a structured phase-by-phase reduction schedule based on published deprescribing guidelines</p></li>
+        <li class="offer-step"><div class="step-num">4</div><p>You take the <strong>healthcare team summary</strong> to your doctor — they review, adjust if needed, and approve the plan</p></li>
+        <li class="offer-step"><div class="step-num">5</div><p>We build your <strong>full journal</strong> around the approved plan — everything personalised to your specific situation</p></li>
+        <li class="offer-step"><div class="step-num">6</div><p>Your journal is delivered within 7 days — and we <strong>schedule your 30-minute follow-up call</strong> to walk through it together</p></li>
+      </ul>
+      <div class="gpt-callout">
+        <div class="gpt-callout-title"><i class="ti ti-robot"></i> AI Plan Assistant included</div>
+        <p>A custom AI trained on your specific journal — answers questions about your plan, your supplements, and what to expect at each stage. Designed to support you and your care team, not replace either of them. Cannot handle emergencies — always contact your doctor or emergency services for urgent concerns.</p>
+      </div>
+      <div style="background:rgba(45,212,191,0.04);border:1px solid rgba(45,212,191,0.12);border-radius:12px;padding:1.25rem 1.5rem;margin-top:1rem">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:0.75rem">Your journal is a private digital document</div>
+        <div class="grid-2col-offer">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-device-tablet" style="color:var(--teal2);font-size:15px"></i> Any device</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-lock" style="color:var(--teal2);font-size:15px"></i> Fully private</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-color-swatch" style="color:var(--teal2);font-size:15px"></i> Interactive &amp; tabbed</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-download" style="color:var(--teal2);font-size:15px"></i> No app needed</div>
+        </div>
       </div>
     </div>
   </div>
@@ -825,68 +882,49 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   <div class="wrap">
     <div class="eyebrow"><i class="ti ti-help-circle"></i> Common questions</div>
     <h2 class="section-title">Frequently asked questions</h2>
-    <div style="display:block;margin-top:2rem;border:1px solid var(--border);border-radius:16px;overflow:hidden">
-
-      <details class="faq-details">
-        <summary>Does my doctor need to build my taper schedule first?</summary>
-        <div class="faq-details-body">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>Will my doctor and pharmacist get a copy?</summary>
-        <div class="faq-details-body">Yes. Every client receives a one-page healthcare team summary formatted for their doctor and pharmacist to review. Your doctor reviews the draft plan, adjusts if needed, and gives their approval. Your pharmacist sees the full picture for any supplement conversations.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>What if I need to slow down or pause?</summary>
-        <div class="faq-details-body">Hold guidance is built into every stage of your journal. Slowing down or pausing is part of a safe taper — not a failure. Any changes should always be made with your doctor's knowledge, and your tracking log helps you explain exactly what's been happening.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>How do I know if it's withdrawal or my original pain returning?</summary>
-        <div class="faq-details-body">This is one of the most important questions in any gabapentin taper and your journal addresses it directly. Withdrawal symptoms typically track closely with dose reductions and ease with time. Your tracking log is specifically designed to help you and your doctor distinguish the two. When in doubt, always call your doctor.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>But I need gabapentin for my pain — what happens when I'm off it?</summary>
-        <div class="faq-details-body">Reducing gabapentin does not erase your underlying condition — and it shouldn't. What it does is help you and your doctor see more clearly what the medication is actually doing versus what your baseline pain actually is. Many people find their pain is more manageable than the medicated fog made it feel. Others work with their doctor to explore alternative pain management as the dose comes down. Either way, the taper creates clarity — and clarity gives you and your doctor better options than staying at a dose that's affecting your quality of life.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>Why would I want to reduce? It's managing my pain.</summary>
-        <div class="faq-details-body">For many people it is — and that's exactly why a careful supervised reduction is the right approach. But long-term high-dose gabapentin is associated with significant side effects that worsen over time: cognitive fog, memory problems, emotional blunting, persistent fatigue, weight gain, and a deepening physical dependency. Many people find that as doses come down carefully, they feel more present, more themselves — and discover their baseline pain is lower than they thought. The goal is not to be pain-free. The goal is to be better off at a lower dose than you are at a higher one.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>Does GabaDown work for pregabalin (Lyrica) too?</summary>
-        <div class="faq-details-body">Not currently. GabaDown is built specifically for gabapentin users. Pregabalin has a different dosing profile and reduction framework — it's a related but distinct medication. We may address pregabalin in future, but every current journal is gabapentin-specific.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>I'm in Canada — can I use GabaDown?</summary>
-        <div class="faq-details-body">Yes. GabaDown is available to anyone reducing gabapentin under medical supervision in the US and Canada. Pricing is in USD. The deprescribing research it's built on is North American and international — nothing is US-specific.</div>
-      </details>
-
-      <details class="faq-details">
-        <summary>Is there a payment plan?</summary>
-        <div class="faq-details-body">Yes — 2 payments of $249 (total $498). Same journal, same delivery timeline, same everything. Just split the payment for flexibility. Choose the payment plan option at checkout.</div>
-      </details>
-
-      <details class="faq-details" style="border-bottom:none">
-        <summary>What if I'm not ready to buy yet?</summary>
-        <div class="faq-details-body">Download the free 7 Questions guide — it helps you have a more effective conversation with your doctor and is a good starting point regardless of whether GabaDown is right for you right now.</div>
-      </details>
-
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Does my doctor need to build my taper schedule first?</div>
+        <div class="faq-a">No — and that's the gap GabaDown fills. Based on your intake and published deprescribing guidelines, we produce a structured draft framework for you to bring to your doctor for review. You don't need a detailed plan from them before you start — just their general openness to reduction.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will my doctor and pharmacist get a copy?</div>
+        <div class="faq-a">Yes. Every client receives a one-page healthcare team summary formatted for their doctor and pharmacist to review. Your doctor reviews the draft plan, adjusts if needed, and gives their approval. Your pharmacist sees the full picture for any supplement conversations.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I need to slow down or pause?</div>
+        <div class="faq-a">Hold guidance is built into every stage of your journal. Slowing down or pausing is part of a safe taper — not a failure. Any changes should always be made with your doctor's knowledge, and your tracking log helps you explain exactly what's been happening.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I know if it's withdrawal or my original pain returning?</div>
+        <div class="faq-a">This is one of the most important questions in any gabapentin taper and your journal addresses it directly. Withdrawal symptoms typically track closely with dose reductions and ease with time. Your tracking log is specifically designed to help you and your doctor distinguish the two. When in doubt, always call your doctor.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does GabaDown work for pregabalin (Lyrica) too?</div>
+        <div class="faq-a">Not currently. GabaDown is built specifically for gabapentin users. Pregabalin has a different dosing profile and reduction framework — it's a related but distinct medication. We may address pregabalin in future, but every current journal is gabapentin-specific.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I'm in Canada — can I use GabaDown?</div>
+        <div class="faq-a">Yes. GabaDown is available to anyone reducing gabapentin under medical supervision in the US and Canada. Pricing is in USD. The deprescribing research it's built on is North American and international — nothing is US-specific.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I'm not ready to buy yet?</div>
+        <div class="faq-a">Download the free 7 Questions guide — it helps you have a more effective conversation with your doctor and is a good starting point regardless of whether GabaDown is right for you right now.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">But I need gabapentin for my pain — what happens when I'm off it?</div>
+        <div class="faq-a">This is the most important question to ask before you start. Reducing gabapentin does not erase your underlying condition — and it shouldn't. What it does is help you and your doctor see more clearly what the medication is actually doing versus what your baseline pain actually is. Many people find their pain is more manageable than the medicated fog made it feel. Others work with their doctor to explore alternative pain management as the dose comes down. Either way, the taper creates clarity — and clarity gives you and your doctor better options than staying at a dose that's affecting your quality of life.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why would I want to reduce? It's managing my pain.</div>
+        <div class="faq-a">For many people it is — and that's exactly why a careful supervised reduction is the right approach, not stopping abruptly. But long-term high-dose gabapentin is associated with significant side effects that worsen over time: cognitive fog, memory problems, emotional blunting, persistent fatigue, weight gain, and a deepening physical dependency. Many people find that as doses come down carefully, they feel more present, more themselves — and discover their baseline pain is lower than they thought. The goal is not to be pain-free. The goal is to be better off at a lower dose than you are at a higher one.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a payment plan?</div>
+        <div class="faq-a">Yes — 2 payments of $249 (total $498). Same journal, same delivery timeline, same everything. Just split the payment for flexibility. Choose the payment plan option at checkout.</div>
+      </div>
     </div>
   </div>
-</section>
-
-<!-- CONTACT BRIDGE -->
-<section style="background:var(--cream);padding:3rem 2.5rem;text-align:center;border-top:1px solid var(--border)">
-  <p style="font-size:16px;color:var(--text2);margin-bottom:1.25rem">Still have questions?</p>
-  <a href="mailto:hello@gabadown.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--teal2);padding:14px 32px;border-radius:50px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(45,212,191,0.2);transition:all .2s">
-    <i class="ti ti-mail"></i> hello@gabadown.com
-  </a>
 </section>
 
 <!-- DISCLAIMER -->
@@ -920,4 +958,3 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 </body>
 </html>
-
