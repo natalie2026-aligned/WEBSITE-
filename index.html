@@ -287,7 +287,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .hero,.process,.stats,.features,.supps,.stories,.who,.addons,.kit-section,.compare,.offer,.faq,.disclaimer{padding-left:1.25rem;padding-right:1.25rem}
   .bento-2{grid-column:span 6}
   .stories-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
+  .stats-grid{grid-template-columns:1fr !important;max-width:340px;margin:0 auto}
   .addon-grid{grid-template-columns:1fr}
   .process-rail{grid-template-columns:1fr 1fr}
   .compare-table{font-size:13px}
@@ -770,11 +770,29 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     <p>Seven questions that help you and your doctor have a real conversation about gabapentin reduction. Free. One page. Takes 2 minutes to read.</p>
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
     <script>
+    window.addEventListener("message", function(e) {
+      if (e.data && e.data.type === "form-submitted") {
+        window.location.href = "https://gabadown.com/thank-you.html";
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          mutation.addedNodes.forEach(function(node) {
+            if (node.classList && node.classList.contains("formkit-alert-success")) {
+              window.location.href = "https://gabadown.com/thank-you.html";
+            }
+          });
+        });
+      });
+      var form = document.querySelector(".seva-form");
+      if (form) observer.observe(form, { childList: true, subtree: true });
+    });
     document.addEventListener("submit", function(e) {
       if (e.target && e.target.classList.contains("seva-form")) {
         setTimeout(function() {
           window.location.href = "https://gabadown.com/thank-you.html";
-        }, 1000);
+        }, 2000);
       }
     });
     </script>
