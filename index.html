@@ -90,9 +90,11 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 .section-title{font-size:clamp(26px,4vw,40px);line-height:1.15;margin-bottom:0.85rem;color:var(--text)}
 .features .section-title,.features .section-sub,.features p{color:#F0F9FF}
 .features .eyebrow{color:var(--teal2)}
-.features .bento-card{background:rgba(255,255,255,0.05);border-color:rgba(45,212,191,0.15)}
-.features .bento-card h3,.features .bento-card p{color:#CBD5E1}
+.features .bento-card{background:rgba(255,255,255,0.06);border-color:rgba(45,212,191,0.15)}
+.features .bento-card h3{color:#F0F9FF;font-weight:600}
+.features .bento-card p{color:#94A3B8}
 .features .bento-label{color:var(--teal2);border-color:rgba(45,212,191,0.3)}
+.features .section-sub{color:#94A3B8}
 
 .section-sub{font-size:16px;color:var(--text2);line-height:1.85;max-width:640px;margin-bottom:2.5rem}
 
@@ -120,7 +122,7 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 .badge-gold{background:var(--gold2);color:#92400E}
 
 /* ── SUPPLEMENT INFO ──────────────────────────────────────────────── */
-.supps{background:var(--white);padding:5.5rem 2.5rem}
+.supps{background:var(--white);padding:4rem 2.5rem}
 .supps-split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2rem}
 .supps-copy p{font-size:16px;color:var(--text2);line-height:1.85;margin-bottom:1rem}
 .supp-cats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -167,7 +169,7 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 
 /* ── ADD-ONS ──────────────────────────────────────────────────────── */
 .addons{background:var(--white);padding:4rem 2.5rem}
-.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem}
+.addon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2rem}
 .addon-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:10px;transition:all .2s}
 .addon-card:hover{border-color:var(--teal);transform:translateY(-2px)}
 .addon-price{font-family:'DM Serif Display',serif;font-size:36px;color:var(--teal);line-height:1}
@@ -234,9 +236,14 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 /* ── FAQ ──────────────────────────────────────────────────────────── */
 .faq{background:var(--cream);padding:5rem 2.5rem}
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;margin-top:2rem}
-.faq-item{border-bottom:1px solid var(--border);padding:1.25rem 0}
-.faq-q{font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:0.6rem}
-.faq-a{font-size:14.5px;color:var(--text2);line-height:1.8}
+
+.faq-item{border-bottom:1px solid var(--border);padding:0;cursor:pointer}
+.faq-q{font-size:15.5px;font-weight:700;color:var(--text);padding:1.25rem 2rem 1.25rem 0;position:relative;margin:0}
+.faq-q::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:20px;color:var(--teal);font-weight:300;transition:transform 0.2s}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{font-size:14.5px;color:var(--text2);line-height:1.8;display:none;padding-bottom:1.25rem}
+.faq-item.open .faq-a{display:block}
+
 
 /* ── DISCLAIMER ───────────────────────────────────────────────────── */
 .disclaimer{background:var(--navy);padding:3.5rem 2.5rem;border-top:1px solid var(--border-dark)}
@@ -251,12 +258,12 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 /* ── FOOTER ───────────────────────────────────────────────────────── */
 footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212,191,0.06)}
 .footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#94A3B8}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#CBD5E1}
 .footer-logo span{color:#2DD4BF}
 .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
 .footer-links a{font-size:14px;color:#64748B;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--teal)}
-.footer-copy{font-size:12px;color:#475569;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.04)}
+.footer-copy{font-size:12px;color:#64748B;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.04)}
 
 /* ── CONDITION NOTE ───────────────────────────────────────────────── */
 .condition-note{background:rgba(245,158,11,0.06);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin-top:1.5rem}
@@ -291,7 +298,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .bento-2{grid-column:span 6}
   .stories-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
-  .addon-grid{grid-template-columns:1fr}
+  .addon-grid{grid-template-columns:1fr 1fr}
   .process-rail{grid-template-columns:1fr 1fr}
   .compare-table{font-size:13px}
 }
@@ -303,7 +310,11 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 .g2-offer{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .g-icon{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
-</style>
+
+@media(max-width:600px){
+  .proof-heading{font-size:22px !important}
+  .journal-mockup{display:none}
+}</style>
 </head>
 <body>
 
@@ -640,11 +651,11 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 </section>
 
 <!-- PROOF -->
-<section style="background:var(--white);padding:5rem 2.5rem">
-  <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="g2-story">
+<section style="background:var(--white);padding:3.5rem 2.5rem">
+  <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center" class="g2-story">
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Real journey. Documented live.</div>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,38px);color:var(--text);line-height:1.15;margin-bottom:1.25rem;letter-spacing:-0.5px">The only proof that matters is a real person doing this in real time</h2>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,34px);color:var(--text);line-height:1.2;margin-bottom:1.25rem;letter-spacing:-0.5px">The only proof that matters is a real person doing this in real time</h2>
       <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1rem">My mother started at 2,700mg. Eight years on gabapentin. When she and her doctor decided it was time to reduce, I built GabaDown around her situation specifically.</p>
       <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1.5rem">Her taper is ongoing. I document her dose, her symptoms, what is working and what is not, in real time. Not a success story yet. An honest account of what this actually looks like from the inside.</p>
       <div style="font-size:14px;color:var(--text3);display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;flex-shrink:0"></span>Her journey is shared exclusively with GabaDown Circle members</div>
@@ -716,6 +727,12 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         <div class="addon-name">GabaDown Circle</div>
         <div class="addon-desc">The founding-member community for people actively reducing gabapentin. Real conversations, real timelines, real support from people going through exactly this. Founding rate locks in before the price rises.</div>
         <a href="https://buy.stripe.com/eVq4gygzdgfbav67qu83C02" class="addon-cta">Join the Circle <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="addon-card" style="border:1px solid rgba(13,148,136,0.3);background:rgba(13,148,136,0.03)">
+        <div class="addon-price" style="font-size:20px;color:var(--teal)">Complex cases</div>
+        <div class="addon-name">High-complexity support</div>
+        <div class="addon-desc">Polypharmacy, multiple conditions, or a situation that needs clinical pharmacist input. Scoped and priced per case. Inquire by email to discuss.</div>
+        <a href="mailto:hello@gabadown.com" class="addon-cta">Enquire by email <i class="ti ti-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -913,5 +930,13 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   </div>
 </footer>
 
+
+<script>
+document.querySelectorAll('.faq-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+});
+</script>
 </body>
 </html>
