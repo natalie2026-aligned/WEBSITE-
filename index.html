@@ -144,7 +144,7 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 .stories-note p{font-size:14px;color:#94A3B8;line-height:1.65}
 
 /* ── WHO ──────────────────────────────────────────────────────────── */
-.who{background:var(--white);padding:5.5rem 2.5rem}
+.who{background:var(--cream);padding:5.5rem 2.5rem}
 .who-split{display:grid;grid-template-columns:3fr 2fr;gap:3.5rem;align-items:start;margin-top:2.5rem}
 .who-intro{font-size:16px;color:var(--text2);margin-bottom:1.5rem;line-height:1.85}
 .criteria-list{list-style:none}
@@ -270,39 +270,33 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   .faq-grid{grid-template-columns:1fr}
   .who-split{grid-template-columns:1fr}
 }
-/* Named classes for inline grids */
-.grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.grid-2col-tight{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.grid-2col-story{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.grid-4col{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.grid-icon-text{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
-.grid-2col-offer{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-
 @media(max-width:768px){
-  nav{padding:0.75rem 1rem;flex-wrap:wrap;gap:0.5rem}
+  nav{padding:0.75rem 1rem}
   .logo{font-size:18px}
-  .nav-links{gap:0.5rem;flex-wrap:wrap}
+  .nav-links{gap:0.5rem}
   .nav-link{font-size:12px}
   .nav-cta{padding:8px 14px;font-size:12px}
+  .g2,.g2-story{grid-template-columns:1fr;gap:2rem}
+  .g2-tight,.g2-offer{grid-template-columns:1fr 1fr;gap:8px}
+  .g4{grid-template-columns:1fr 1fr}
+  .g-icon{grid-template-columns:auto 1fr;gap:1rem}
+  nav{padding:1rem 1.25rem}
   .hero,.process,.stats,.features,.supps,.stories,.who,.addons,.kit-section,.compare,.offer,.faq,.disclaimer{padding-left:1.25rem;padding-right:1.25rem}
   .bento-2{grid-column:span 6}
   .stories-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr !important;max-width:340px;margin:0 auto}
+  .stats-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
   .addon-grid{grid-template-columns:1fr}
   .process-rail{grid-template-columns:1fr 1fr}
   .compare-table{font-size:13px}
-  /* Fix all inline grids on mobile */
-  .grid-2col{grid-template-columns:1fr;gap:2rem}
-  .grid-2col-tight{grid-template-columns:1fr 1fr;gap:8px}
-  .grid-2col-story{grid-template-columns:1fr;gap:2rem}
-  .grid-4col{grid-template-columns:1fr 1fr;gap:6px}
-  .grid-icon-text{grid-template-columns:auto 1fr;gap:1rem}
-  .grid-2col-offer{grid-template-columns:1fr 1fr;gap:8px}
-  .supp-cats{grid-template-columns:1fr !important}
-  /* General padding fix */
-  section{padding-left:1.25rem !important;padding-right:1.25rem !important}
-  .wrap{padding-left:0;padding-right:0}
 }
+
+/* Mobile grid classes */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.g2-story{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.g2-tight{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g2-offer{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.g-icon{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
 </style>
 </head>
 <body>
@@ -396,9 +390,9 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 </section>
 
 <!-- STORY -->
-<section style="background:var(--cream);padding:5.5rem 2.5rem">
+<section style="background:var(--white);padding:5.5rem 2.5rem">
   <div class="wrap">
-    <div class="grid-2col" style="margin-bottom:2.5rem">
+    <div class="g2" style="margin-bottom:2.5rem">
       <div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:8px"><i class="ti ti-heart"></i> Why GabaDown exists</div>
         <h2 style="font-size:clamp(28px,3.5vw,40px);margin-bottom:1.25rem;color:var(--text)">I built this because I looked for help for my mother — and found nothing.</h2>
@@ -419,7 +413,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
             <div style="font-size:13px;color:var(--text2);line-height:1.6">GabaDown Circle members get real-time updates on my mom's taper — her dose, her symptoms, what's working, and what isn't. The only place you'll find the full story.</div>
           </div>
         </div>
-        <div class="grid-2col-tight">
+        <div class="g2-tight">
           <a href="/blog/moms-gabapentin-journey/" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:var(--teal2);padding:13px 16px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(45,212,191,0.2)"><i class="ti ti-book"></i> Read her story</a>
           <a href="https://buy.stripe.com/eVq4gygzdgfbav67qu83C02" style="display:flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);color:white;padding:13px 16px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none"><i class="ti ti-users"></i> Join the Circle</a>
         </div>
@@ -435,7 +429,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 <!-- WHY PEOPLE REDUCE -->
 <section style="background:var(--navy);padding:5.5rem 2.5rem">
-  <div class="wrap" class="grid-2col">
+  <div class="wrap" class="g2">
     <div>
       <div class="eyebrow eyebrow-light"><i class="ti ti-alert-triangle"></i> Why people reduce</div>
       <h2 style="font-size:clamp(26px,3.5vw,38px);color:#F8FAFC;margin-bottom:1.25rem;line-height:1.15">The side effects that make people search for a way out</h2>
@@ -465,14 +459,10 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   </div>
 </section>
 
-<!-- STATS -->
-
-
-
 <!-- WHAT IS THE JOURNAL -->
-<section style="background:var(--cream);padding:5rem 2.5rem">
+<section style="background:var(--navy2);padding:5rem 2.5rem;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)">
   <div class="wrap">
-    <div class="grid-2col-story">
+    <div class="g2-story">
       <div>
         <div class="eyebrow eyebrow-light"><i class="ti ti-notebook"></i> What you receive</div>
         <h2 style="font-size:clamp(26px,3.5vw,38px);color:#F8FAFC;margin-bottom:1.25rem;line-height:1.15">A personalized digital journal — private, interactive, ready on day one</h2>
@@ -522,7 +512,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
           <!-- Daily log row -->
           <div style="border-top:1px solid #E2E8F0;padding-top:1rem">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9CA3AF;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem">Today's log</div>
-            <div class="grid-4col">
+            <div class="g4">
               <div style="background:#F8FAFC;border-radius:6px;padding:0.5rem;text-align:center;border:1px solid #E2E8F0"><div style="font-size:10px;color:#9CA3AF;margin-bottom:3px">Pain</div><div style="font-size:14px;font-weight:700;color:#374151">6/10</div></div>
               <div style="background:#F8FAFC;border-radius:6px;padding:0.5rem;text-align:center;border:1px solid #E2E8F0"><div style="font-size:10px;color:#9CA3AF;margin-bottom:3px">Sleep</div><div style="font-size:14px;font-weight:700;color:#374151">5h</div></div>
               <div style="background:#F0FDF4;border-radius:6px;padding:0.5rem;text-align:center;border:1px solid #BBF7D0"><div style="font-size:10px;color:#9CA3AF;margin-bottom:3px">Mood</div><div style="font-size:14px;font-weight:700;color:#0D9488">OK</div></div>
@@ -589,7 +579,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       </div>
       <!-- Row 4: Full width AI -->
       <div class="bento-card bento-6 bento-dark">
-        <div class="grid-icon-text">
+        <div class="g-icon">
           <div class="card-icon" style="width:64px;height:64px"><i class="ti ti-robot" style="font-size:28px"></i></div>
           <div>
             <div class="card-title" style="font-size:18px;margin-bottom:8px">AI Plan Assistant — included for every client</div>
@@ -645,18 +635,18 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 
 <!-- PROOF -->
 <section style="background:var(--white);padding:5rem 2.5rem">
-  <div class="wrap" style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+  <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="g2-story">
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Real journey. Documented live.</div>
       <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,38px);color:var(--text);line-height:1.15;margin-bottom:1.25rem;letter-spacing:-0.5px">The only proof that matters is a real person doing this in real time</h2>
       <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1rem">My mother started at 2,700mg. Eight years on gabapentin. When she and her doctor decided it was time to reduce, I built GabaDown around her situation specifically.</p>
-      <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1.5rem">Her taper is ongoing. I document her dose, her symptoms, what is working and what is not — in real time. Not a success story yet. An honest account of what this actually looks like from the inside.</p>
+      <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1.5rem">Her taper is ongoing. I document her dose, her symptoms, what is working and what is not, in real time. Not a success story yet. An honest account of what this actually looks like from the inside.</p>
       <div style="font-size:14px;color:var(--text3);display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;flex-shrink:0"></span>Her journey is shared exclusively with GabaDown Circle members</div>
     </div>
     <div style="background:var(--navy);border-radius:20px;padding:2rem;border:1px solid rgba(45,212,191,0.15)">
       <p style="font-family:'DM Serif Display',serif;font-size:20px;font-style:italic;color:#E2E8F0;line-height:1.65;margin-bottom:1.25rem">"Ease and peace is not something I am waiting for. It is what I am walking toward, one day at a time."</p>
-      <div style="font-size:13px;color:#475569;display:flex;align-items:center;gap:8px"><span style="color:var(--teal2);font-size:16px">&#10003;</span> Starting dose 2,700mg · Taper in progress · Updates in the Circle</div>
-      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(45,212,191,0.1)">
+      <div style="font-size:13px;color:#64748B;margin-bottom:1.5rem">Starting dose 2,700mg &middot; Taper in progress &middot; Updates in the Circle</div>
+      <div style="padding-top:1.5rem;border-top:1px solid rgba(45,212,191,0.1)">
         <a href="https://buy.stripe.com/eVq4gygzdgfbav67qu83C02" style="display:inline-flex;align-items:center;gap:8px;background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.2);color:var(--teal2);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none">Follow her journey in the Circle &rarr;</a>
       </div>
     </div>
@@ -733,29 +723,9 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     <p>Seven questions that help you and your doctor have a real conversation about gabapentin reduction. Free. One page. Takes 2 minutes to read.</p>
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
     <script>
-    window.addEventListener("message", function(e) {
-      if (e.data && e.data.type === "form-submitted") {
-        window.location.href = "https://gabadown.com/thank-you.html";
-      }
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-      var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          mutation.addedNodes.forEach(function(node) {
-            if (node.classList && node.classList.contains("formkit-alert-success")) {
-              window.location.href = "https://gabadown.com/thank-you.html";
-            }
-          });
-        });
-      });
-      var form = document.querySelector(".seva-form");
-      if (form) observer.observe(form, { childList: true, subtree: true });
-    });
     document.addEventListener("submit", function(e) {
       if (e.target && e.target.classList.contains("seva-form")) {
-        setTimeout(function() {
-          window.location.href = "https://gabadown.com/thank-you.html";
-        }, 2000);
+        setTimeout(function() { window.location.href = "https://gabadown.com/thank-you.html"; }, 2000);
       }
     });
     </script>
@@ -847,7 +817,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
       </div>
       <div style="background:rgba(45,212,191,0.04);border:1px solid rgba(45,212,191,0.12);border-radius:12px;padding:1.25rem 1.5rem;margin-top:1rem">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:0.75rem">Your journal is a private digital document</div>
-        <div class="grid-2col-offer">
+        <div class="g2-offer">
           <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-device-tablet" style="color:var(--teal2);font-size:15px"></i> Any device</div>
           <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-lock" style="color:var(--teal2);font-size:15px"></i> Fully private</div>
           <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#94A3B8"><i class="ti ti-color-swatch" style="color:var(--teal2);font-size:15px"></i> Interactive &amp; tabbed</div>
