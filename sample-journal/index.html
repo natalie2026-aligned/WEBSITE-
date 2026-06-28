@@ -237,11 +237,23 @@ input:focus{outline:none;border-color:var(--teal);background:#fff}
   .milestone-grid{grid-template-columns:repeat(2,1fr)}
   .hero{padding:1.5rem 1.25rem}
   .hero-name{font-size:24px}
-  .tabs{border-radius:10px}
-  .tab{font-size:12px;padding:10px 4px;min-width:60px}
+  .tabs{border-radius:10px;overflow-x:auto;flex-wrap:nowrap}
+  .tab{font-size:11px;padding:10px 8px;min-width:72px;flex-shrink:0}
   .mc-time{font-size:36px}
   .th-dose{font-size:30px}
   .vgrid2{grid-template-columns:1fr}
+  .taper-header{flex-direction:column;align-items:flex-start}
+  .sample-banner{flex-direction:column}
+  .sample-banner a{width:100%;text-align:center}
+}
+@media(max-width:480px){
+  .vgrid{grid-template-columns:1fr 1fr}
+  .milestone-grid{grid-template-columns:1fr 1fr}
+  .tab{font-size:10px;padding:9px 6px;min-width:62px}
+  .hero-name{font-size:20px}
+  .th-dose{font-size:26px}
+  .mc-time{font-size:30px}
+  .rule-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
