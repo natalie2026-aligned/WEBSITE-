@@ -414,7 +414,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 </section>
 
 <!-- STORY -->
-<section style="background:var(--white);padding:5.5rem 2.5rem">
+<section style="background:var(--white);padding:5.5rem 2.5rem;overflow:hidden">
   <div class="wrap">
     <div class="g2" style="margin-bottom:2.5rem">
       <div>
@@ -631,10 +631,10 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center" class="g2-story">
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem">Real journey. Documented live.</div>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,34px);color:var(--text);line-height:1.2;margin-bottom:1.25rem;letter-spacing:-0.5px">The only proof that matters is a real person doing this in real time</h2>
-      <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1rem">My mother started at 2,700mg. Eight years on gabapentin. When she and her doctor decided it was time to reduce, I built GabaDown around her situation specifically.</p>
-      <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1.5rem">Her taper is ongoing. I document her dose, her symptoms, what is working and what is not, in real time. Not a success story yet. An honest account of what this actually looks like from the inside.</p>
-      <div style="font-size:14px;color:var(--text3);display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;flex-shrink:0"></span>Her journey is shared exclusively with GabaDown Circle members</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,34px);color:var(--text);line-height:1.2;margin-bottom:1.25rem;letter-spacing:-0.5px">You are not doing this alone. Someone is walking it right now.</h2>
+      <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1rem">GabaDown was built around a real person on 2,700mg after eight years. Her taper is ongoing and documented in real time - the dose changes, the hard weeks, what is working and what is not. Not a polished success story. An honest account of what this actually looks like from the inside.</p>
+      <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1.5rem">Inside the Circle, you follow along with people at every stage of the same journey. Real timelines. Real conversations. The kind of company that makes this feel possible instead of terrifying.</p>
+      <div style="font-size:14px;color:var(--text3);display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;flex-shrink:0"></span>Journey updates shared exclusively with GabaDown Circle members</div>
     </div>
     <div style="background:var(--navy);border-radius:20px;padding:2rem;border:1px solid rgba(45,212,191,0.15)">
       <p style="font-family:'DM Serif Display',serif;font-size:20px;font-style:italic;color:#F0F9FF;line-height:1.65;margin-bottom:1.25rem">"Ease and peace is not something I am waiting for. It is what I am walking toward, one day at a time."</p>
@@ -793,7 +793,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     </div>
 
     <!-- THREE TIER CARDS -->
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:2.5rem;align-items:start">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:2.5rem;align-items:stretch">
 
       <!-- TIER 1: THE FOUNDATION -->
       <div style="background:var(--navy);border-radius:20px;padding:2rem;border:1px solid rgba(45,212,191,0.2);display:flex;flex-direction:column;gap:1rem">
@@ -868,22 +868,28 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
     </div>
 
     <!-- WORTH IT GUARANTEE -->
-    <div style="background:rgba(45,212,191,0.04);border:1px solid rgba(45,212,191,0.15);border-radius:16px;padding:1.75rem 2rem;text-align:center;margin-bottom:2rem">
-      <div style="font-size:22px;margin-bottom:0.5rem">🛡</div>
-      <div style="font-family:'DM Serif Display',serif;font-size:20px;color:#F0F9FF;margin-bottom:0.5rem">The Worth It Guarantee</div>
-      <div style="font-size:14px;color:#94A3B8;max-width:520px;margin:0 auto;line-height:1.8">If after your 30-minute follow-up call you don't feel this was worth every dollar, we will refund you completely. No questions. No conditions. If it doesn't deliver, you don't pay.</div>
+    <div style="background:linear-gradient(135deg,#1a2f1a 0%,#0f1f0f 100%);border:1px solid rgba(134,239,172,0.3);border-radius:16px;padding:1.5rem 2.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+      <div style="font-size:32px;flex-shrink:0">🛡️</div>
+      <div style="flex:1;min-width:280px">
+        <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#86EFAC;margin-bottom:0.4rem">The Worth It Guarantee</div>
+        <div style="font-size:14px;color:#CBD5E1;line-height:1.75">If after your 30-minute follow-up call you don't feel this was worth every dollar, we will refund you completely. No questions. No conditions. If it doesn't deliver, you don't pay.</div>
+      </div>
+      <div style="background:rgba(134,239,172,0.1);border:1px solid rgba(134,239,172,0.2);border-radius:10px;padding:0.75rem 1.25rem;text-align:center;flex-shrink:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#86EFAC;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px">100%</div>
+        <div style="font-size:12px;color:#CBD5E1;">Money back</div>
+      </div>
     </div>
 
     <!-- WHAT HAPPENS AFTER -->
-    <div style="background:var(--navy);border-radius:16px;padding:2rem;border:1px solid rgba(45,212,191,0.12)">
-      <h3 style="font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;margin-bottom:1.25rem">What happens after you purchase</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
-        <div style="display:flex;gap:12px;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid rgba(45,212,191,0.07)"><div style="width:26px;height:26px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);flex-shrink:0">1</div><p style="font-size:13.5px;color:#CBD5E1;line-height:1.6">Your intake questionnaire arrives by email within 2 hours of purchase</p></div>
-        <div style="display:flex;gap:12px;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid rgba(45,212,191,0.07)"><div style="width:26px;height:26px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);flex-shrink:0">2</div><p style="font-size:13.5px;color:#CBD5E1;line-height:1.6">You complete the questionnaire - your dose, history, doctor's current thinking, and goals</p></div>
-        <div style="display:flex;gap:12px;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid rgba(45,212,191,0.07)"><div style="width:26px;height:26px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);flex-shrink:0">3</div><p style="font-size:13.5px;color:#CBD5E1;line-height:1.6">We build your draft taper framework based on published deprescribing guidelines</p></div>
-        <div style="display:flex;gap:12px;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid rgba(45,212,191,0.07)"><div style="width:26px;height:26px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);flex-shrink:0">4</div><p style="font-size:13.5px;color:#CBD5E1;line-height:1.6">You take the healthcare team summary to your doctor - they review and approve the plan</p></div>
-        <div style="display:flex;gap:12px;align-items:flex-start;padding:0.75rem 0"><div style="width:26px;height:26px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);flex-shrink:0">5</div><p style="font-size:13.5px;color:#CBD5E1;line-height:1.6">We build your full journal around the approved plan - everything personalised to your situation</p></div>
-        <div style="display:flex;gap:12px;align-items:flex-start;padding:0.75rem 0"><div style="width:26px;height:26px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);flex-shrink:0">6</div><p style="font-size:13.5px;color:#CBD5E1;line-height:1.6">Journal delivered within 7 days - your 30-minute follow-up call is scheduled to walk through everything together</p></div>
+    <div style="background:var(--navy);border-radius:16px;padding:1.75rem 2rem;border:1px solid rgba(45,212,191,0.12)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal2);margin-bottom:1rem">What happens after you purchase</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;align-items:start">
+        <div style="text-align:center"><div style="width:32px;height:32px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);margin:0 auto 0.6rem">1</div><div style="font-size:12px;color:#CBD5E1;line-height:1.5">Intake questionnaire within 2 hours</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);margin:0 auto 0.6rem">2</div><div style="font-size:12px;color:#CBD5E1;line-height:1.5">You complete your intake - dose, history, goals</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);margin:0 auto 0.6rem">3</div><div style="font-size:12px;color:#CBD5E1;line-height:1.5">We build your draft taper framework</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);margin:0 auto 0.6rem">4</div><div style="font-size:12px;color:#CBD5E1;line-height:1.5">Your doctor reviews and approves the plan</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);margin:0 auto 0.6rem">5</div><div style="font-size:12px;color:#CBD5E1;line-height:1.5">Full journal built around the approved plan</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:rgba(13,148,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);margin:0 auto 0.6rem">6</div><div style="font-size:12px;color:#CBD5E1;line-height:1.5">Delivered in 7 days - follow-up call scheduled</div></div>
       </div>
     </div>
 
