@@ -321,6 +321,35 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
 @media(max-width:600px){
   .proof-heading{font-size:22px !important}
   .journal-mockup{display:none}
+  /* Story section: 3-col to 1-col */
+  [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr !important}
+  /* Addon grid to 1 col */
+  .addon-grid{grid-template-columns:1fr !important}
+  /* Process rail to 1 col */
+  .process-rail{grid-template-columns:1fr !important}
+  /* Stats grid */
+  .stats-grid{grid-template-columns:1fr !important}
+  /* Hero trust items stack */
+  .hero-trust{flex-direction:column;gap:10px;align-items:flex-start}
+  /* Nav */
+  nav{padding:0.75rem 1rem}
+  .nav-link{display:none}
+  /* Pricing cards already 1 col via offer-tier-grid */
+  /* Supp cats grid */
+  .supp-cats{grid-template-columns:1fr !important}
+  /* Compare table smaller */
+  .compare-table{font-size:11px}
+  .compare-table th,.compare-table td{padding:8px 6px}
+  /* FAQ already 1 col */
+  /* Kit section */
+  .kit-inner{padding:2.5rem 1.25rem}
+  /* Bento cards */
+  .bento-3,.bento-2,.bento-6{grid-column:span 6 !important}
+  /* G2 tight to stack */
+  .g2-tight{grid-template-columns:1fr}
+  /* Hero CTA group */
+  .hero-cta-group{flex-direction:column;align-items:flex-start}
+  .hero-cta{width:100%;justify-content:center}
 }</style>
 </head>
 <body>
@@ -425,7 +454,7 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
         <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1rem">Long-term high-dose gabapentin carries real costs - cognitive fog, emotional blunting, weight gain, dependency. If you are searching for a way to reduce, you already know this feeling. You are not imagining it.</p>
         <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1rem">My mother has been on 2,700mg for years. When she decided to reduce, we went looking for a structured roadmap. There were protocols. Published guidelines. Good information - scattered across a dozen sources, none of it organized, none of it personalized to how each individual actually responds.</p>
         <p style="font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:1.25rem">So I built it myself. My mom's journey - her real numbers, her hard weeks and her wins - is shared with GabaDown Circle members as it unfolds.</p>
-        <a href="/blog/" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none"><i class="ti ti-book"></i> Read her story</a>
+        <a href="/blog/moms-gabapentin-journey/" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none"><i class="ti ti-book"></i> Read her story</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:1.25rem">
         <div style="background:var(--navy);border-radius:16px;padding:1.75rem;border-left:4px solid var(--teal2)">
