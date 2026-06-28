@@ -34,7 +34,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .hero::after{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.07) 0%,transparent 70%)}
 .hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal2);margin-bottom:0.4rem}
 .hero-name{font-family:'DM Serif Display',serif;font-size:32px;color:#F0F9FF;line-height:1.15;margin-bottom:0.2rem}
-.hero-sub{font-size:15px;color:#64748B;margin-bottom:1.75rem}
+.hero-sub{font-size:15px;color:#94A3B8;margin-bottom:1.75rem}
 .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
 .vgrid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.25rem}
 .vc{border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
@@ -47,7 +47,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .vc-green{background:#0F3320;color:#86EFAC}
 .affirmation{background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.2);border-radius:12px;padding:16px 20px;text-align:center}
 .affirmation p{font-size:16px;font-style:italic;color:#CBD5E1;line-height:1.65}
-.affirmation span{font-size:12px;color:#475569;display:block;margin-top:5px}
+.affirmation span{font-size:12px;color:#94A3B8;display:block;margin-top:5px}
 
 /* SAMPLE BANNER */
 .sample-banner{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:12px;padding:1rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
@@ -55,8 +55,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .sample-banner a{background:var(--teal);color:white;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
 
 /* TABS */
-.tabs{display:flex;border-radius:12px;overflow:hidden;border:1px solid var(--border2);margin-bottom:1.5rem;flex-wrap:wrap}
-.tab{flex:1;min-width:80px;padding:12px 6px;font-size:14px;font-weight:500;text-align:center;cursor:pointer;background:rgba(17,34,64,0.6);color:var(--text3);border:none;border-right:1px solid rgba(13,148,136,0.15);border-bottom:none;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.tabs{display:flex;border-radius:12px;overflow:hidden;border:1px solid rgba(45,212,191,0.2);margin-bottom:1.5rem;flex-wrap:wrap;background:var(--navy2)}
+.tab{flex:1;min-width:80px;padding:12px 6px;font-size:14px;font-weight:500;text-align:center;cursor:pointer;background:var(--navy2);color:#CBD5E1;border:none;border-right:1px solid rgba(45,212,191,0.1);border-bottom:none;transition:all 0.15s;font-family:'DM Sans',sans-serif}
 .tab:last-child{border-right:none}
 .tab.on{background:var(--navy2);color:var(--teal2);font-weight:700;border-bottom:2px solid var(--teal2)}
 .page{display:none}
@@ -100,13 +100,13 @@ input:focus{outline:none;border-color:var(--teal);background:#fff}
 .taper-header{background:var(--navy);border-radius:14px;padding:1.5rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .th-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
 .th-dose{font-family:'DM Serif Display',serif;font-size:38px;color:#F0F9FF}
-.th-sub{font-size:14px;color:#64748B;margin-top:3px}
+.th-sub{font-size:14px;color:#94A3B8;margin-top:3px}
 .th-goal{font-size:14px;color:#86EFAC;font-weight:600}
 .th-goal-dose{font-family:'DM Serif Display',serif;font-size:28px;color:#86EFAC}
 .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1rem}
 .phase-card{border-radius:12px;padding:14px;border:1px solid var(--border)}
 .phase-card.active{border-color:var(--teal);background:var(--teal-pale)}
-.phase-card.future{background:var(--cream);opacity:0.7}
+.phase-card.future{background:#F8FAFC;border-color:#E2E8F0}
 .phase-card.done{background:var(--green-light);border-color:var(--green)}
 .phase-num{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px}
 .phase-card.active .phase-num{color:var(--teal)}
@@ -157,7 +157,7 @@ input:focus{outline:none;border-color:var(--teal);background:#fff}
 /* MILESTONES */
 .milestone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1rem}
 .ms-card{border-radius:14px;padding:18px 14px;text-align:center;border:2px solid transparent;cursor:pointer;transition:all 0.2s;position:relative}
-.ms-card.locked{background:var(--cream);border-color:var(--border);opacity:0.6}
+.ms-card.locked{background:#F1F5F9;border-color:#E2E8F0;opacity:0.75}
 .ms-card.current{background:var(--navy2);border-color:var(--teal2);box-shadow:0 0 0 3px rgba(45,212,191,0.15)}
 .ms-card.claimed{background:var(--green-light);border-color:var(--green)}
 .ms-emoji{font-size:32px;margin-bottom:7px;display:block}
@@ -190,7 +190,7 @@ input:focus{outline:none;border-color:var(--teal);background:#fff}
 .morning-commitment{background:var(--navy);border-radius:16px;padding:1.75rem;margin-bottom:1rem}
 .mc-title{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;margin-bottom:0.4rem}
 .mc-time{font-family:'DM Serif Display',serif;font-size:44px;color:var(--teal2);margin-bottom:0.75rem;letter-spacing:-1px}
-.mc-sub{font-size:14px;color:#64748B;margin-bottom:1.25rem;line-height:1.5}
+.mc-sub{font-size:14px;color:#94A3B8;margin-bottom:1.25rem;line-height:1.5}
 .mc-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
 .mc-step{background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px}
 .mc-step .step-num{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--teal2);min-width:26px}
@@ -212,7 +212,7 @@ input:focus{outline:none;border-color:var(--teal);background:#fff}
 /* VISION */
 .cal-hero{background:var(--navy);border-radius:16px;padding:1.75rem;margin-bottom:1rem;text-align:center}
 .cal-hero-title{font-family:'DM Serif Display',serif;font-size:24px;color:#F0F9FF;margin-bottom:0.3rem}
-.cal-hero-sub{font-size:14px;color:#64748B;margin-bottom:1.25rem}
+.cal-hero-sub{font-size:14px;color:#94A3B8;margin-bottom:1.25rem}
 .cal-progress-bar{background:rgba(255,255,255,0.08);border-radius:20px;height:16px;overflow:hidden;margin-bottom:6px}
 .cal-progress-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--teal),var(--teal2));transition:width 0.8s ease}
 .cal-progress-label{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--teal2);text-align:right}
