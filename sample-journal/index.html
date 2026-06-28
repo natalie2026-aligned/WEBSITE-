@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample GabaDown Journal — See What Yours Looks Like</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1628;--navy2:#112240;--navy3:#1A3A5C;
+  --teal:#0D9488;--teal2:#2DD4BF;--teal-pale:#CCFBF1;
+  --gold:#F59E0B;--cream:#F8FAFC;--white:#FFFFFF;
+  --text:#0F172A;--text2:#475569;--text3:#94A3B8;
+  --border:#E2E8F0;--border2:rgba(13,148,136,0.25);
+  --green:#16A34A;--green-light:#DCFCE7;
+  --amber:#D97706;--amber-light:#FEF3C7;
+  --red:#DC2626;--red-light:#FEE2E2;
+  --radius:14px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:16px;line-height:1.6;min-height:100vh}
+.wrap{max-width:940px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+
+/* TOPBAR */
+.topbar{background:var(--navy);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(45,212,191,0.15)}
+.topbar-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#F0F9FF;text-decoration:none}
+.topbar-logo span{color:var(--teal2)}
+.topbar-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);background:rgba(45,212,191,0.08);border:1px solid rgba(45,212,191,0.2);padding:5px 14px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.topbar-cta{background:var(--teal);color:white;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none}
+
+/* HERO */
+.hero{background:var(--navy);border-radius:20px;padding:2rem;margin-bottom:1.75rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.07) 0%,transparent 70%)}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal2);margin-bottom:0.4rem}
+.hero-name{font-family:'DM Serif Display',serif;font-size:32px;color:#F0F9FF;line-height:1.15;margin-bottom:0.2rem}
+.hero-sub{font-size:15px;color:#64748B;margin-bottom:1.75rem}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+.vgrid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.25rem}
+.vc{border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.vc .icon{font-size:26px}
+.vc .vlabel{font-size:15px;font-weight:700;line-height:1.3}
+.vc .vdetail{font-size:13px;line-height:1.5;opacity:0.85}
+.vc-teal{background:#0D3D3A;color:#81E6D9}
+.vc-navy{background:rgba(255,255,255,0.05);border:1px solid rgba(45,212,191,0.15);color:#CBD5E1}
+.vc-gold{background:#3D2A0A;color:#FCD34D}
+.vc-green{background:#0F3320;color:#86EFAC}
+.affirmation{background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.2);border-radius:12px;padding:16px 20px;text-align:center}
+.affirmation p{font-size:16px;font-style:italic;color:#CBD5E1;line-height:1.65}
+.affirmation span{font-size:12px;color:#475569;display:block;margin-top:5px}
+
+/* SAMPLE BANNER */
+.sample-banner{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:12px;padding:1rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sample-banner p{font-size:14px;color:#92400E;line-height:1.6;flex:1}
+.sample-banner a{background:var(--teal);color:white;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+
+/* TABS */
+.tabs{display:flex;border-radius:12px;overflow:hidden;border:1px solid var(--border2);margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{flex:1;min-width:80px;padding:12px 6px;font-size:14px;font-weight:500;text-align:center;cursor:pointer;background:rgba(17,34,64,0.6);color:var(--text3);border:none;border-right:1px solid rgba(13,148,136,0.15);border-bottom:none;transition:all 0.15s;font-family:'DM Sans',sans-serif}
+.tab:last-child{border-right:none}
+.tab.on{background:var(--navy2);color:var(--teal2);font-weight:700;border-bottom:2px solid var(--teal2)}
+.page{display:none}
+.page.on{display:block}
+
+/* CARDS */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.6rem;margin-bottom:1rem}
+.card-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:0.75rem}
+.card-title{font-family:'DM Serif Display',serif;font-size:21px;color:var(--text);margin-bottom:0.3rem}
+.card-sub{font-size:15px;color:var(--text2);margin-bottom:1rem;line-height:1.6}
+.accent-teal{border-left:4px solid var(--teal);padding-left:16px;margin-bottom:1rem}
+.accent-gold{border-left:4px solid var(--gold);padding-left:16px;margin-bottom:1rem}
+.accent-green{border-left:4px solid var(--green);padding-left:16px;margin-bottom:1rem}
+
+/* SCALES */
+.scale-row{display:flex;gap:8px;flex-wrap:wrap}
+.sb{border:1px solid var(--border2);border-radius:10px;background:var(--cream);color:var(--text2);font-size:17px;padding:10px 14px;cursor:pointer;min-width:48px;text-align:center;transition:all 0.1s;font-family:'DM Sans',sans-serif}
+.sb:hover{background:var(--teal-pale);border-color:var(--teal)}
+.sb.sp{background:#FEE2E2;border-color:var(--red);color:#991B1B;font-weight:700}
+.sb.ss{background:#DBEAFE;border-color:#2563EB;color:#1E40AF;font-weight:700}
+.sb.sm{background:var(--green-light);border-color:var(--green);color:#14532D;font-weight:700}
+.sb.se{background:var(--amber-light);border-color:var(--amber);color:#92400E;font-weight:700}
+
+/* PILLS */
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.pill{border:1px solid var(--border2);border-radius:20px;background:var(--cream);color:var(--text2);font-size:14px;padding:8px 16px;cursor:pointer;transition:all 0.1s;font-family:'DM Sans',sans-serif}
+.pill:hover{background:var(--teal-pale);border-color:var(--teal)}
+.pill.on{background:var(--teal-pale);border-color:var(--teal);color:#0F766E;font-weight:700}
+
+/* INPUTS */
+.field-label{font-size:14px;color:var(--text2);margin-bottom:6px;font-weight:600}
+textarea{width:100%;border:1px solid var(--border2);border-radius:10px;padding:12px 14px;font-size:16px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);resize:vertical;line-height:1.7;min-height:110px}
+textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+textarea::placeholder{color:var(--text3)}
+input[type="text"],input[type="date"],input[type="number"]{width:100%;border:1px solid var(--border2);border-radius:10px;padding:11px 14px;font-size:16px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);height:48px}
+input:focus{outline:none;border-color:var(--teal);background:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+/* TAPER */
+.taper-header{background:var(--navy);border-radius:14px;padding:1.5rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.th-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
+.th-dose{font-family:'DM Serif Display',serif;font-size:38px;color:#F0F9FF}
+.th-sub{font-size:14px;color:#64748B;margin-top:3px}
+.th-goal{font-size:14px;color:#86EFAC;font-weight:600}
+.th-goal-dose{font-family:'DM Serif Display',serif;font-size:28px;color:#86EFAC}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1rem}
+.phase-card{border-radius:12px;padding:14px;border:1px solid var(--border)}
+.phase-card.active{border-color:var(--teal);background:var(--teal-pale)}
+.phase-card.future{background:var(--cream);opacity:0.7}
+.phase-card.done{background:var(--green-light);border-color:var(--green)}
+.phase-num{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px}
+.phase-card.active .phase-num{color:var(--teal)}
+.phase-card.done .phase-num{color:var(--green)}
+.phase-card.future .phase-num{color:var(--text3)}
+.phase-dose{font-family:'DM Serif Display',serif;font-size:21px;font-weight:700;margin-bottom:3px}
+.phase-card.active .phase-dose{color:var(--navy)}
+.phase-card.done .phase-dose{color:#14532D}
+.phase-card.future .phase-dose{color:var(--text2)}
+.phase-detail{font-size:12px;line-height:1.5}
+.phase-card.active .phase-detail{color:var(--text2)}
+.phase-card.done .phase-detail{color:#166534}
+.phase-card.future .phase-detail{color:var(--text3)}
+.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:0}
+.rule-box{border-radius:10px;padding:14px 16px}
+.rule-box.teal{background:var(--teal-pale);border:1px solid #5EEAD4}
+.rule-box.amber{background:var(--amber-light);border:1px solid #FDE68A}
+.rule-box.green{background:var(--green-light);border:1px solid #86EFAC}
+.rule-box.red{background:var(--red-light);border:1px solid #FECACA}
+.rule-title{font-size:12px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em}
+.rule-box.teal .rule-title{color:#0F766E}
+.rule-box.amber .rule-title{color:#92400E}
+.rule-box.green .rule-title{color:#14532D}
+.rule-box.red .rule-title{color:#991B1B}
+.rule-item{font-size:13px;padding:3px 0 3px 14px;position:relative;line-height:1.4}
+.rule-item::before{content:'•';position:absolute;left:0;font-weight:700}
+.rule-box.teal .rule-item{color:#134E4A}
+.rule-box.amber .rule-item{color:#78350F}
+.rule-box.green .rule-item{color:#14532D}
+.rule-box.red .rule-item{color:#7F1D1D}
+
+/* SUPPLEMENTS */
+.timing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1.25rem}
+.timing-block{border-radius:var(--radius);padding:16px;border:1px solid var(--border)}
+.timing-block.morning{background:#FFF7ED;border-color:#FED7AA}
+.timing-block.midday{background:var(--green-light);border-color:#86EFAC}
+.timing-block.evening{background:#EFF6FF;border-color:#BFDBFE}
+.timing-title{font-size:13px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.06em}
+.timing-block.morning .timing-title{color:#92400E}
+.timing-block.midday .timing-title{color:#14532D}
+.timing-block.evening .timing-title{color:#1E40AF}
+.timing-item{font-size:13px;padding:4px 0 4px 14px;position:relative;line-height:1.4;color:var(--text)}
+.timing-item::before{content:'•';position:absolute;left:0;font-weight:700}
+.timing-block.morning .timing-item::before{color:#D97706}
+.timing-block.midday .timing-item::before{color:var(--green)}
+.timing-block.evening .timing-item::before{color:#2563EB}
+
+/* MILESTONES */
+.milestone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1rem}
+.ms-card{border-radius:14px;padding:18px 14px;text-align:center;border:2px solid transparent;cursor:pointer;transition:all 0.2s;position:relative}
+.ms-card.locked{background:var(--cream);border-color:var(--border);opacity:0.6}
+.ms-card.current{background:var(--navy2);border-color:var(--teal2);box-shadow:0 0 0 3px rgba(45,212,191,0.15)}
+.ms-card.claimed{background:var(--green-light);border-color:var(--green)}
+.ms-emoji{font-size:32px;margin-bottom:7px;display:block}
+.ms-dose{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px}
+.ms-card.locked .ms-dose{color:var(--text3)}
+.ms-card.current .ms-dose{color:var(--teal2)}
+.ms-card.claimed .ms-dose{color:var(--green)}
+.ms-label{font-size:13px;font-weight:600;margin-bottom:3px}
+.ms-card.locked .ms-label{color:var(--text3)}
+.ms-card.current .ms-label{color:#F0F9FF}
+.ms-card.claimed .ms-label{color:#14532D}
+.ms-reward{font-size:12px;line-height:1.4}
+.ms-card.locked .ms-reward{color:var(--text3)}
+.ms-card.current .ms-reward{color:var(--text3)}
+.ms-card.claimed .ms-reward{color:#166534}
+.ms-badge{position:absolute;top:8px;right:8px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.ms-card.claimed .ms-badge{background:var(--green);color:#fff}
+.ms-card.current .ms-badge{background:var(--teal);color:#fff}
+
+/* EXERCISES */
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ex-card{border-radius:var(--radius);border:1px solid var(--border);padding:18px;background:var(--white)}
+.ex-icon{font-size:26px;margin-bottom:8px}
+.ex-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:5px}
+.ex-steps{margin-top:8px;padding-left:0;list-style:none}
+.ex-steps li{font-size:13px;color:var(--text2);padding:4px 0 4px 18px;position:relative;line-height:1.5}
+.ex-steps li::before{content:'→';position:absolute;left:0;color:var(--teal);font-weight:700}
+
+/* MORNING */
+.morning-commitment{background:var(--navy);border-radius:16px;padding:1.75rem;margin-bottom:1rem}
+.mc-title{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;margin-bottom:0.4rem}
+.mc-time{font-family:'DM Serif Display',serif;font-size:44px;color:var(--teal2);margin-bottom:0.75rem;letter-spacing:-1px}
+.mc-sub{font-size:14px;color:#64748B;margin-bottom:1.25rem;line-height:1.5}
+.mc-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+.mc-step{background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.mc-step .step-num{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--teal2);min-width:26px}
+.mc-step .step-text{font-size:14px;color:#CBD5E1;line-height:1.4}
+
+/* BUTTONS */
+.btn{width:100%;padding:15px;font-size:17px;font-weight:700;border-radius:var(--radius);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.1s;margin-top:0.5rem;display:block;text-align:center;text-decoration:none;border:none}
+.btn-teal{background:var(--teal);color:white}
+.btn-teal:hover{background:#0b8076}
+.btn-outline{background:var(--cream);color:var(--text);border:1px solid var(--border2)}
+.saved-msg{font-size:14px;color:var(--teal);text-align:center;margin-top:10px;min-height:22px;font-weight:600}
+
+/* HARD DAYS */
+.hard-days-box{background:var(--navy);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.hd-title{font-family:'DM Serif Display',serif;font-size:20px;color:#F0F9FF;margin-bottom:0.75rem}
+.hd-item{background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 16px;margin-bottom:8px;font-size:14px;color:#CBD5E1;line-height:1.5}
+.hd-item strong{color:var(--teal2);display:block;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px}
+
+/* VISION */
+.cal-hero{background:var(--navy);border-radius:16px;padding:1.75rem;margin-bottom:1rem;text-align:center}
+.cal-hero-title{font-family:'DM Serif Display',serif;font-size:24px;color:#F0F9FF;margin-bottom:0.3rem}
+.cal-hero-sub{font-size:14px;color:#64748B;margin-bottom:1.25rem}
+.cal-progress-bar{background:rgba(255,255,255,0.08);border-radius:20px;height:16px;overflow:hidden;margin-bottom:6px}
+.cal-progress-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--teal),var(--teal2));transition:width 0.8s ease}
+.cal-progress-label{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--teal2);text-align:right}
+
+/* HISTORY */
+.hcard{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:12px}
+.hdate{font-size:14px;color:var(--text2);margin-bottom:8px;font-weight:700}
+.hbadges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:6px}
+.badge{font-size:12px;padding:3px 10px;border-radius:20px;font-weight:700}
+.bc{background:var(--red-light);color:#991B1B}
+.bb{background:#DBEAFE;color:#1E40AF}
+.bt{background:var(--green-light);color:#14532D}
+.ba{background:var(--amber-light);color:#92400E}
+.bg{background:#F1F5F9;color:#475569}
+.bp{background:var(--teal-pale);color:#0F766E}
+.hnote{font-size:14px;color:var(--text2);line-height:1.5;margin-top:7px}
+
+@media(max-width:768px){
+  .wrap{padding:1rem 0.85rem 3rem}
+  .vgrid{grid-template-columns:1fr 1fr}
+  .grid2,.grid3,.timing-grid,.ex-grid,.phase-grid,.rule-grid{grid-template-columns:1fr}
+  .milestone-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:1.5rem 1.25rem}
+  .hero-name{font-size:24px}
+  .tabs{border-radius:10px}
+  .tab{font-size:12px;padding:10px 4px;min-width:60px}
+  .mc-time{font-size:36px}
+  .th-dose{font-size:30px}
+  .vgrid2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/" class="topbar-logo">Gaba<span>Down</span></a>
+  <span class="topbar-badge">Sample Journal</span>
+  <a href="/#apply" class="topbar-cta">Get Yours</a>
+</div>
+
+<div class="wrap">
+
+  <div class="sample-banner">
+    <p><strong>This is a sample journal.</strong> It's pre-filled with a fictional client so you can see exactly what yours would look like. Every GabaDown journal is built from your intake -- your dose, your history, your doctor's direction. Tap around and explore.</p>
+    <a href="/#apply">Get your custom journal</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">GabaDown Journal · Private</div>
+    <div class="hero-name">Sarah's Taper Journal</div>
+    <div class="hero-sub">Starting dose 1,200mg · Sciatica and nerve pain · Taper in progress</div>
+    <div class="vgrid">
+      <div class="vc vc-teal">
+        <span class="icon">💊</span>
+        <span class="vlabel">1,200mg</span>
+        <span class="vdetail">Starting dose · 3x daily</span>
+      </div>
+      <div class="vc vc-gold">
+        <span class="icon">🎯</span>
+        <span class="vlabel">600mg</span>
+        <span class="vdetail">Phase 1 goal · 6 months</span>
+      </div>
+      <div class="vc vc-green">
+        <span class="icon">📅</span>
+        <span class="vlabel">Week 8</span>
+        <span class="vdetail">Current phase · On track</span>
+      </div>
+      <div class="vc vc-navy">
+        <span class="icon">⬇️</span>
+        <span class="vlabel">−100mg</span>
+        <span class="vdetail">Reduction so far · Stable</span>
+      </div>
+    </div>
+    <div class="vgrid2">
+      <div class="vc vc-navy">
+        <span class="icon">👩‍⚕️</span>
+        <span class="vlabel">Dr. Patricia Chen</span>
+        <span class="vdetail">Family GP · Reviewed and approved plan · Next appt July 14</span>
+      </div>
+      <div class="vc vc-navy">
+        <span class="icon">💬</span>
+        <span class="vlabel">Why I'm doing this</span>
+        <span class="vdetail">I want to think clearly again. I want to feel like myself.</span>
+      </div>
+    </div>
+    <div class="affirmation">
+      <p>"Every small reduction is proof that I am stronger than I thought."</p>
+      <span>Sarah's anchor phrase -- updated in the Vision tab</span>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab on" onclick="show('taper',this)">Taper Plan</button>
+    <button class="tab" onclick="show('log',this)">Daily Log</button>
+    <button class="tab" onclick="show('vision',this)">Vision</button>
+    <button class="tab" onclick="show('supps',this)">Supplements</button>
+    <button class="tab" onclick="show('milestones',this)">Milestones</button>
+    <button class="tab" onclick="show('exercises',this)">Exercises</button>
+    <button class="tab" onclick="show('morning',this)">Morning</button>
+    <button class="tab" onclick="show('advocacy',this)">Advocacy</button>
+    <button class="tab" onclick="show('history',this)">History</button>
+  </div>
+
+  <!-- TAPER PLAN -->
+  <div id="taper" class="page on">
+    <div class="taper-header">
+      <div>
+        <div class="th-label">Current dose</div>
+        <div class="th-dose">1,100mg</div>
+        <div class="th-sub">Week 8 of Phase 1 · Holding well</div>
+      </div>
+      <div style="text-align:right">
+        <div class="th-goal">Phase 1 target</div>
+        <div class="th-goal-dose">600mg</div>
+        <div style="font-size:13px;color:#64748B;margin-top:3px">Est. completion: December 2026</div>
+      </div>
+    </div>
+
+    <div class="phase-grid">
+      <div class="phase-card done">
+        <div class="phase-num">Phase 0 · Complete</div>
+        <div class="phase-dose">1,200mg</div>
+        <div class="phase-detail">Baseline stabilisation · 4 weeks · Doctor reviewed journal</div>
+      </div>
+      <div class="phase-card active">
+        <div class="phase-num">Phase 1 · Active</div>
+        <div class="phase-dose">1,100mg</div>
+        <div class="phase-detail">First 100mg reduction · Holding 6 weeks · Reassess July 14</div>
+      </div>
+      <div class="phase-card future">
+        <div class="phase-num">Phase 2 · Upcoming</div>
+        <div class="phase-dose">1,000mg</div>
+        <div class="phase-detail">Second reduction · Pending Phase 1 sign-off from Dr. Chen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Taper rules -- agreed with Dr. Chen</div>
+      <div class="rule-grid">
+        <div class="rule-box teal">
+          <div class="rule-title">Go signal</div>
+          <div class="rule-item">Pain at or below 5/10 for 2 weeks</div>
+          <div class="rule-item">Sleep at least 5h consistently</div>
+          <div class="rule-item">No new symptoms for 10 days</div>
+        </div>
+        <div class="rule-box red">
+          <div class="rule-title">Hold signal</div>
+          <div class="rule-item">Pain spike above 7/10 for 3 days</div>
+          <div class="rule-item">Sleep below 4h for more than 4 nights</div>
+          <div class="rule-item">Anxiety preventing daily function</div>
+        </div>
+        <div class="rule-box amber">
+          <div class="rule-title">Withdrawal vs. relapse</div>
+          <div class="rule-item">Withdrawal: peaks days 3-7 after drop</div>
+          <div class="rule-item">Relapse: gradual, matches original pain pattern</div>
+          <div class="rule-item">When unsure: hold and track for 5 days</div>
+        </div>
+        <div class="rule-box green">
+          <div class="rule-title">Support protocol</div>
+          <div class="rule-item">Magnesium glycinate every evening</div>
+          <div class="rule-item">ALA with morning dose</div>
+          <div class="rule-item">CBD oil if pain spikes above 6/10</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hard-days-box">
+      <div class="hd-title">Hard day plan</div>
+      <div class="hd-item"><strong>First step</strong>Check your log. Is this a pattern or a bad day?</div>
+      <div class="hd-item"><strong>If anxiety spikes</strong>L-Theanine 200mg + 10 min vagus nerve breathing. Do not skip meals.</div>
+      <div class="hd-item"><strong>If pain spikes</strong>Voltaren topically if localised. Note location and intensity. If above 7 for 3 days, contact Dr. Chen.</div>
+      <div class="hd-item"><strong>Do not</strong>Increase dose without speaking to Dr. Chen first. One hard day is not a relapse.</div>
+    </div>
+  </div>
+
+  <!-- DAILY LOG -->
+  <div id="log" class="page">
+    <div class="card">
+      <div class="card-eyebrow">Today's log</div>
+      <div class="card-title">How are you feeling today?</div>
+      <div class="card-sub">Tap to log. This builds your appointment history.</div>
+
+      <div class="accent-teal">
+        <div class="field-label">Pain level (0 = none, 10 = severe)</div>
+        <div class="scale-row">
+          <button class="sb sp" onclick="sel(this,'pain')">0</button>
+          <button class="sb sp" onclick="sel(this,'pain')">1</button>
+          <button class="sb sp" onclick="sel(this,'pain')">2</button>
+          <button class="sb ss" onclick="sel(this,'pain')">3</button>
+          <button class="sb ss" onclick="sel(this,'pain')">4</button>
+          <button class="sb sm on" onclick="sel(this,'pain')">5</button>
+          <button class="sb se" onclick="sel(this,'pain')">6</button>
+          <button class="sb se" onclick="sel(this,'pain')">7</button>
+          <button class="sb sp" onclick="sel(this,'pain')">8</button>
+          <button class="sb sp" onclick="sel(this,'pain')">9</button>
+          <button class="sb sp" onclick="sel(this,'pain')">10</button>
+        </div>
+      </div>
+
+      <div class="accent-teal" style="margin-top:1.25rem">
+        <div class="field-label">Sleep hours last night</div>
+        <div class="scale-row">
+          <button class="sb sp" onclick="sel(this,'sleep')">2h</button>
+          <button class="sb sp" onclick="sel(this,'sleep')">3h</button>
+          <button class="sb ss" onclick="sel(this,'sleep')">4h</button>
+          <button class="sb sm on" onclick="sel(this,'sleep')">5h</button>
+          <button class="sb sm" onclick="sel(this,'sleep')">6h</button>
+          <button class="sb sm" onclick="sel(this,'sleep')">7h</button>
+          <button class="sb sm" onclick="sel(this,'sleep')">8h</button>
+          <button class="sb sm" onclick="sel(this,'sleep')">9h+</button>
+        </div>
+      </div>
+
+      <div class="accent-teal" style="margin-top:1.25rem">
+        <div class="field-label">Mood today</div>
+        <div class="pill-row">
+          <button class="pill on" onclick="tog(this)">Okay</button>
+          <button class="pill" onclick="tog(this)">Good</button>
+          <button class="pill" onclick="tog(this)">Anxious</button>
+          <button class="pill" onclick="tog(this)">Foggy</button>
+          <button class="pill" onclick="tog(this)">Low</button>
+          <button class="pill" onclick="tog(this)">Irritable</button>
+          <button class="pill" onclick="tog(this)">Calm</button>
+        </div>
+      </div>
+
+      <div class="accent-teal" style="margin-top:1.25rem">
+        <div class="field-label">Energy level</div>
+        <div class="scale-row">
+          <button class="sb sp" onclick="sel(this,'energy')">1</button>
+          <button class="sb sp" onclick="sel(this,'energy')">2</button>
+          <button class="sb ss" onclick="sel(this,'energy')">3</button>
+          <button class="sb sm on" onclick="sel(this,'energy')">4</button>
+          <button class="sb sm" onclick="sel(this,'energy')">5</button>
+          <button class="sb sm" onclick="sel(this,'energy')">6</button>
+          <button class="sb sm" onclick="sel(this,'energy')">7</button>
+          <button class="sb se" onclick="sel(this,'energy')">8</button>
+          <button class="sb se" onclick="sel(this,'energy')">9</button>
+          <button class="sb se" onclick="sel(this,'energy')">10</button>
+        </div>
+      </div>
+
+      <div style="margin-top:1.25rem">
+        <div class="field-label">Symptoms today (tick all that apply)</div>
+        <div class="pill-row">
+          <button class="pill" onclick="tog(this)">Nerve pain</button>
+          <button class="pill on" onclick="tog(this)">Brain fog</button>
+          <button class="pill" onclick="tog(this)">Tingling</button>
+          <button class="pill" onclick="tog(this)">Burning</button>
+          <button class="pill" onclick="tog(this)">Sweating</button>
+          <button class="pill" onclick="tog(this)">Nausea</button>
+          <button class="pill" onclick="tog(this)">Dizziness</button>
+          <button class="pill" onclick="tog(this)">Muscle tension</button>
+          <button class="pill on" onclick="tog(this)">Restless legs</button>
+        </div>
+      </div>
+
+      <div style="margin-top:1.25rem">
+        <div class="field-label">Notes for today</div>
+        <textarea placeholder="Anything worth noting -- what helped, what was hard, anything unusual...">Leg pain was manageable this morning. Noticed the brain fog lifting slightly around 2pm. Took magnesium early tonight. Sleep has been better this week.</textarea>
+      </div>
+
+      <button class="btn btn-teal" onclick="save()">Save today's log</button>
+      <div class="saved-msg" id="saved"></div>
+    </div>
+  </div>
+
+  <!-- VISION -->
+  <div id="vision" class="page">
+    <div class="cal-hero">
+      <div class="cal-hero-title">Your reason for doing this</div>
+      <div class="cal-hero-sub">Come back here on the hard days</div>
+      <div class="cal-progress-bar"><div class="cal-progress-fill" style="width:12%"></div></div>
+      <div class="cal-progress-label">12% of Phase 1 complete</div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Sarah's vision</div>
+      <div class="accent-gold">
+        <div class="card-title">What I'm walking toward</div>
+        <div class="card-sub">I want to think clearly again. I want to have a conversation without losing the thread halfway through. I want to wake up and not feel like I'm underwater for the first three hours. I want to be present with my kids instead of just physically there.</div>
+      </div>
+      <div class="field-label" style="margin-top:1rem">Update your vision</div>
+      <textarea>I want to think clearly again. I want to have a conversation without losing the thread halfway through. I want to wake up and not feel like I'm underwater for the first three hours. I want to be present with my kids instead of just physically there.</textarea>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">What life looks like on the other side</div>
+      <div class="grid2">
+        <div>
+          <div class="field-label">Physical</div>
+          <textarea style="min-height:80px">Moving without dreading the nerve flare. Walking the dog without timing it around doses.</textarea>
+        </div>
+        <div>
+          <div class="field-label">Mental</div>
+          <textarea style="min-height:80px">Reading a book and actually remembering what I read. Finishing my own sentences.</textarea>
+        </div>
+        <div>
+          <div class="field-label">Social</div>
+          <textarea style="min-height:80px">Being the person who shows up, not the one who cancels at the last minute.</textarea>
+        </div>
+        <div>
+          <div class="field-label">Daily life</div>
+          <textarea style="min-height:80px">Making dinner without needing to sit down halfway through. Driving without anxiety.</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPLEMENTS -->
+  <div id="supps" class="page">
+    <div class="card">
+      <div class="card-eyebrow">Sarah's supplement protocol</div>
+      <div class="card-title">Timed and explained</div>
+      <div class="card-sub">Reviewed with pharmacist June 2026. Confirm any changes with your pharmacist before adjusting.</div>
+    </div>
+
+    <div class="timing-grid">
+      <div class="timing-block morning">
+        <div class="timing-title">Morning · with food</div>
+        <div class="timing-item">Alpha-lipoic acid (ALA) 600mg</div>
+        <div class="timing-item">Lion's Mane 500mg</div>
+        <div class="timing-item">B12 Methylcobalamin 1000mcg</div>
+        <div class="timing-item">Omega-3 fish oil 2g</div>
+      </div>
+      <div class="timing-block midday">
+        <div class="timing-title">Midday · with lunch</div>
+        <div class="timing-item">Turmeric/Curcumin 500mg</div>
+        <div class="timing-item">Ashwagandha KSM-66 300mg</div>
+      </div>
+      <div class="timing-block evening">
+        <div class="timing-title">Evening · 2h after gabapentin</div>
+        <div class="timing-item">Magnesium Glycinate 400mg</div>
+        <div class="timing-item">L-Theanine 200mg</div>
+        <div class="timing-item">Reishi Mushroom 500mg</div>
+        <div class="timing-item">CBD oil 25mg sublingual (as needed)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Pharmacist notes</div>
+      <div class="accent-teal">
+        <div style="font-size:14px;color:var(--text2);line-height:1.75">Ashwagandha, turmeric and valerian flagged for additive sedation with gabapentin pathway -- monitor for increased drowsiness especially in first 2 weeks. Magnesium confirmed safe. B12 methylcobalamin confirmed preferred form. All supplements reviewed June 12 2026.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILESTONES -->
+  <div id="milestones" class="page">
+    <div class="cal-hero">
+      <div class="cal-hero-title">Your milestone map</div>
+      <div class="cal-hero-sub">Each reduction unlocks a reward you chose</div>
+      <div class="cal-progress-bar"><div class="cal-progress-fill" style="width:12%"></div></div>
+      <div class="cal-progress-label">1 of 8 milestones reached</div>
+    </div>
+
+    <div class="milestone-grid">
+      <div class="ms-card claimed">
+        <span class="ms-badge">Claimed</span>
+        <span class="ms-emoji">🌿</span>
+        <div class="ms-dose">1,100mg</div>
+        <div class="ms-label">First reduction</div>
+        <div class="ms-reward">New book from the list</div>
+      </div>
+      <div class="ms-card current">
+        <span class="ms-badge">Current</span>
+        <span class="ms-emoji">🛁</span>
+        <div class="ms-dose">1,000mg</div>
+        <div class="ms-label">Two months in</div>
+        <div class="ms-reward">Spa afternoon, just for me</div>
+      </div>
+      <div class="ms-card locked">
+        <span class="ms-emoji">🌸</span>
+        <div class="ms-dose">900mg</div>
+        <div class="ms-label">Under 1000</div>
+        <div class="ms-reward">Weekend trip with my sister</div>
+      </div>
+      <div class="ms-card locked">
+        <span class="ms-emoji">🎵</span>
+        <div class="ms-dose">800mg</div>
+        <div class="ms-label">Halfway to Phase 1</div>
+        <div class="ms-reward">Concert tickets</div>
+      </div>
+      <div class="ms-card locked">
+        <span class="ms-emoji">🍽️</span>
+        <div class="ms-dose">700mg</div>
+        <div class="ms-label">Three quarters there</div>
+        <div class="ms-reward">Fancy dinner, no occasion needed</div>
+      </div>
+      <div class="ms-card locked">
+        <span class="ms-emoji">⭐</span>
+        <div class="ms-dose">600mg</div>
+        <div class="ms-label">Phase 1 complete</div>
+        <div class="ms-reward">One night away, alone, quiet hotel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCISES -->
+  <div id="exercises" class="page">
+    <div class="card">
+      <div class="card-eyebrow">Nerve health support</div>
+      <div class="card-title">Built for your situation</div>
+      <div class="card-sub">These are adapted to sciatica and lower limb nerve pain. Do what you can, skip what aggravates. Report anything new to Dr. Chen.</div>
+    </div>
+    <div class="ex-grid">
+      <div class="ex-card">
+        <div class="ex-icon">🦶</div>
+        <div class="ex-title">Ankle alphabet</div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:6px">3 min daily · Seated</div>
+        <ul class="ex-steps">
+          <li>Sit with leg extended, foot off the floor</li>
+          <li>Trace each letter A-Z with your big toe</li>
+          <li>Go slowly -- this is nerve activation, not a workout</li>
+          <li>Switch feet. Note any difference between sides.</li>
+        </ul>
+      </div>
+      <div class="ex-card">
+        <div class="ex-icon">🧘</div>
+        <div class="ex-title">Sciatic nerve floss</div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:6px">5 min daily · Seated or lying</div>
+        <ul class="ex-steps">
+          <li>Sit tall, extend one leg straight</li>
+          <li>Flex foot (toes toward you) and hold 3 seconds</li>
+          <li>Point foot away and hold 3 seconds</li>
+          <li>Repeat 10 times each side -- stop if sharp pain</li>
+        </ul>
+      </div>
+      <div class="ex-card">
+        <div class="ex-icon">✋</div>
+        <div class="ex-title">Hand dexterity</div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:6px">2 min daily · Any time</div>
+        <ul class="ex-steps">
+          <li>Tap each finger to thumb, one at a time</li>
+          <li>Repeat in reverse order</li>
+          <li>Try with eyes closed to increase challenge</li>
+          <li>Both hands -- note any asymmetry</li>
+        </ul>
+      </div>
+      <div class="ex-card">
+        <div class="ex-icon">💨</div>
+        <div class="ex-title">Vagus nerve breathing</div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:6px">5 min · Any time · Especially useful on hard days</div>
+        <ul class="ex-steps">
+          <li>Inhale for 4 counts through the nose</li>
+          <li>Hold for 2 counts</li>
+          <li>Exhale slowly for 8 counts through the mouth</li>
+          <li>The long exhale activates the vagus nerve directly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORNING -->
+  <div id="morning" class="page">
+    <div class="morning-commitment">
+      <div class="mc-title">Sarah's morning protocol</div>
+      <div class="mc-time">7:00 AM</div>
+      <div class="mc-sub">Built around your schedule and your nervous system. Do this before checking your phone.</div>
+      <div class="mc-steps">
+        <div class="mc-step"><span class="step-num">1</span><span class="step-text">Glass of water before anything else. Nervous system hydration matters.</span></div>
+        <div class="mc-step"><span class="step-num">2</span><span class="step-text">Morning supplements with a small meal. ALA, Lion's Mane, B12, Omega-3.</span></div>
+        <div class="mc-step"><span class="step-num">3</span><span class="step-text">10 minutes outside. Light on the eyes, movement in the body. Non-negotiable.</span></div>
+        <div class="mc-step"><span class="step-num">4</span><span class="step-text">Log yesterday if you didn't. Two minutes. Opens the day with intention.</span></div>
+        <div class="mc-step"><span class="step-num">5</span><span class="step-text">Read your vision statement. Thirty seconds. Remind yourself what you're doing this for.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">Customise your morning</div>
+      <div class="field-label">Your ideal start time</div>
+      <input type="text" value="7:00 AM">
+      <div class="field-label" style="margin-top:1rem">Your non-negotiable morning anchor</div>
+      <textarea style="min-height:80px">10 minutes outside before anything else.</textarea>
+      <div class="field-label" style="margin-top:1rem">What you want to protect in your mornings</div>
+      <textarea style="min-height:80px">Quiet. No phone until after supplements and breakfast. Space to just exist before the day starts.</textarea>
+      <button class="btn btn-teal" onclick="save()" style="margin-top:1rem">Save morning protocol</button>
+      <div class="saved-msg" id="saved2"></div>
+    </div>
+  </div>
+
+  <!-- ADVOCACY -->
+  <div id="advocacy" class="page">
+    <div class="card">
+      <div class="card-eyebrow">Your next appointment</div>
+      <div class="card-title">Prepared for Dr. Chen · July 14</div>
+      <div class="card-sub">Walk in with data, not a general impression. Your log makes this easy.</div>
+
+      <div class="accent-teal">
+        <div class="field-label">What to bring</div>
+        <div class="pill-row">
+          <button class="pill on" onclick="tog(this)">Last 4 weeks log summary</button>
+          <button class="pill on" onclick="tog(this)">Current supplement list</button>
+          <button class="pill on" onclick="tog(this)">Healthcare team summary</button>
+          <button class="pill" onclick="tog(this)">Pain pattern notes</button>
+        </div>
+      </div>
+
+      <div style="margin-top:1.25rem">
+        <div class="field-label">Your questions for this appointment</div>
+        <textarea>1. My pain has been holding steady at 4-5 since the reduction. Is that stable enough to proceed to 1,000mg?
+2. The brain fog is improving but restless legs have been worse nights 2-4 after each reduction. Is that withdrawal or something else?
+3. Can we document the next reduction schedule together so I have a written plan?</textarea>
+      </div>
+
+      <div style="margin-top:1.25rem">
+        <div class="field-label">What you want your doctor to understand</div>
+        <textarea>I am serious about doing this slowly. I am not in a rush. I want to do this in a way that my body can handle -- even if it takes longer than the standard timeline.</textarea>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">If you face pushback</div>
+      <div class="rule-grid">
+        <div class="rule-box teal">
+          <div class="rule-title">"You don't need to taper"</div>
+          <div class="rule-item">I've been on this dose for 18 months. Published guidelines recommend tapering for anyone on gabapentin longer than a few weeks.</div>
+          <div class="rule-item">I'm not stopping -- I'm reducing carefully under your supervision.</div>
+        </div>
+        <div class="rule-box amber">
+          <div class="rule-title">"Just reduce by half"</div>
+          <div class="rule-item">That rate is too fast for someone at my dose and duration. I'd like to reduce by 10% at a time and hold until stable.</div>
+          <div class="rule-item">Can we document a slower schedule together?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div id="history" class="page">
+    <div class="card">
+      <div class="card-eyebrow">Log history</div>
+      <div class="card-title">Your last 7 entries</div>
+    </div>
+
+    <div class="hcard">
+      <div class="hdate">Today · June 28, 2026 · Week 8</div>
+      <div class="hbadges"><span class="badge bt">Pain 5</span><span class="badge bb">Sleep 5h</span><span class="badge bp">Mood: Okay</span><span class="badge ba">Energy 4</span></div>
+      <div class="hnote">Leg pain manageable. Brain fog lifting slightly. Magnesium taken early.</div>
+    </div>
+    <div class="hcard">
+      <div class="hdate">June 27, 2026 · Week 8</div>
+      <div class="hbadges"><span class="badge bt">Pain 4</span><span class="badge bb">Sleep 6h</span><span class="badge bp">Mood: Calm</span><span class="badge ba">Energy 5</span></div>
+      <div class="hnote">Best day this week. Managed a 20-minute walk. No nerve flare.</div>
+    </div>
+    <div class="hcard">
+      <div class="hdate">June 26, 2026 · Week 8</div>
+      <div class="hbadges"><span class="badge bc">Pain 6</span><span class="badge bc">Sleep 4h</span><span class="badge bg">Mood: Anxious</span><span class="badge bc">Energy 3</span></div>
+      <div class="hnote">Hard night. Restless legs woke me at 3am. Took L-Theanine. Eventually settled.</div>
+    </div>
+    <div class="hcard">
+      <div class="hdate">June 25, 2026 · Week 8</div>
+      <div class="hbadges"><span class="badge bt">Pain 5</span><span class="badge bb">Sleep 5h</span><span class="badge bp">Mood: Foggy</span><span class="badge ba">Energy 4</span></div>
+      <div class="hnote">Fog heavy until midday. Cleared after lunch and a short walk.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM CTA -->
+<div style="background:var(--navy);padding:3rem 1.5rem;text-align:center;border-top:1px solid rgba(45,212,191,0.1)">
+  <div style="max-width:560px;margin:0 auto">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem">This is what yours looks like</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:28px;color:#F0F9FF;margin-bottom:0.75rem;line-height:1.2">Built around your dose, your doctor, your situation</div>
+    <div style="font-size:15px;color:#64748B;line-height:1.8;margin-bottom:1.75rem">Everything in this journal is customised from your intake. Your taper schedule. Your doctor's name. Your milestones. Your vision. Your morning. Yours.</div>
+    <a href="/#apply" style="display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:16px 40px;border-radius:12px;font-size:17px;font-weight:700;text-decoration:none">Get your custom journal</a>
+    <div style="font-size:13px;color:#334155;margin-top:1rem">100% Protected · Full refund after your follow-up call if it's not worth it</div>
+  </div>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+}
+function sel(btn, group) {
+  btn.closest('.scale-row').querySelectorAll('.sb').forEach(b => {
+    b.classList.remove('on');
+    b.style.outline = '';
+  });
+  btn.style.outline = '2px solid #0D9488';
+}
+function tog(btn) {
+  btn.classList.toggle('on');
+}
+function save() {
+  const msgs = document.querySelectorAll('.saved-msg');
+  msgs.forEach(m => { m.textContent = 'Saved.'; setTimeout(() => m.textContent = '', 2500); });
+}
+</script>
+</body>
+</html>
