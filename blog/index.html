@@ -12,7 +12,7 @@
 :root{--navy:#0B1628;--navy2:#112240;--teal:#0D9488;--teal2:#2DD4BF;--cream:#F8FAFC;--white:#fff;--text:#0F172A;--text2:#374151;--text3:#6B7280;--border:#E2E8F0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:16px;line-height:1.65}
-nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-bottom:1px solid rgba(45,212,191,0.1)}
+nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:#0B1628;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(45,212,191,0.1)}
 .logo{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;text-decoration:none}
 .logo span{color:var(--teal2)}
 .nav-links{display:flex;align-items:center;gap:1.5rem}
@@ -67,6 +67,20 @@ footer{background:#060D1A;padding:2.5rem;border-top:1px solid rgba(45,212,191,0.
   .article-card{grid-template-columns:1fr}
   .article-card-right{align-items:flex-start}
 }
+
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;width:36px;height:36px;flex-shrink:0}
+.nav-hamburger span{display:block;height:2px;width:22px;background:#CBD5E1;border-radius:2px;transition:all 0.25s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile-menu{display:none;flex-direction:column;background:#112240;border-bottom:1px solid rgba(45,212,191,0.2);position:sticky;top:57px;z-index:99}
+.nav-mobile-menu.open{display:flex}
+.nav-mobile-menu a{padding:1rem 1.5rem;font-size:15px;font-weight:500;color:#CBD5E1;text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.08);transition:all 0.15s}
+.nav-mobile-menu a:last-child{background:#0D9488;color:white;font-weight:700;text-align:center;border-bottom:none}
+.nav-mobile-menu a:last-child:hover{background:#2DD4BF;color:#0B1628}
+.nav-mobile-menu a:not(:last-child):hover{color:#2DD4BF;padding-left:1.75rem}
+@media(max-width:600px){.nav-link{display:none!important}.nav-cta{display:none!important}.nav-hamburger{display:flex!important}}
+
 </style>
 </head>
 <body>
