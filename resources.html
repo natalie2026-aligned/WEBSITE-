@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Resources — GabaDown</title>
+<meta name="description" content="Everything worth knowing about gabapentin reduction in one place. Free resources, community groups, and clinical references — no sign-up required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --navy:   #0B1628;
+  --navy2:  #112240;
+  --navy3:  #1A3A5C;
+  --teal:   #0D9488;
+  --teal2:  #2DD4BF;
+  --teal3:  #CCFBF1;
+  --cream:  #F8FAFC;
+  --white:  #FFFFFF;
+  --text:   #0F172A;
+  --text2:  #374151;
+  --text3:  #6B7280;
+  --on-dark:#CBD5E1;
+  --border: #E2E8F0;
+  --border-dark: rgba(45,212,191,0.2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;font-size:16px;line-height:1.65}
+h1,h2,h3{font-family:'DM Serif Display',serif;letter-spacing:-0.5px}
+
+/* NAV */
+nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border-dark)}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;letter-spacing:-0.5px;text-decoration:none}
+.logo span{color:var(--teal2)}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-link{color:var(--on-dark);font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--teal2)}
+.nav-cta{background:var(--teal);color:white;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--teal2);color:var(--navy)}
+
+/* HERO */
+.hero{background:var(--navy);padding:5rem 2.5rem 4rem;text-align:center;border-bottom:1px solid var(--border-dark)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal2);background:rgba(45,212,191,0.08);border:1px solid var(--border-dark);padding:7px 18px;border-radius:20px;margin-bottom:1.75rem}
+.hero h1{font-size:clamp(32px,5vw,52px);color:#F0F9FF;line-height:1.1;margin-bottom:1.25rem;max-width:700px;margin-left:auto;margin-right:auto}
+.hero h1 em{font-style:italic;color:var(--teal2)}
+.hero-sub{font-size:17px;color:#94A3B8;max-width:560px;margin:0 auto;line-height:1.8;font-weight:300}
+
+/* HONEST NOTE */
+.honest-note{background:var(--navy2);border-bottom:1px solid var(--border-dark)}
+.honest-note-inner{max-width:780px;margin:0 auto;padding:2rem 2.5rem;display:flex;gap:1.25rem;align-items:flex-start}
+.honest-note-icon{width:40px;height:40px;background:rgba(45,212,191,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.honest-note-icon i{color:var(--teal2);font-size:20px}
+.honest-note p{font-size:15px;color:#94A3B8;line-height:1.8}
+.honest-note strong{color:#CBD5E1}
+
+/* MAIN LAYOUT */
+.page-body{max-width:780px;margin:0 auto;padding:3.5rem 2.5rem}
+
+/* SECTION HEADERS */
+.section-label{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
+.section-label i{font-size:15px}
+
+/* FEATURED RESOURCE */
+.featured-resource{background:var(--navy);border-radius:16px;padding:2rem;border:1px solid var(--border-dark);margin-bottom:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.featured-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);background:rgba(45,212,191,0.1);border:1px solid var(--border-dark);padding:4px 12px;border-radius:20px;margin-bottom:0.85rem}
+.featured-resource h3{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;line-height:1.2;margin-bottom:0.6rem}
+.featured-resource p{font-size:14px;color:#64748B;line-height:1.75}
+.featured-cta{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:white;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap;flex-shrink:0;align-self:center}
+.featured-cta:hover{background:var(--teal2);color:var(--navy);transform:translateY(-1px)}
+
+/* RESOURCE CARDS */
+.resource-group{margin-bottom:3rem}
+.resource-grid{display:grid;gap:12px}
+.resource-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:1.25rem 1.5rem;display:grid;grid-template-columns:44px 1fr auto;gap:1rem;align-items:center;transition:all .2s;text-decoration:none}
+.resource-card:hover{border-color:var(--teal);transform:translateY(-1px);box-shadow:0 4px 20px rgba(13,148,136,0.08)}
+.resource-card-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.resource-card-icon i{font-size:20px}
+.icon-fb{background:#EFF6FF;} .icon-fb i{color:#2563EB}
+.icon-reddit{background:#FFF7ED;} .icon-reddit i{color:#EA580C}
+.icon-medical{background:rgba(13,148,136,0.08);} .icon-medical i{color:var(--teal)}
+.icon-book{background:#F5F3FF;} .icon-book i{color:#7C3AED}
+.icon-article{background:#FFF1F2;} .icon-article i{color:#E11D48}
+.resource-card-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.resource-card-desc{font-size:13px;color:var(--text3);line-height:1.5}
+.resource-card-meta{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#94A3B8;white-space:nowrap;flex-shrink:0}
+.resource-card-arrow{display:flex;align-items:center;gap:6px}
+.resource-card-arrow i{font-size:14px;color:#CBD5E1;transition:all .2s}
+.resource-card:hover .resource-card-arrow i{color:var(--teal2);transform:translateX(3px)}
+
+/* HONEST FOOTER NOTE */
+.page-note{background:var(--navy2);border-radius:14px;padding:1.5rem;border:1px solid var(--border-dark);margin-top:1rem}
+.page-note p{font-size:14px;color:#64748B;line-height:1.8}
+.page-note strong{color:#94A3B8}
+
+/* CTA STRIP */
+.cta-strip{background:var(--navy);border-top:1px solid var(--border-dark);padding:4rem 2.5rem;text-align:center;margin-top:0}
+.cta-strip h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,38px);color:#F0F9FF;margin-bottom:1rem;line-height:1.15}
+.cta-strip p{font-size:16px;color:#64748B;max-width:520px;margin:0 auto 2rem;line-height:1.8}
+.cta-strip-btn{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;transition:all .2s}
+.cta-strip-btn:hover{background:var(--teal2);color:var(--navy);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#060D1A;padding:2rem 2.5rem;border-top:1px solid rgba(45,212,191,0.08)}
+.footer-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:18px;color:#1E3A5C}
+.footer-logo span{color:#0F4A44}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:#1E3A5C;text-decoration:none}
+.footer-links a:hover{color:var(--teal)}
+.footer-copy{font-size:12px;color:#1A2F4A;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(45,212,191,0.05)}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  nav{padding:1rem 1.25rem}
+  .nav-links .nav-link{display:none}
+  .hero{padding:3.5rem 1.25rem 3rem}
+  .honest-note-inner{padding:1.5rem 1.25rem}
+  .page-body{padding:2.5rem 1.25rem}
+  .featured-resource{grid-template-columns:1fr;gap:1.25rem}
+  .resource-card{grid-template-columns:44px 1fr}
+  .resource-card-meta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">Gaba<span>Down</span></a>
+  <div class="nav-links">
+    <a href="/blog/" class="nav-link">Blog</a>
+    <a href="/resources.html" class="nav-link" style="color:var(--teal2)">Resources</a>
+    <a href="/#apply" class="nav-cta">See the journal</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow"><i class="ti ti-books"></i> Free resources</div>
+  <h1>Everything I found when I went <em>looking</em></h1>
+  <p class="hero-sub">Start here before you spend a dollar anywhere. The communities below are real. The clinical references are real. And they're all free.</p>
+</section>
+
+<!-- HONEST NOTE -->
+<div class="honest-note">
+  <div class="honest-note-inner">
+    <div class="honest-note-icon"><i class="ti ti-heart"></i></div>
+    <p><strong>A note on why this page exists.</strong> When my mother needed help tapering from 2,700mg, I went looking for everything out there. These are the best of what I found. If you're not ready to invest in a structured protocol, these communities and references are the right place to start. The people in those groups genuinely care — they just can't give you a system built around your specific situation. That's the only gap GabaDown fills.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- FEATURED: 7 QUESTIONS -->
+  <div class="section-label"><i class="ti ti-star"></i> Start here</div>
+  <div class="featured-resource">
+    <div>
+      <div class="featured-tag"><i class="ti ti-download"></i> Free download</div>
+      <h3>7 Questions to Ask Your Doctor About Gabapentin Reduction</h3>
+      <p>Most appointments last 15 minutes. These questions help you use every one of them — and reveal exactly where the gaps are in your current plan. No sign-up required.</p>
+    </div>
+    <a href="/7-questions.html" class="featured-cta">Get the free guide <i class="ti ti-arrow-right"></i></a>
+  </div>
+
+  <!-- FACEBOOK GROUPS -->
+  <div class="resource-group">
+    <div class="section-label"><i class="ti ti-brand-facebook"></i> Facebook communities</div>
+    <div class="resource-grid">
+
+      <a href="https://www.facebook.com/share/g/1Kk53z753T/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-fb"><i class="ti ti-users"></i></div>
+        <div>
+          <div class="resource-card-name">Gabapentin Side Effect</div>
+          <div class="resource-card-desc">The largest of the three groups. Covers side effects, experiences, and reduction — 5,500+ members. Good starting point if you're still figuring out what you're dealing with.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">5.5K members</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+      <a href="https://www.facebook.com/share/g/1Au3hcmcVj/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-fb"><i class="ti ti-users"></i></div>
+        <div>
+          <div class="resource-card-name">Gabapentin/Lyrica Withdrawal Coaching & Support</div>
+          <div class="resource-card-desc">More focused on the taper and withdrawal process specifically. 1,600 members. Useful for people who are actively reducing and want to hear from others doing the same.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">1.6K members</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+      <a href="https://www.facebook.com/share/g/17esYZEii3/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-fb"><i class="ti ti-users"></i></div>
+        <div>
+          <div class="resource-card-name">gabapenten withdrawal support group</div>
+          <div class="resource-card-desc">Smaller, more personal community of 1,100 members focused on the withdrawal experience. Well-moderated. Good for people who want a quieter space than the larger groups.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">1.1K members</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CLINICAL REFERENCES -->
+  <div class="resource-group">
+    <div class="section-label"><i class="ti ti-stethoscope"></i> Clinical references worth reading</div>
+    <div class="resource-grid">
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/26721643/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-medical"><i class="ti ti-file-text"></i></div>
+        <div>
+          <div class="resource-card-name">Mersfelder & Nichols 2016 — Gabapentin: Abuse, Dependence, and Withdrawal</div>
+          <div class="resource-card-desc">The most-cited peer-reviewed paper on gabapentin withdrawal risk. Established the over-1,800mg daily threshold. Worth reading before any conversation with your doctor.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">PubMed</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+      <a href="https://doi.org/10.1111/jgs.19482" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-medical"><i class="ti ti-file-text"></i></div>
+        <div>
+          <div class="resource-card-name">2025 JAGS Case Study — Patient-Directed Gabapentin Taper</div>
+          <div class="resource-card-desc">Recent case study documenting a successful supervised taper with patient-directed pacing. Useful evidence to bring to a doctor who is uncertain about slow reduction.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">JAGS 2025</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+      <a href="https://www.deprescribing.org/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-medical"><i class="ti ti-world"></i></div>
+        <div>
+          <div class="resource-card-name">Deprescribing.org</div>
+          <div class="resource-card-desc">Evidence-based deprescribing guidelines and tools for patients and clinicians. Good background reading and helpful for practitioners who haven't encountered formal deprescribing protocols.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">Clinical</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- READING -->
+  <div class="resource-group">
+    <div class="section-label"><i class="ti ti-book"></i> Worth reading</div>
+    <div class="resource-grid">
+
+      <a href="https://www.madinamerica.com/2023/05/gabapentin-withdrawal-one-year-later/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-article"><i class="ti ti-news"></i></div>
+        <div>
+          <div class="resource-card-name">Gabapentin Withdrawal: One Year Later — Mad In America</div>
+          <div class="resource-card-desc">A first-person account of completing a long gabapentin taper. One of the most honest, detailed accounts of the full experience online. The community comments are worth reading too.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">Article</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+      <a href="https://connect.mayoclinic.org/discussion/tapering-off-gabapentin/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-card-icon icon-medical"><i class="ti ti-message-circle"></i></div>
+        <div>
+          <div class="resource-card-name">Mayo Clinic Connect — Tapering Off Gabapentin</div>
+          <div class="resource-card-desc">Forum thread with real patient experiences tapering gabapentin. More moderated and clinically grounded than most social media groups. Good signal-to-noise ratio.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">Forum</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+      <a href="/blog/why-gabapentin-tapers-fail/" class="resource-card">
+        <div class="resource-card-icon icon-book"><i class="ti ti-writing"></i></div>
+        <div>
+          <div class="resource-card-name">Why Most Gabapentin Tapers Fail — GabaDown Blog</div>
+          <div class="resource-card-desc">The patterns that derail most tapers — and what the ones that succeed have in common. The most useful thing I've written about this process.</div>
+        </div>
+        <div class="resource-card-arrow"><span class="resource-card-meta">GabaDown</span><i class="ti ti-arrow-right"></i></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM NOTE -->
+  <div class="page-note">
+    <p><strong>On the communities above:</strong> The people in these groups are doing their best with what they have. What they can't give you is a system that knows your specific dose, your history, your doctor's plan, and is still there on day 60 when you hit a wall. That's not a criticism of them — it's just a different thing. If you get to the point where the group support isn't enough, <a href="/#apply" style="color:var(--teal2);text-decoration:none">that's what GabaDown is for</a>.</p>
+  </div>
+
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>When free isn't enough anymore</h2>
+  <p>You've done the research. You've read the threads. You know more than most. What's missing isn't information — it's a system built around your specific situation, with someone holding the whole thing together.</p>
+  <a href="/#apply" class="cta-strip-btn">See what GabaDown looks like <i class="ti ti-arrow-right"></i></a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Gaba<span>Down</span></div>
+    <div class="footer-links">
+      <a href="mailto:hello@gabadown.com">hello@gabadown.com</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#apply">Get started</a>
+    </div>
+    <div class="footer-copy">GabaDown is a patient advocacy resource. Not a medical service. Always reduce gabapentin under the direct supervision of your doctor and pharmacist. &copy; 2026 GabaDown.</div>
+  </div>
+</footer>
+
+</body>
+</html>
