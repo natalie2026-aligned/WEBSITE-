@@ -106,10 +106,36 @@ footer{background:#060D1A;padding:2.5rem 2.5rem;border-top:1px solid rgba(45,212
   <a href="/" class="logo">Gaba<span>Down</span></a>
   <div class="nav-links">
     <a href="/blog/" class="nav-link">Blog</a>
+    <a href="/resources.html" class="nav-link">Resources</a>
     <a href="/for-healthcare-providers.html" class="nav-link">For Providers</a>
     <a href="/#apply" class="nav-cta">Get Your Journal</a>
   </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="/blog/">Blog</a>
+  <a href="/resources.html">Resources</a>
+  <a href="/for-healthcare-providers.html">For Providers</a>
+  <a href="/#apply" onclick="toggleMenu()">Get Your Journal</a>
+</div>
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  var h=document.querySelector('.nav-hamburger');
+  m.classList.toggle('open');
+  h.classList.toggle('active');
+}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('mobileMenu');
+  var h=document.querySelector('.nav-hamburger');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){
+    m.classList.remove('open');
+    h.classList.remove('active');
+  }
+});
+</script>
 
 <section class="article-header">
   <div class="article-header-inner">
