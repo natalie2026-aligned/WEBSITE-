@@ -53,7 +53,7 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 .honest-note-icon{width:40px;height:40px;background:rgba(45,212,191,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .honest-note-icon i{color:var(--teal2);font-size:20px}
 .honest-note p{font-size:15px;color:#94A3B8;line-height:1.8}
-.honest-note strong{color:#CBD5E1}
+.honest-note strong{color:#F0F9FF}
 
 /* MAIN LAYOUT */
 .page-body{max-width:780px;margin:0 auto;padding:3.5rem 2.5rem}
@@ -66,7 +66,7 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 .featured-resource{background:var(--navy);border-radius:16px;padding:2rem;border:1px solid var(--border-dark);margin-bottom:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
 .featured-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2);background:rgba(45,212,191,0.1);border:1px solid var(--border-dark);padding:4px 12px;border-radius:20px;margin-bottom:0.85rem}
 .featured-resource h3{font-family:'DM Serif Display',serif;font-size:22px;color:#F0F9FF;line-height:1.2;margin-bottom:0.6rem}
-.featured-resource p{font-size:14px;color:#64748B;line-height:1.75}
+.featured-resource p{font-size:14px;color:#94A3B8;line-height:1.75}
 .featured-cta{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:white;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap;flex-shrink:0;align-self:center}
 .featured-cta:hover{background:var(--teal2);color:var(--navy);transform:translateY(-1px)}
 
@@ -86,18 +86,18 @@ nav{padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-item
 .resource-card-desc{font-size:13px;color:var(--text3);line-height:1.5}
 .resource-card-meta{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#94A3B8;white-space:nowrap;flex-shrink:0}
 .resource-card-arrow{display:flex;align-items:center;gap:6px}
-.resource-card-arrow i{font-size:14px;color:#CBD5E1;transition:all .2s}
+.resource-card-arrow i{font-size:14px;color:#F0F9FF;transition:all .2s}
 .resource-card:hover .resource-card-arrow i{color:var(--teal2);transform:translateX(3px)}
 
 /* HONEST FOOTER NOTE */
 .page-note{background:var(--navy2);border-radius:14px;padding:1.5rem;border:1px solid var(--border-dark);margin-top:1rem}
-.page-note p{font-size:14px;color:#64748B;line-height:1.8}
+.page-note p{font-size:14px;color:#94A3B8;line-height:1.8}
 .page-note strong{color:#94A3B8}
 
 /* CTA STRIP */
 .cta-strip{background:var(--navy);border-top:1px solid var(--border-dark);padding:4rem 2.5rem;text-align:center;margin-top:0}
 .cta-strip h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,38px);color:#F0F9FF;margin-bottom:1rem;line-height:1.15}
-.cta-strip p{font-size:16px;color:#64748B;max-width:520px;margin:0 auto 2rem;line-height:1.8}
+.cta-strip p{font-size:16px;color:#94A3B8;max-width:520px;margin:0 auto 2rem;line-height:1.8}
 .cta-strip-btn{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;transition:all .2s}
 .cta-strip-btn:hover{background:var(--teal2);color:var(--navy);transform:translateY(-2px)}
 
@@ -131,7 +131,7 @@ footer{background:#060D1A;padding:2rem 2.5rem;border-top:1px solid rgba(45,212,1
   <a href="/" class="logo">Gaba<span>Down</span></a>
   <div class="nav-links">
     <a href="/blog/" class="nav-link">Blog</a>
-    <a href="/resources.html" class="nav-link">Resources</a>
+    <a href="/resources.html" class="nav-link">Free Resources</a>
     <a href="/for-healthcare-providers.html" class="nav-link">For Providers</a>
     <a href="/#apply" class="nav-cta">Get Your Journal</a>
   </div>
@@ -141,7 +141,7 @@ footer{background:#060D1A;padding:2rem 2.5rem;border-top:1px solid rgba(45,212,1
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="/blog/">Blog</a>
-  <a href="/resources.html">Resources</a>
+  <a href="/resources.html">Free Resources</a>
   <a href="/for-healthcare-providers.html">For Providers</a>
   <a href="/#apply" onclick="toggleMenu()">Get Your Journal</a>
 </div>
@@ -173,7 +173,7 @@ document.addEventListener('click',function(e){
 <div class="honest-note">
   <div class="honest-note-inner">
     <div class="honest-note-icon"><i class="ti ti-heart"></i></div>
-    <p><strong>A note on why this page exists.</strong> When my mother needed help tapering from 2,700mg, I went looking for everything out there. These are the best of what I found. If you're not ready to invest in a structured protocol, these communities and references are the right place to start. The people in those groups genuinely care — they just can't give you a system built around your specific situation. That's the only gap GabaDown fills.</p>
+    <p><strong>A note on why this page exists.</strong> When my mother needed help tapering from 2,700mg, I went looking for everything out there. These are the best of what I found. If you're not ready to invest in a structured protocol, these communities and references are the right place to start. The people in those groups genuinely care — they just can't give you a system built around your specific situation. That's the gap.</p>
   </div>
 </div>
 
